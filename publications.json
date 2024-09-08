@@ -1,0 +1,124 @@
+[
+    {
+      "title": "AE-FLOW: Autoencoder Normalizing Flow",
+      "authors": [
+        "Jakub Mosinski",
+        "Piotr Bilinski",
+        "Thomas Merritt",
+        "Abdelhamid Ezzerg",
+        "Daniel Korzekwa"
+      ],
+      "year": 2023,
+      "venue": "ICASSP"
+    },
+    {
+      "title": "Comparing normalizing flows and diffusion models for prosody and acoustic modelling in text-to-speech",
+      "authors": [
+        "Guangyan Zhang",
+        "Thomas Merritt",
+        "Manuel Sam Ribeiro",
+        "Biel Tura Vecino",
+        "Kayoko Yanagisawa",
+        "Kamil Pokora",
+        "Abdelhamid Ezzerg",
+        "Sebastian Cygert",
+        "Ammar Abbas",
+        "Piotr Bilinski",
+        "Roberto Barra-Chicote",
+        "Daniel Korzekwa",
+        "Jaime Lorenzo-Trueba"
+      ],
+      "year": 2023,
+      "venue": "INTERSPEECH"
+    },
+    {
+      "title": "Remap, warp and attend: Non-parallel many-to-many accent conversion with Normalizing Flows",
+      "authors": [
+        "Abdelhamid Ezzerg",
+        "Thomas Merritt",
+        "Kayoko Yanagisawa",
+        "Piotr Bilinski",
+        "Magdalena Proszewska",
+        "Kamil Pokora",
+        "Renard Korzeniowski",
+        "Roberto Barra-Chicote",
+        "Daniel Korzekwa"
+      ],
+      "year": 2022,
+      "venue": "IEEE Speech Language Technology Workshop (SLT)"
+    },
+    {
+      "title": "Creating New Voices using Normalizing Flows",
+      "authors": [
+        "Piotr Bilinski",
+        "Thomas Merritt",
+        "Abdelhamid Ezzerg",
+        "Kamil Pokora",
+        "Sebastian Cygert",
+        "Kayoko Yanagisawa",
+        "Roberto Barra-Chicote",
+        "Daniel Korzekwa"
+      ],
+      "year": 2022,
+      "venue": "INTERSPEECH"
+    },
+    {
+      "title": "GlowVC: Mel-spectrogram space disentangling model for language-independent text-free voice conversion",
+      "authors": [
+        "Magdalena Proszewska",
+        "Grzegorz Beringer",
+        "Daniel Sáez-Trigueros",
+        "Thomas Merritt",
+        "Abdelhamid Ezzerg",
+        "Roberto Barra-Chicote"
+      ],
+      "year": 2022,
+      "venue": "INTERSPEECH"
+    },
+    {
+      "title": "Text-free non-parallel many-to-many voice conversion using normalising flows",
+      "authors": [
+        "Thomas Merritt",
+        "Abdelhamid Ezzerg",
+        "Piotr Bilinski",
+        "Magdalena Proszewska",
+        "Kamil Pokora",
+        "Roberto Barra-Chicote",
+        "Daniel Korzekwa"
+      ],
+      "year": 2022,
+      "venue": "International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
+    },
+    {
+      "title": "Enhancing audio quality for expressive Neural Text-to-Speech",
+      "authors": [
+        "Abdelhamid Ezzerg",
+        "Adam Gabrys",
+        "Bartosz Putrycz",
+        "Daniel Korzekwa",
+        "Daniel Saez-Trigueros",
+        "David McHardy",
+        "Kamil Pokora",
+        "Jakub Lachowicz",
+        "Jaime Lorenzo-Trueba",
+        "Viacheslav Klimkov"
+      ],
+      "year": 2021,
+      "venue": "Speech Synthesis Workshop (SSW)"
+    },
+    {
+      "title": "Non-Autoregressive TTS with Explicit Duration Modelling for Low-Resource Highly Expressive Speech",
+      "authors": [
+        "Raahil Shah",
+        "Kamil Pokora",
+        "Abdelhamid Ezzerg",
+        "Viacheslav Klimkov",
+        "Goeric Huybrechts",
+        "Bartosz Putrycz",
+        "Daniel Korzekwa",
+        "Thomas Merritt"
+      ],
+      "year": 2021,
+      "venue": "Speech Synthesis Workshop (SSW)"
+    }
+  ]
