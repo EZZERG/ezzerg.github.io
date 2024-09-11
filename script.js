@@ -7,24 +7,27 @@ fetch('publications.json')
             const publicationItem = document.createElement('div');
             publicationItem.classList.add('publication-item');
             
+            const itemContent = document.createElement('div');
+            itemContent.classList.add('item-content');
+            
             const title = document.createElement('h3');
             const titleLink = document.createElement('a');
             titleLink.href = publication.url;
             titleLink.textContent = publication.title;
             title.appendChild(titleLink);
-            publicationItem.appendChild(title);
+            itemContent.appendChild(title);
             
             const authors = document.createElement('p');
             authors.textContent = publication.authors.join(', ');
-            publicationItem.appendChild(authors);
+            itemContent.appendChild(authors);
             
             const year = document.createElement('p');
             year.textContent = publication.year;
-            publicationItem.appendChild(year);
+            itemContent.appendChild(year);
             
             const venue = document.createElement('p');
             venue.textContent = publication.venue;
-            publicationItem.appendChild(venue);
+            itemContent.appendChild(venue);
             
             const bibtexButton = document.createElement('button');
             bibtexButton.textContent = 'BibTeX';
@@ -32,7 +35,7 @@ fetch('publications.json')
             bibtexButton.addEventListener('click', () => {
                 generateBibtex(publication);
             });
-            publicationItem.appendChild(bibtexButton);
+            itemContent.appendChild(bibtexButton);
             
             // Add arXiv button
             const arxivUrl = publication['arxiv-url'] || publication.url;
@@ -43,8 +46,14 @@ fetch('publications.json')
                 arxivButton.addEventListener('click', () => {
                     window.open(arxivUrl, '_blank');
                 });
-                publicationItem.appendChild(arxivButton);
+                itemContent.appendChild(arxivButton);
             }
+            
+            publicationItem.appendChild(itemContent);
+            
+            const icon = document.createElement('i');
+            icon.classList.add('fas', 'fa-scroll', 'item-icon');
+            publicationItem.appendChild(icon);
             
             publicationList.appendChild(publicationItem);
         });
