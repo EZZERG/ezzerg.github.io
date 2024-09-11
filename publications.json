@@ -9,7 +9,10 @@
         "Daniel Korzekwa"
       ],
       "year": 2023,
-      "venue": "ICASSP"
+      "venue": "ICASSP",
+      "url": "https://ieeexplore.ieee.org/document/10095301",
+      "arxiv-url": "https://arxiv.org/abs/2312.16552",
+      "bibtex": "@misc{mosiński2023aeflowautoencodernormalizingflow, title={AE-Flow: AutoEncoder Normalizing Flow}, author={Jakub Mosiński and Piotr Biliński and Thomas Merritt and Abdelhamid Ezzerg and Daniel Korzekwa}, year={2023}, eprint={2312.16552}, archivePrefix={arXiv}, primaryClass={cs.SD}, url={https://arxiv.org/abs/2312.16552}, }"
     },
     {
       "title": "Comparing normalizing flows and diffusion models for prosody and acoustic modelling in text-to-speech",
@@ -29,7 +32,9 @@
         "Jaime Lorenzo-Trueba"
       ],
       "year": 2023,
-      "venue": "INTERSPEECH"
+      "venue": "INTERSPEECH",
+      "url": "https://arxiv.org/abs/2307.16679",
+      "bibtex": "@misc{zhang2023comparingnormalizingflowsdiffusion, title={Comparing normalizing flows and diffusion models for prosody and acoustic modelling in text-to-speech}, author={Guangyan Zhang and Thomas Merritt and Manuel Sam Ribeiro and Biel Tura-Vecino and Kayoko Yanagisawa and Kamil Pokora and Abdelhamid Ezzerg and Sebastian Cygert and Ammar Abbas and Piotr Bilinski and Roberto Barra-Chicote and Daniel Korzekwa and Jaime Lorenzo-Trueba}, year={2023}, eprint={2307.16679}, archivePrefix={arXiv}, primaryClass={eess.AS}, url={https://arxiv.org/abs/2307.16679}, }"
     },
     {
       "title": "Remap, warp and attend: Non-parallel many-to-many accent conversion with Normalizing Flows",
@@ -45,7 +50,10 @@
         "Daniel Korzekwa"
       ],
       "year": 2022,
-      "venue": "IEEE Speech Language Technology Workshop (SLT)"
+      "venue": "IEEE Speech Language Technology Workshop (SLT)",
+      "url": "https://ieeexplore.ieee.org/document/10022506",
+      "arxiv-url": "https://arxiv.org/abs/2211.05850",
+      "bibtex": "@misc{ezzerg2022remapwarpattendnonparallel, title={Remap, warp and attend: Non-parallel many-to-many accent conversion with Normalizing Flows}, author={Abdelhamid Ezzerg and Thomas Merritt and Kayoko Yanagisawa and Piotr Bilinski and Magdalena Proszewska and Kamil Pokora and Renard Korzeniowski and Roberto Barra-Chicote and Daniel Korzekwa}, year={2022}, eprint={2211.05850}, archivePrefix={arXiv}, primaryClass={eess.AS}, url={https://arxiv.org/abs/2211.05850}, }"
     },
     {
       "title": "Creating New Voices using Normalizing Flows",
@@ -60,7 +68,9 @@
         "Daniel Korzekwa"
       ],
       "year": 2022,
-      "venue": "INTERSPEECH"
+      "venue": "INTERSPEECH",
+      "url": "https://arxiv.org/abs/2312.14569",
+      "bibtex": "@inproceedings{Bilinski_2022, series={interspeech_2022}, title={Creating New Voices using Normalizing Flows}, url={http://dx.doi.org/10.21437/Interspeech.2022-10195}, DOI={10.21437/interspeech.2022-10195}, booktitle={Interspeech 2022}, publisher={ISCA}, author={Bilinski, Piotr and Merritt, Thomas and Ezzerg, Abdelhamid and Pokora, Kamil and Cygert, Sebastian and Yanagisawa, Kayoko and Barra-Chicote, Roberto and Korzekwa, Daniel}, year={2022}, month=sep, pages={2958–2962}, collection={interspeech_2022} }"
     },
     {
       "title": "GlowVC: Mel-spectrogram space disentangling model for language-independent text-free voice conversion",
@@ -73,7 +83,9 @@
         "Roberto Barra-Chicote"
       ],
       "year": 2022,
-      "venue": "INTERSPEECH"
+      "venue": "INTERSPEECH",
+      "url": "https://arxiv.org/abs/2207.01454",
+      "bibtex": "@misc{proszewska2022glowvcmelspectrogramspacedisentangling, title={GlowVC: Mel-spectrogram space disentangling model for language-independent text-free voice conversion}, author={Magdalena Proszewska and Grzegorz Beringer and Daniel Sáez-Trigueros and Thomas Merritt and Abdelhamid Ezzerg and Roberto Barra-Chicote}, year={2022}, eprint={2207.01454}, archivePrefix={arXiv}, primaryClass={eess.AS}, url={https://arxiv.org/abs/2207.01454}, }"
     },
     {
       "title": "Text-free non-parallel many-to-many voice conversion using normalising flows",
@@ -87,7 +99,10 @@
         "Daniel Korzekwa"
       ],
       "year": 2022,
-      "venue": "International Conference on Acoustics, Speech and Signal Processing (ICASSP)"
+      "venue": "International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+      "url": "https://ieeexplore.ieee.org/document/9746368",
+      "arxiv-url": "https://arxiv.org/abs/2203.08009",
+      "bibtex": "@misc{merritt2022textfreenonparallelmanytomanyvoice, title={Text-free non-parallel many-to-many voice conversion using normalising flows}, author={Thomas Merritt and Abdelhamid Ezzerg and Piotr Biliński and Magdalena Proszewska and Kamil Pokora and Roberto Barra-Chicote and Daniel Korzekwa}, year={2022}, eprint={2203.08009}, archivePrefix={arXiv}, primaryClass={eess.AS}, url={https://arxiv.org/abs/2203.08009}, }"
     },
     {
       "title": "Enhancing audio quality for expressive Neural Text-to-Speech",
@@ -104,7 +119,9 @@
         "Viacheslav Klimkov"
       ],
       "year": 2021,
-      "venue": "Speech Synthesis Workshop (SSW)"
+      "venue": "Speech Synthesis Workshop (SSW)",
+      "url": "https://arxiv.org/abs/2108.06270",
+      "bibtex": "@misc{ezzerg2021enhancingaudioqualityexpressive, title={Enhancing audio quality for expressive Neural Text-to-Speech}, author={Abdelhamid Ezzerg and Adam Gabrys and Bartosz Putrycz and Daniel Korzekwa and Daniel Saez-Trigueros and David McHardy and Kamil Pokora and Jakub Lachowicz and Jaime Lorenzo-Trueba and Viacheslav Klimkov}, year={2021}, eprint={2108.06270}, archivePrefix={arXiv}, primaryClass={eess.AS}, url={https://arxiv.org/abs/2108.06270}, }"
     },
     {
       "title": "Non-Autoregressive TTS with Explicit Duration Modelling for Low-Resource Highly Expressive Speech",
@@ -119,6 +136,8 @@
         "Thomas Merritt"
       ],
       "year": 2021,
-      "venue": "Speech Synthesis Workshop (SSW)"
+      "venue": "Speech Synthesis Workshop (SSW)",
+      "url": "https://arxiv.org/abs/2106.12896",
+      "bibtex": "@misc{shah2021nonautoregressivettsexplicitduration, title={Non-Autoregressive TTS with Explicit Duration Modelling for Low-Resource Highly Expressive Speech}, author={Raahil Shah and Kamil Pokora and Abdelhamid Ezzerg and Viacheslav Klimkov and Goeric Huybrechts and Bartosz Putrycz and Daniel Korzekwa and Thomas Merritt}, year={2021}, eprint={2106.12896}, archivePrefix={arXiv}, primaryClass={cs.SD}, url={https://arxiv.org/abs/2106.12896}, }"
     }
   ]
