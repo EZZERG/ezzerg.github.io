@@ -2,25 +2,33 @@ const canvas = document.getElementById('background-canvas');
 const ctx = canvas.getContext('2d');
 
 let width, height, particles;
-const particleCount = 50; // Reduced from 100
-const connectionDistance = 120; // Increased from 100
-const moveSpeed = 0.01; // Reduced from 0.5 to 0.1
+const particleCount = 100; // Increased for better effect
+const connectionDistance = 120;
+const moveSpeed = 0.5; // Increased for more noticeable movement
 
 // Particle class
 class Particle {
     constructor() {
         this.x = Math.random() * width;
         this.y = Math.random() * height;
-        this.vx = (Math.random() - 0.5) * moveSpeed;
-        this.vy = (Math.random() - 0.5) * moveSpeed;
+        this.originalX = this.x;
+        this.originalY = this.y;
     }
 
-    update() {
-        this.x += this.vx;
-        this.y += this.vy;
+    update(mouseX, mouseY) {
+        const dx = mouseX - this.x;
+        const dy = mouseY - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const maxDistance = 100;
+        const force = (maxDistance - distance) / maxDistance;
 
-        if (this.x < 0 || this.x > width) this.vx = -this.vx;
-        if (this.y < 0 || this.y > height) this.vy = -this.vy;
+        if (distance < maxDistance) {
+            this.x -= dx * force * moveSpeed;
+            this.y -= dy * force * moveSpeed;
+        } else {
+            this.x += (this.originalX - this.x) * 0.05;
+            this.y += (this.originalY - this.y) * 0.05;
+        }
     }
 }
 
@@ -38,8 +46,6 @@ function draw() {
     ctx.strokeStyle = 'rgba(200, 200, 200, 0.1)';
 
     particles.forEach(particle => {
-        particle.update();
-
         particles.forEach(otherParticle => {
             if (particle === otherParticle) return;
 
@@ -60,16 +66,15 @@ function draw() {
         ctx.fillStyle = 'rgba(200, 200, 200, 0.5)';
         ctx.fill();
     });
-
-    requestAnimationFrame(draw);
 }
 
 // Mouse interaction
 let mouse = { x: width / 2, y: height / 2 };
 
-canvas.addEventListener('mousemove', (e) => {
+document.addEventListener('mousemove', (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
+    console.log('Mouse moved:', mouse.x, mouse.y); // Debugging line
 });
 
 function drawMouseConnections() {
@@ -90,6 +95,7 @@ function drawMouseConnections() {
 
 // Main animation loop
 function animate() {
+    particles.forEach(particle => particle.update(mouse.x, mouse.y));
     draw();
     drawMouseConnections();
     requestAnimationFrame(animate);
@@ -101,3 +107,8 @@ animate();
 
 // Resize handling
 window.addEventListener('resize', init);
+
+// Debugging: Log mouse position every second
+setInterval(() => {
+    console.log('Current mouse position:', mouse.x, mouse.y);
+}, 1000);
