@@ -161,6 +161,59 @@ section h1::after {
     transition: transform 0.3s;
 }
 
+.education-item, .experience-item {
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #1e1e1e;
+    display: flex;
+    align-items: center;
+}
+
+.item-content {
+    flex: 0 0 75%; /* Adjust as needed */
+    padding-right: 20px;
+    z-index: 2;
+}
+
+.item-logo-container {
+    flex: 0 0 25%; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align logo to the right of its container */
+    overflow: hidden;
+    padding-right: 20px; /* Add some padding to the right */
+}
+
+.item-logo {
+    max-width: 100%;
+    max-height: 80%;
+    width: auto;
+    height: auto;
+    opacity: 1.0;
+    transition: all 0.3s ease;
+    object-fit: contain;
+    margin-right: -15%; /* Push the logo to the left */
+}
+
+/* Specific logo adjustments if needed */
+#ucl-item .item-logo { max-width: 90%; margin-right: 10%; }
+#centralesupelec-item .item-logo { max-width: 90%; margin-right: 15%; }
+#ens-item .item-logo { max-width: 90%; margin-right: 8%; }
+#cambridge-item .item-logo { max-width: 90%; margin-right: 8%; }
+#fimatix-item .item-logo { max-width: 90%; margin-right: 10%; }
+#amazon-item .item-logo { max-width: 90%; margin-right: 10%; }
+#axa-item .item-logo { max-width: 90%; margin-right: 15%; }
+#ibm-item .item-logo { max-width: 80%; margin-right: 8%; }
+
+/* Hover effect */
+.education-item:hover .item-logo,
+.experience-item:hover .item-logo {
+    opacity: 0.6;
+    transform: scale(1.1);
+    margin-right: -18%; /* Push the logo further left on hover */
+}
+
 .education-item h2, .experience-item h2, .publication-item h3 {
     font-size: 1.4em;
     margin-bottom: 10px;
@@ -351,67 +404,4 @@ a:hover {
 
 .notification.show {
     opacity: 1;
-}
-
-.education-item, .experience-item, .publication-item {
-    position: relative;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.item-content {
-    width: 85%;
-    padding-right: 20px;
-    z-index: 2;
-}
-
-.item-icon {
-    position: absolute;
-    right: -7%; /* Start at the right edge of the block */
-    height: 100%;
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 6em;
-    color: #D4AF37;
-    opacity: 0.4;
-    transition: all 0.3s ease;
-}
-
-.education-item:hover,
-.experience-item:hover,
-.publication-item:hover {
-    background-color: #252525;
-}
-
-.education-item:hover .item-icon,
-.experience-item:hover .item-icon,
-.publication-item:hover .item-icon {
-    right: -15%; /* Slide further to the right on hover */
-    opacity: 0.2;
-}
-
-/* Remove specific colors for each icon type */
-.education-item .item-icon,
-.experience-item .item-icon,
-.publication-item .item-icon {
-    color: #D4AF37; /* Gold color for all icons */
-    -webkit-text-stroke: 1px #D4AF37;
-}
-
-/* For better browser compatibility, add these */
-@supports (-webkit-text-stroke: 1px #D4AF37) {
-  .item-icon {
-    text-shadow: none;
-  }
-}
-
-.education-item .item-icon::before {
-    content: "\f19d"; /* Graduation hat icon */
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
 }
