@@ -205,7 +205,11 @@ section h1::after {
 #cambridge-item .item-logo { max-width: 90%; margin-right: 8%; }
 #fimatix-item .item-logo { max-width: 90%; margin-right: 10%; }
 #amazon-item .item-logo { max-width: 90%; margin-right: 10%; }
-#axa-item .item-logo { max-width: 90%; margin-right: 15%; }
+#axa-item .item-logo { 
+    max-width: none; 
+    width: 50%; 
+    margin-right: 20%; 
+}
 #ibm-item .item-logo { max-width: 80%; margin-right: 8%; }
 
 /* Hover effect */
