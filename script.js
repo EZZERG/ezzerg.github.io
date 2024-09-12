@@ -142,3 +142,68 @@ function setLogoProperties(selector) {
 // Apply to both education and experience sections
 setLogoProperties('#education .education-item');
 setLogoProperties('#experience .experience-item');
+
+// Add this function at the end of the file
+
+function animateTimeline() {
+    const timelineContainers = document.querySelectorAll('.timeline-container');
+    
+    timelineContainers.forEach(container => {
+        const timeline = container.querySelector('.timeline');
+        const items = container.querySelectorAll('.education-item, .experience-item');
+        
+        items.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                // Remove the timeline background animation
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                // Remove the timeline background reset
+            });
+        });
+    });
+}
+
+function setupTimeline() {
+    const timelineContainers = document.querySelectorAll('.timeline-container');
+    
+    timelineContainers.forEach(container => {
+        const timeline = container.querySelector('.timeline');
+        const items = container.querySelectorAll('.education-item, .experience-item');
+        
+        items.forEach((item, index) => {
+            const circle = document.createElement('div');
+            circle.classList.add('timeline-circle');
+            timeline.appendChild(circle);
+            
+            function positionCircle() {
+                const itemRect = item.getBoundingClientRect();
+                const containerRect = container.getBoundingClientRect();
+                const relativeTop = itemRect.top - containerRect.top;
+                const circlePosition = relativeTop + itemRect.height / 2;
+                circle.style.top = `${circlePosition}px`;
+            }
+            
+            positionCircle();
+            window.addEventListener('resize', positionCircle);
+            
+            item.addEventListener('mouseenter', () => {
+                circle.style.backgroundColor = '#FFD700';
+                circle.style.boxShadow = '0 0 10px #FFD700';
+                circle.style.transform = 'translateX(-50%) scale(2)';
+            });
+            
+            item.addEventListener('mouseleave', () => {
+                circle.style.backgroundColor = '';
+                circle.style.boxShadow = '';
+                circle.style.transform = '';
+            });
+        });
+    });
+}
+
+// Call the function after the DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    animateTimeline();
+    setupTimeline();
+});

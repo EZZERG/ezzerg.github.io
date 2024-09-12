@@ -156,7 +156,7 @@ section h1::after {
     text-align: justify;
 }
 
-.education-item:hover, .experience-item:hover, .publication-item:hover {
+.publication-item:hover {
     transform: translateY(-5px);
     transition: transform 0.3s;
 }
@@ -170,6 +170,26 @@ section h1::after {
     align-items: center;
     overflow: hidden;
     transition: all 0.3s ease;
+}
+
+.education-item::before, .experience-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -24px; /* Adjust based on your layout */
+    width: 24px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 215, 0, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.education-item:hover::before, .experience-item:hover::before {
+    opacity: 1;
+}
+
+.education-item:hover, .experience-item:hover {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
 }
 
 .item-content {
@@ -470,4 +490,55 @@ a:hover {
 
 body {
     background-color: #121212; /* Dark background */
+}
+
+.timeline-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.timeline {
+    width: 4px;
+    background-color: #D4AF37;
+    margin-right: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.timeline-circle {
+    width: 12px;
+    height: 12px;
+    background-color: #D4AF37;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width: 768px) {
+    .timeline-container {
+        flex-direction: row; /* Keep it row to maintain vertical timeline */
+    }
+
+    .timeline {
+        width: 4px; /* Keep the width consistent */
+        margin-right: 10px; /* Reduce margin on smaller screens */
+    }
+
+    .timeline-content {
+        flex: 1;
+    }
+
+    .education-item, .experience-item {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .timeline-circle {
+        width: 10px;
+        height: 10px;
+    }
 }
