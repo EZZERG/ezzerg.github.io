@@ -200,7 +200,7 @@ section h1::after {
 
 /* Specific logo adjustments if needed */
 #ucl-item .item-logo { max-width: 90%; margin-right: 10%; }
-#centralesupelec-item .item-logo { max-width: 90%; margin-right: 15%; }
+#centralesupelec-item .item-logo { max-width: 65%; margin-right: 15%; }
 #ens-item .item-logo { max-width: 90%; margin-right: 8%; }
 #cambridge-item .item-logo { max-width: 90%; margin-right: 8%; }
 #fimatix-item .item-logo { max-width: 90%; margin-right: 10%; }
