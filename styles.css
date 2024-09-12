@@ -168,6 +168,8 @@ section h1::after {
     background-color: #1e1e1e;
     display: flex;
     align-items: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .item-content {
@@ -181,7 +183,7 @@ section h1::after {
     display: flex;
     align-items: center;
     justify-content: flex-end; /* Align logo to the right of its container */
-    overflow: hidden;
+    overflow: visible; /* Changed from hidden to visible */
     padding-right: 20px; /* Add some padding to the right */
 }
 
@@ -209,9 +211,9 @@ section h1::after {
 /* Hover effect */
 .education-item:hover .item-logo,
 .experience-item:hover .item-logo {
-    opacity: 0.6;
-    transform: scale(1.1);
-    margin-right: -18%; /* Push the logo further left on hover */
+    opacity: 0.2; /* More transparent on hover */
+    transform: scale(1.2) translateX(30%); /* Scale up and slide to the right */
+    margin-right: 0; /* Reset the negative margin */
 }
 
 .education-item h2, .experience-item h2, .publication-item h3 {
