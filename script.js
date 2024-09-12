@@ -51,9 +51,14 @@ fetch('publications.json')
             
             publicationItem.appendChild(itemContent);
             
+            const iconContainer = document.createElement('div');
+            iconContainer.classList.add('item-icon-container');
+            
             const icon = document.createElement('i');
             icon.classList.add('fas', 'fa-scroll', 'item-icon');
-            publicationItem.appendChild(icon);
+            iconContainer.appendChild(icon);
+            
+            publicationItem.appendChild(iconContainer);
             
             publicationList.appendChild(publicationItem);
         });
@@ -124,3 +129,16 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+// Set custom properties for logo size and offset
+function setLogoProperties(selector) {
+    document.querySelectorAll(selector).forEach(item => {
+        const logoSize = item.dataset.logoSize || 80;
+        const logoOffset = item.dataset.logoOffset || 0;
+        item.style.setProperty('--logo-size', `${logoSize}px`);
+        item.style.setProperty('--logo-offset', `${logoOffset}px`);
+    });
+}
+
+// Apply to both education and experience sections
+setLogoProperties('#education .education-item');
+setLogoProperties('#experience .experience-item');
