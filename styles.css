@@ -117,7 +117,7 @@ section h1::after {
 }
 
 .about-container, .education-item, .experience-item, .publication-item {
-    background-color: #1e1e1e;
+    background-color: rgba(30, 30, 30, 0.7);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -131,6 +131,11 @@ section h1::after {
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.about-container:hover {
+    background-color: rgba(30, 30, 30, 0.97);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3)
 }
 
 .profile-photo {
@@ -159,13 +164,15 @@ section h1::after {
 .publication-item:hover {
     transform: translateY(-5px);
     transition: transform 0.3s;
+    background-color: rgba(30, 30, 30, 0.97);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3)
 }
 
 .education-item, .experience-item {
     position: relative;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #1e1e1e;
+    background-color: rgba(30, 30, 30, 0.7);
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -191,7 +198,8 @@ section h1::after {
 }
 
 .education-item:hover, .experience-item:hover {
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    background-color: rgba(30, 30, 30, 0.97);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3)
 }
 
 .item-content {
@@ -436,7 +444,7 @@ a:hover {
     position: relative;
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #1e1e1e;
+    background-color: rgba(30, 30, 30, 0.7);
     display: flex;
     align-items: center;
     overflow: hidden;
