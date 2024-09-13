@@ -135,8 +135,8 @@ section h1::after {
 
 .profile-photo {
     flex: 1;
-    max-width: 350px; /* Reduced from 400px */
-    margin: 0 auto; /* Center the photo */
+    max-width: 350px;
+    margin: 0 auto;
 }
 
 .profile-photo img {
@@ -170,13 +170,15 @@ section h1::after {
     align-items: center;
     overflow: hidden;
     transition: all 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .education-item::before, .experience-item::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -24px; /* Adjust based on your layout */
+    left: -24px;
     width: 24px;
     height: 100%;
     background: linear-gradient(to right, rgba(255, 215, 0, 0.5), transparent);
@@ -193,18 +195,18 @@ section h1::after {
 }
 
 .item-content {
-    flex: 0 0 75%; /* Adjust as needed */
+    flex: 1;
     padding-right: 20px;
     z-index: 2;
 }
 
 .item-logo-container {
-    flex: 0 0 25%; /* Adjust as needed */
+    flex: 0 0 25%;
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Align logo to the right of its container */
-    overflow: visible; /* Changed from hidden to visible */
-    padding-right: 20px; /* Add some padding to the right */
+    justify-content: flex-end;
+    overflow: visible;
+    padding-right: 20px;
 }
 
 .item-logo {
@@ -215,7 +217,18 @@ section h1::after {
     opacity: 1.0;
     transition: all 0.3s ease;
     object-fit: contain;
-    margin-right: -15%; /* Push the logo to the left */
+    margin-right: -15%;
+}
+
+@media screen and (min-width: 768px) {
+    .item-logo-container {
+        flex: 0 0 200px; /* Set the logo container width to 200px for wide screens */
+    }
+
+    .item-content {
+        flex: 1;
+        padding-right: 40px;
+    }
 }
 
 /* Specific logo adjustments if needed */
@@ -225,19 +238,15 @@ section h1::after {
 #cambridge-item .item-logo { max-width: 90%; margin-right: 8%; }
 #fimatix-item .item-logo { max-width: 90%; margin-right: 10%; }
 #amazon-item .item-logo { max-width: 90%; margin-right: 10%; }
-#axa-item .item-logo { 
-    max-width: none; 
-    width: 50%; 
-    margin-right: 20%; 
-}
+#axa-item .item-logo { max-width: none; width: 50%; margin-right: 20%; }
 #ibm-item .item-logo { max-width: 80%; margin-right: 8%; }
 
 /* Hover effect */
 .education-item:hover .item-logo,
 .experience-item:hover .item-logo {
-    opacity: 0.2; /* More transparent on hover */
-    transform: scale(1.2) translateX(30%); /* Scale up and slide to the right */
-    margin-right: 0; /* Reset the negative margin */
+    opacity: 0.2;
+    transform: scale(1.2) translateX(30%);
+    margin-right: 0;
 }
 
 .education-item h2, .experience-item h2, .publication-item h3 {
@@ -261,8 +270,8 @@ section h1::after {
 
 .education-coursework {
     margin-top: 10px;
-    padding-left: 0; /* Remove left padding */
-    list-style-type: none; /* Remove bullet points */
+    padding-left: 0;
+    list-style-type: none;
 }
 
 .education-coursework li {
@@ -308,7 +317,7 @@ footer {
 }
 
 .footer-contact-info a:hover {
-    color: #ffffff; /* A brighter color for hover state */
+    color: #ffffff;
     text-decoration: underline;
 }
 
@@ -322,7 +331,7 @@ footer .fas, footer .fab {
     }
 
     .profile-photo {
-        max-width: 250px; /* Even smaller on mobile */
+        max-width: 250px;
         margin-bottom: 20px;
     }
 }
@@ -363,7 +372,7 @@ a {
 }
 
 a:hover {
-    color: #FFD700; /* A brighter gold for hover state */
+    color: #FFD700;
     text-decoration: underline;
 }
 
@@ -373,15 +382,6 @@ a:hover {
 
 .about-text a:hover {
     color: #FFD700;
-}
-
-.footer-contact-info a {
-    color: #BEBEBE;
-}
-
-.footer-contact-info a:hover {
-    color: #ffffff; /* A brighter color for hover state */
-    text-decoration: underline;
 }
 
 .bibtex-button {
@@ -432,7 +432,6 @@ a:hover {
     opacity: 1;
 }
 
-/* Add these styles for the publication items */
 .publication-item {
     position: relative;
     padding: 20px;
@@ -445,13 +444,13 @@ a:hover {
 }
 
 .publication-item .item-content {
-    flex: 0 0 85%; /* Adjust as needed */
+    flex: 0 0 85%;
     padding-right: 20px;
     z-index: 2;
 }
 
 .publication-item .item-icon-container {
-    flex: 0 0 15%; /* Adjust as needed */
+    flex: 0 0 15%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -460,20 +459,19 @@ a:hover {
 }
 
 .publication-item .item-icon {
-    font-size: 4em; /* Adjust size as needed */
-    color: #D4AF37; /* Gold color, adjust as needed */
+    font-size: 4em;
+    color: #D4AF37;
     opacity: 0.4;
     transition: all 0.3s ease;
-    margin-right: 15%; /* Push the icon to the left */
+    margin-right: 15%;
 }
 
 .publication-item:hover .item-icon {
-    opacity: 0.2; /* More transparent on hover */
-    transform: scale(1.2) translateX(25%); /* Scale up and slide to the right */
-    margin-right: 0; /* Reset the negative margin */
+    opacity: 0.2;
+    transform: scale(1.2) translateX(25%);
+    margin-right: 0;
 }
 
-/* Adjust button styles if needed */
 .bibtex-button, .arxiv-button {
     margin-top: 10px;
     margin-right: 10px;
@@ -486,10 +484,6 @@ a:hover {
     width: 100%;
     height: 100%;
     z-index: -1;
-}
-
-body {
-    background-color: #121212; /* Dark background */
 }
 
 .timeline-container {
@@ -517,15 +511,14 @@ body {
     transition: all 0.3s ease;
 }
 
-
 @media screen and (max-width: 768px) {
     .timeline-container {
-        flex-direction: row; /* Keep it row to maintain vertical timeline */
+        flex-direction: row;
     }
 
     .timeline {
-        width: 4px; /* Keep the width consistent */
-        margin-right: 10px; /* Reduce margin on smaller screens */
+        width: 4px;
+        margin-right: 10px;
     }
 
     .timeline-content {
@@ -534,7 +527,7 @@ body {
 
     .education-item, .experience-item {
         margin-left: 0;
-        padding-right: 30px; /* Add some padding on the right */
+        padding-right: 30px;
     }
 
     .timeline-circle {
