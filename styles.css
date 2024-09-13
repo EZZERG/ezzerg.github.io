@@ -534,7 +534,7 @@ body {
 
     .education-item, .experience-item {
         margin-left: 0;
-        width: 100%;
+        padding-right: 30px; /* Add some padding on the right */
     }
 
     .timeline-circle {
