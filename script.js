@@ -164,6 +164,13 @@ function animateTimeline() {
     });
 }
 
+function positionCircle(item, circle) {
+    const itemRect = item.getBoundingClientRect();
+    const containerRect = item.closest('.timeline-container').getBoundingClientRect();
+    const circlePosition = itemRect.top - containerRect.top + item.offsetHeight / 2;
+    circle.style.top = `${circlePosition}px`;
+}
+
 function setupTimeline() {
     const timelineContainers = document.querySelectorAll('.timeline-container');
     
@@ -171,39 +178,29 @@ function setupTimeline() {
         const timeline = container.querySelector('.timeline');
         const items = container.querySelectorAll('.education-item, .experience-item');
         
-        items.forEach((item, index) => {
+        items.forEach(item => {
             const circle = document.createElement('div');
             circle.classList.add('timeline-circle');
             timeline.appendChild(circle);
             
-            function positionCircle() {
-                const itemRect = item.getBoundingClientRect();
-                const containerRect = container.getBoundingClientRect();
-                const relativeTop = itemRect.top - containerRect.top;
-                const circlePosition = relativeTop + itemRect.height / 2;
-                circle.style.top = `${circlePosition}px`;
-            }
+            positionCircle(item, circle);
+            window.addEventListener('resize', () => positionCircle(item, circle));
             
-            positionCircle();
-            window.addEventListener('resize', positionCircle);
-            
+            // Add hover effect to the circle
             item.addEventListener('mouseenter', () => {
+                circle.style.transform = 'translate(-50%, -50%) scale(2)';
                 circle.style.backgroundColor = '#FFD700';
                 circle.style.boxShadow = '0 0 10px #FFD700';
-                circle.style.transform = 'translateX(-50%) scale(2)';
             });
             
             item.addEventListener('mouseleave', () => {
-                circle.style.backgroundColor = '';
-                circle.style.boxShadow = '';
-                circle.style.transform = '';
+                circle.style.transform = 'translate(-50%, -50%)';
+                circle.style.backgroundColor = '#D4AF37';
+                circle.style.boxShadow = 'none';
             });
         });
     });
 }
 
 // Call the function after the DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    animateTimeline();
-    setupTimeline();
-});
+document.addEventListener('DOMContentLoaded', setupTimeline);
