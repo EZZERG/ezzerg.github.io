@@ -110,6 +110,7 @@ section h1::after {
     position: absolute;
     bottom: 0;
     left: 50%;
+    transform: translateX(-50%);
     width: 100px;
     height: 3px;
     background-color: #BEBEBE;
