@@ -32,23 +32,28 @@ body {
     justify-content: center;
     gap: 30px;
     margin-top: 20px;
-    flex-wrap: wrap;
 }
 
-.contact-info a {
+.contact-info a, .footer-contact-info a {
     color: #BEBEBE;
     text-decoration: none;
     transition: all 0.3s;
-    font-size: 1.1em;
-    padding: 5px 10px;
-    border-radius: 5px;
+    font-size: 2em; /* Increased icon size */
+    padding: 10px;
+    border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px; /* Set a fixed width */
+    height: 60px; /* Set a fixed height */
 }
 
-.contact-info a:hover {
-    color: #ffffff;
-    background-color: rgba(77, 182, 172, 0.3);
+.contact-info a:hover, .footer-contact-info a:hover {
+    color: #FFD700; /* Changed to gold */
+    background-color: rgba(255, 215, 0, 0.2); /* Light gold background */
     transform: translateY(-2px);
+    text-decoration: none;
 }
 
 nav {
@@ -324,14 +329,13 @@ footer {
     text-decoration: none;
 }
 
-.footer-contact-info a:hover {
-    color: #ffffff;
-    text-decoration: underline;
+.footer-contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 15px;
 }
 
-footer .fas, footer .fab {
-    margin-right: 5px;
-}
 
 @media screen and (max-width: 768px) {
     .about-container {
