@@ -59,11 +59,11 @@ const Publications = () => {
                 </div>
               </div>
               
-              <div className="lg:w-1/3 rounded-lg overflow-hidden bg-white/10">
+              <div className="lg:w-[425px] h-[300px] rounded-lg overflow-hidden bg-white/10 relative">
                 <img
                   src={pub.previewImage}
                   alt={`Preview of ${pub.title}`}
-                  className="w-full h-full object-cover"
+                  className="absolute top-0 left-0 w-full h-full object-cover"
                 />
               </div>
             </div>
