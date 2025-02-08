@@ -90,6 +90,29 @@ a:hover {
   }
 }
 
+/* Update lightning animations for hover states */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 15px 5px rgba(96, 165, 250, 0.5),
+                0 0 25px 8px rgba(96, 165, 250, 0.3);
+    filter: blur(1px);
+  }
+  50% {
+    box-shadow: 0 0 25px 8px rgba(96, 165, 250, 0.8),
+                0 0 35px 12px rgba(96, 165, 250, 0.5),
+                0 0 45px 15px rgba(96, 165, 250, 0.3);
+    filter: blur(2px);
+  }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: lightningPulse 2s ease-in-out infinite;
+}
+
 section {
   position: relative;
   overflow: hidden;

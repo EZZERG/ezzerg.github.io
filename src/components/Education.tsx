@@ -62,6 +62,7 @@ const cardVariants = {
 const Education = () => {
   const timelineRef = useRef<HTMLDivElement>(null)
   const [linePosition, setLinePosition] = useState(0)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   useEffect(() => {
     if (timelineRef.current) {
@@ -86,8 +87,21 @@ const Education = () => {
       </div>
       
       <div className="relative">
-        {/* Timeline line */}
-        <div ref={timelineRef} className="absolute left-[11px] top-4 bottom-4 w-[2px] bg-white/20" />
+        {/* Timeline line with gradient */}
+        <div ref={timelineRef} className="absolute left-[11px] top-4 bottom-4 w-[2px]">
+          <div className="absolute inset-0 bg-white/20" />
+          {hoveredIndex !== null && (
+            <div 
+              className="absolute top-0 w-full bg-gradient-to-b from-blue-400 to-transparent transition-all duration-300"
+              style={{
+                height: `${(hoveredIndex + 1) * 100 / educationData.length}%`,
+                opacity: 0.5,
+                boxShadow: '0 0 20px 5px rgba(96, 165, 250, 0.5)',
+                filter: 'blur(2px)'
+              }}
+            />
+          )}
+        </div>
         
         <div className="space-y-6">
           {educationData.map((edu, index) => (
@@ -98,6 +112,8 @@ const Education = () => {
               whileInView="visible"
               viewport={{ margin: "-100px", once: false }}
               className="relative flex items-center gap-6 ml-6"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Timeline dot */}
               <div className="absolute top-1/2 -translate-y-1/2 w-6 h-6" 
@@ -105,17 +121,19 @@ const Education = () => {
                   left: `${linePosition-11}px`,
                   transform: 'translate(-50%, -50%)' // Center both horizontally and vertically
                 }}>
-                <div className="w-3 h-3 bg-blue-400 rounded-full absolute top-1.5 left-1.5"
+                <div 
+                  className={`w-3 h-3 bg-blue-400 rounded-full absolute top-1.5 left-1.5 transition-all duration-300
+                    ${hoveredIndex === index ? 'animate-glow' : ''}`}
                   style={{ 
-                    animation: 'lightningGlow 2s ease-in-out infinite',
-                    boxShadow: '0 0 10px rgba(96, 165, 250, 0.5)'
+                    boxShadow: hoveredIndex === index ? '0 0 20px 5px rgba(96, 165, 250, 0.7)' : 'none',
+                    filter: hoveredIndex === index ? 'blur(1px)' : 'none'
                   }} 
                 />
                 <motion.div
                   initial={{ scale: 0.1, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
-                  className="w-full h-full border-2 border-blue-400/50 rounded-full absolute top-0 left-0"
-                  style={{ animation: 'lightningPulse 2s ease-in-out infinite' }}
+                  className={`w-full h-full border-2 border-blue-400/50 rounded-full absolute top-0 left-0
+                    ${hoveredIndex === index ? 'animate-pulse' : ''}`}
                 />
               </div>
 
