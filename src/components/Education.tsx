@@ -105,11 +105,17 @@ const Education = () => {
                   left: `${linePosition-11}px`,
                   transform: 'translate(-50%, -50%)' // Center both horizontally and vertically
                 }}>
-                <div className="w-3 h-3 bg-blue-400 rounded-full absolute top-1.5 left-1.5" />
+                <div className="w-3 h-3 bg-blue-400 rounded-full absolute top-1.5 left-1.5"
+                  style={{ 
+                    animation: 'lightningGlow 2s ease-in-out infinite',
+                    boxShadow: '0 0 10px rgba(96, 165, 250, 0.5)'
+                  }} 
+                />
                 <motion.div
                   initial={{ scale: 0.1, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
                   className="w-full h-full border-2 border-blue-400/50 rounded-full absolute top-0 left-0"
+                  style={{ animation: 'lightningPulse 2s ease-in-out infinite' }}
                 />
               </div>
 
