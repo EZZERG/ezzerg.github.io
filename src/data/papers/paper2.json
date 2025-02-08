@@ -1,0 +1,13 @@
+{
+  "title": "Another Research Paper Title",
+  "year": "2022",
+  "authors": ["Your Name", "Author 2", "Author 3"],
+  "venue": "Another Conference/Journal",
+  "abstract": "Abstract of your second paper goes here. Keep it concise but informative.",
+  "links": {
+    "arxiv": "https://arxiv.org/abs/yyyy.yyyyy",
+    "code": null,
+    "pdf": "/papers/paper2.pdf"
+  },
+  "previewImage": "/papers/paper2-preview.png"
+}
