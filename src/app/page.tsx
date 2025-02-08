@@ -7,6 +7,7 @@ import About from '../components/About'
 import Education from '../components/Education'
 import Employment from '../components/Employment'
 import Publications from '../components/Publications'
+import Background from '../components/Background'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -18,7 +19,8 @@ export default function Home() {
   if (!mounted) return null
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 p-4 md:p-8 text-white">
+    <div className="min-h-screen p-4 md:p-8 text-white">
+      <Background />
       <Navigation />
       
       <main className="max-w-4xl mx-auto space-y-12 pt-16">

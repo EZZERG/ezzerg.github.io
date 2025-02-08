@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from 'next/script'
 import "./globals.css";
 
 const geistSans = Geist({
@@ -24,9 +25,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        <Script 
+          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" 
+          strategy="beforeInteractive"
+        />
+        <Script 
+          src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js" 
+          strategy="beforeInteractive"
+        />
+      </head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0B1026]`}>
         {children}
       </body>
     </html>
