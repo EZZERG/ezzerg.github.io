@@ -23,7 +23,7 @@ export default function Home() {
       <Background />
       <Navigation />
       
-      <main className="max-w-4xl mx-auto space-y-12 pt-16">
+      <main className="max-w-4xl mx-auto space-y-[50vh] pt-16 pb-[30vh]">
         <Header />
         <About />
         <Education />
