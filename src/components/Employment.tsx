@@ -1,5 +1,8 @@
 'use client'
 
+import { motion } from 'framer-motion'
+import { useRef, useState, useEffect } from 'react'
+
 const employmentData = [
   {
     employer: "Current University Name",
@@ -17,46 +20,121 @@ const employmentData = [
   }
 ]
 
+const cardVariants = {
+  hidden: { 
+    opacity: 0,
+    x: -30,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.4,
+      ease: [0.25, 0.1, 0.25, 1],
+    }
+  }
+}
+
 const Employment = () => {
+  const timelineRef = useRef<HTMLDivElement>(null)
+  const [linePosition, setLinePosition] = useState(0)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+
+  useEffect(() => {
+    if (timelineRef.current) {
+      const position = timelineRef.current.offsetLeft;
+      const dotCenteringOffset = 12;
+      setLinePosition(position - dotCenteringOffset)
+    }
+  }, [])
+
   return (
-    <section id="employment" className="space-y-6">
-      <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair">
+    <section id="employment" className="space-y-8">
+      <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair">
         Employment
       </h2>
       
-      <div className="grid grid-cols-1 gap-6">
-        {employmentData.map((job, index) => (
-          <div
-            key={index}
-            className="backdrop-blur-xl bg-white/10 p-6 rounded-2xl border border-white/20 shadow-xl 
-                       hover:bg-white/[0.15] transition-all duration-300 hover:scale-[1.02]"
-          >
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/10 p-4 flex-shrink-0">
-                <img
-                  src={job.logo}
-                  alt={`${job.employer} logo`}
-                  className="w-full h-full object-contain"
+      <div className="relative">
+        {/* Timeline line with gradient */}
+        <div ref={timelineRef} className="absolute left-[11px] top-4 bottom-4 w-[2px]">
+          <div className="absolute inset-0 bg-white/20" />
+          {hoveredIndex !== null && (
+            <div 
+              className="absolute top-0 w-full bg-gradient-to-b from-blue-400 to-transparent transition-all duration-300"
+              style={{
+                height: `${(hoveredIndex + 1) * 100 / employmentData.length}%`,
+                opacity: 0.5,
+                boxShadow: '0 0 20px 5px rgba(96, 165, 250, 0.5)',
+                filter: 'blur(2px)'
+              }}
+            />
+          )}
+        </div>
+        
+        <div className="space-y-6">
+          {employmentData.map((job, index) => (
+            <motion.div
+              key={index}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ margin: "-100px", once: false }}
+              className="relative flex items-center gap-6 ml-6"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {/* Timeline dot */}
+              <div className="absolute top-1/2 -translate-y-1/2 w-6 h-6" 
+                style={{ 
+                  left: `${linePosition-11}px`,
+                  transform: 'translate(-50%, -50%)'
+                }}>
+                <div 
+                  className={`w-3 h-3 bg-blue-400 rounded-full absolute top-1.5 left-1.5 transition-all duration-300
+                    ${hoveredIndex === index ? 'animate-glow' : ''}`}
+                  style={{ 
+                    boxShadow: hoveredIndex === index ? '0 0 20px 5px rgba(96, 165, 250, 0.7)' : 'none',
+                    filter: hoveredIndex === index ? 'blur(1px)' : 'none'
+                  }} 
+                />
+                <motion.div
+                  initial={{ scale: 0.1, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  className={`w-full h-full border-2 border-blue-400/50 rounded-full absolute top-0 left-0
+                    ${hoveredIndex === index ? 'animate-pulse' : ''}`}
                 />
               </div>
-              
-              <div className="flex-1">
-                <h3 className="text-2xl font-semibold text-blue-300 font-raleway">
-                  {job.employer}
-                </h3>
-                <p className="text-xl text-gray-200 mt-1 font-raleway">
-                  {job.title}
-                </p>
-                <p className="text-gray-300 mt-1 font-medium">
-                  {job.years}
-                </p>
-                <p className="text-gray-200 mt-4 leading-relaxed">
-                  {job.description}
-                </p>
+
+              <div className="backdrop-blur-xl bg-white/10 p-6 rounded-2xl border border-white/20 shadow-xl 
+                          hover:bg-white/[0.15] transition-all duration-300 hover:scale-[1.01] flex-1">
+                <div className="flex flex-col md:flex-row gap-6 items-start">
+                  <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/10 p-4 flex-shrink-0">
+                    <img
+                      src={job.logo}
+                      alt={`${job.employer} logo`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  
+                  <div className="flex-1">
+                    <h3 className="text-2xl font-semibold text-blue-300 font-raleway">
+                      {job.employer}
+                    </h3>
+                    <p className="text-xl text-gray-200 mt-1 font-raleway">
+                      {job.title}
+                    </p>
+                    <p className="text-gray-300 mt-1 font-medium">
+                      {job.years}
+                    </p>
+                    <p className="text-gray-200 mt-4 leading-relaxed">
+                      {job.description}
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )
