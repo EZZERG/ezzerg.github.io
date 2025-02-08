@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Navigation from '../components/Navigation'
+import Header from '../components/Header'
 import About from '../components/About'
 import Education from '../components/Education'
 import Employment from '../components/Employment'
@@ -21,6 +22,7 @@ export default function Home() {
       <Navigation />
       
       <main className="max-w-4xl mx-auto space-y-12 pt-16">
+        <Header />
         <About />
         <Education />
         <Employment />
