@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useRef, useState, useEffect } from 'react'
 
 const educationData = [
   {
@@ -59,6 +60,17 @@ const cardVariants = {
 }
 
 const Education = () => {
+  const timelineRef = useRef<HTMLDivElement>(null)
+  const [linePosition, setLinePosition] = useState(0)
+
+  useEffect(() => {
+    if (timelineRef.current) {
+      const position = timelineRef.current.offsetLeft;
+      const dotCenteringOffset = 12; // Half of dot width (24px/2)
+      setLinePosition(position - dotCenteringOffset)
+    }
+  }, [])
+
   return (
     <section id="education" className="space-y-8">
       <div className="overflow-hidden">
@@ -75,7 +87,7 @@ const Education = () => {
       
       <div className="relative">
         {/* Timeline line */}
-        <div className="absolute left-[11px] top-4 bottom-4 w-[2px] bg-white/20" />
+        <div ref={timelineRef} className="absolute left-[11px] top-4 bottom-4 w-[2px] bg-white/20" />
         
         <div className="space-y-6">
           {educationData.map((edu, index) => (
@@ -85,10 +97,14 @@ const Education = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ margin: "-100px", once: false }}
-              className="relative flex items-start gap-6 ml-6"
+              className="relative flex items-center gap-6 ml-6"
             >
               {/* Timeline dot */}
-              <div className="absolute -left-[29px] top-3 w-6 h-6">
+              <div className="absolute top-1/2 -translate-y-1/2 w-6 h-6" 
+                style={{ 
+                  left: `${linePosition-11}px`,
+                  transform: 'translate(-50%, -50%)' // Center both horizontally and vertically
+                }}>
                 <div className="w-3 h-3 bg-blue-400 rounded-full absolute top-1.5 left-1.5" />
                 <motion.div
                   initial={{ scale: 0.1, opacity: 0 }}
