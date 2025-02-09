@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
+import TypingTitle from './TypingTitle'
 
 const employmentData = [
   {
@@ -50,9 +51,12 @@ const Employment = () => {
 
   return (
     <section id="employment" className="space-y-8">
-      <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair">
-        Employment
-      </h2>
+      <div className="overflow-hidden">
+        <TypingTitle 
+          text="Employment"
+          className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair"
+        />
+      </div>
       
       <div className="relative">
         {/* Timeline line with gradient */}

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import TypingTitle from './TypingTitle'
 import paper1 from '@/data/papers/paper1.json'
 import paper2 from '@/data/papers/paper2.json'
 
@@ -45,15 +46,10 @@ const Publications = () => {
   return (
     <section id="publications" className="space-y-6">
       <div className="overflow-hidden">
-        <motion.h2 
-          variants={titleVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.5 }}
-          className="text-4xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair"
-        >
-          Publications
-        </motion.h2>
+        <TypingTitle 
+          text="Publications"
+          className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair"
+        />
       </div>
 
       <div className="relative">

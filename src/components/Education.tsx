@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
+import TypingTitle from './TypingTitle'
 
 const educationData = [
   {
@@ -75,15 +76,10 @@ const Education = () => {
   return (
     <section id="education" className="space-y-8">
       <div className="overflow-hidden">
-        <motion.h2 
-          variants={titleVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.5 }}
+        <TypingTitle 
+          text="Education"
           className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair"
-        >
-          Education
-        </motion.h2>
+        />
       </div>
       
       <div className="relative">

@@ -1,18 +1,25 @@
 'use client'
 import { MdEmail } from 'react-icons/md'
 import { FaGithub, FaGraduationCap } from 'react-icons/fa'
+import TypingTitle from './TypingTitle'
 
 const Header = () => {
   return (
     <header id="main-header" className="backdrop-blur-xl bg-white/10 p-8 rounded-2xl border border-white/20 shadow-xl hover:bg-white/[0.15] transition-all duration-300 text-center">
-      <div className="flex flex-col items-center gap-8">
-        <div className="flex-1">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair">
-            Your Name
-          </h1>
-          <p className="text-xl text-gray-200 mb-4 font-raleway">
-            PhD Candidate in [Your Field]
-          </p>
+      <div className="flex flex-col items-center">
+        <div className="flex-1 flex flex-col gap-6">
+          <div>
+            <TypingTitle
+              text="Your Name"
+              className="text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair"
+            />
+          </div>
+          <div>
+            <TypingTitle
+              text="PhD Candidate in [Your Field]"
+              className="text-xl text-gray-200 font-raleway"
+            />
+          </div>
           <div className="flex gap-4 justify-center">
             <a
               href="mailto:your.email@university.edu"

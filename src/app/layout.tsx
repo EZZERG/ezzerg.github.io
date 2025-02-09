@@ -40,6 +40,10 @@ export default function RootLayout({
           src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js" 
           strategy="beforeInteractive"
         />
+        <Script 
+          src="https://unpkg.com/typewriter-effect@latest/dist/core.js"
+          strategy="beforeInteractive"
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-[#0B1026]`}>
         {children}
