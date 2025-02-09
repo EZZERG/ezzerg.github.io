@@ -54,7 +54,7 @@ const Employment = () => {
       <div className="overflow-hidden">
         <TypingTitle 
           text="Employment"
-          className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-silkscreen"
+          className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-500 inline-block text-transparent bg-clip-text font-silkscreen"
         />
       </div>
       
@@ -109,8 +109,8 @@ const Employment = () => {
                 />
               </div>
 
-              <div className="backdrop-blur-sm bg-white/5 p-6 rounded-2xl border border-white/20 shadow-xl 
-                          hover:bg-white/[0.15] transition-all duration-300">
+              <div className="backdrop-blur-sm bg-black/10 p-6 rounded-2xl border border-white/20 shadow-xl 
+                          hover:bg-black/30 transition-all duration-300 hover:backdrop-blur-xl">
                 <div className="flex flex-col md:flex-row gap-6 items-start">
                   <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/5 p-4 flex-shrink-0">
                     <img
