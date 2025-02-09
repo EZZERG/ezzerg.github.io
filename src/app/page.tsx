@@ -40,6 +40,7 @@ const Section = ({ children }: { children: React.ReactNode }) => {
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
     setMounted(true)
@@ -50,8 +51,8 @@ export default function Home() {
   return (
     <div className="min-h-screen p-4 md:p-8 text-white">
       <Background />
-      <Navigation />
-      <StickyHeader />
+      <Navigation activeSection={activeSection} onSectionChange={setActiveSection} />
+      <StickyHeader activeSection={activeSection} />
       
       <main className="max-w-4xl mx-auto space-y-[50vh] pt-16 pb-[30vh]">
         <Section>

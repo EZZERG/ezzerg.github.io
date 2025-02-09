@@ -105,12 +105,39 @@ a:hover {
   }
 }
 
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255,255,255,0.3);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255,255,255,0.7);
+  }
+}
+
 .animate-glow {
   animation: glow 2s ease-in-out infinite;
 }
 
 .animate-pulse {
   animation: lightningPulse 2s ease-in-out infinite;
+}
+
+/* Remove or comment out the previous .writing-mode-vertical styles */
+
+/* .writing-mode-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+.writing-mode-vertical:hover {
+  transform: translateX(-2px);
+} */
+
+.rotate-nav-text {
+  transform-origin: bottom left;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  transform: rotate(180deg);
 }
 
 section {
