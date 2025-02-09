@@ -16,9 +16,9 @@ const About = () => {
         <div>
           <TypingTitle 
             text="About Me"
-            className="text-4xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair"
+            className="text-4xl font-bold mb-6 bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-silkscreen"
           />
-          <p className="text-gray-200 leading-relaxed font-raleway">
+          <p className="text-gray-200 leading-relaxed font-space">
             I am a PhD student passionate about [Your Research Area]. My research focuses on [Brief Description]. 
             I am particularly interested in [Specific Interests/Topics].
           </p>

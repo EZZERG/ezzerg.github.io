@@ -39,11 +39,11 @@ const StickyHeader = ({ activeSection = '' }) => {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ duration: 0.3 }}
-          className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/30 border-b border-white/10"
+          className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/75 border-b border-white/10"
         >
           <div className="max-w-4xl mx-auto px-4 flex flex-col">
             <div className="py-3 flex justify-between items-center">
-              <h1 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair">
+              <h1 className="text-xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-vt323">
                 Your Name
               </h1>
               

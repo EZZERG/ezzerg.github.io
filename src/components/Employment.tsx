@@ -54,7 +54,7 @@ const Employment = () => {
       <div className="overflow-hidden">
         <TypingTitle 
           text="Employment"
-          className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair"
+          className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-silkscreen"
         />
       </div>
       
@@ -64,11 +64,11 @@ const Employment = () => {
           <div className="absolute inset-0 bg-white/20" />
           {hoveredIndex !== null && (
             <div 
-              className="absolute top-0 w-full bg-gradient-to-b from-blue-400 to-transparent transition-all duration-300"
+              className="absolute top-0 w-full bg-gradient-to-b from-teal-400 to-transparent transition-all duration-300"
               style={{
                 height: `${(hoveredIndex + 1) * 100 / employmentData.length}%`,
                 opacity: 0.5,
-                boxShadow: '0 0 20px 5px rgba(96, 165, 250, 0.5)',
+                boxShadow: '0 0 20px 5px rgba(20, 184, 166, 0.5)',
                 filter: 'blur(2px)'
               }}
             />
@@ -94,17 +94,17 @@ const Employment = () => {
                   transform: 'translate(-50%, -50%)'
                 }}>
                 <div 
-                  className={`w-3 h-3 bg-blue-400 rounded-full absolute top-1.5 left-1.5 transition-all duration-300
+                  className={`w-3 h-3 bg-teal-400 rounded-full absolute top-1.5 left-1.5 transition-all duration-300
                     ${hoveredIndex === index ? 'animate-glow' : ''}`}
                   style={{ 
-                    boxShadow: hoveredIndex === index ? '0 0 20px 5px rgba(96, 165, 250, 0.7)' : 'none',
+                    boxShadow: hoveredIndex === index ? '0 0 20px 5px rgba(20, 184, 166, 0.7)' : 'none',
                     filter: hoveredIndex === index ? 'blur(1px)' : 'none'
                   }} 
                 />
                 <motion.div
                   initial={{ scale: 0.1, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
-                  className={`w-full h-full border-2 border-blue-400/50 rounded-full absolute top-0 left-0
+                  className={`w-full h-full border-2 border-teal-400/50 rounded-full absolute top-0 left-0
                     ${hoveredIndex === index ? 'animate-pulse' : ''}`}
                 />
               </div>
@@ -121,16 +121,16 @@ const Employment = () => {
                   </div>
                   
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold text-blue-300 font-raleway">
+                    <h3 className="text-2xl font-semibold text-teal-300 font-space">
                       {job.employer}
                     </h3>
-                    <p className="text-xl text-gray-200 mt-1 font-raleway">
+                    <p className="text-xl text-gray-200 mt-1 font-space">
                       {job.title}
                     </p>
-                    <p className="text-gray-300 mt-1 font-medium">
+                    <p className="text-gray-300 mt-1 font-medium font-space">
                       {job.years}
                     </p>
-                    <p className="text-gray-200 mt-4 leading-relaxed">
+                    <p className="text-gray-200 mt-4 leading-relaxed font-space">
                       {job.description}
                     </p>
                   </div>

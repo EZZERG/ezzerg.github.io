@@ -70,8 +70,8 @@ const Navigation = ({ className = '', activeSection = '', onSectionChange = (sec
                 className={`
                   relative transition-all duration-300
                   ${activeSection === href.slice(1) 
-                    ? 'text-white text-lg font-bold drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]' 
-                    : 'text-white/70 text-sm'
+                    ? 'text-white text-lg font-bold font-space drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]' 
+                    : 'text-white/70 text-sm font-space'
                   }
                 `}
               >
@@ -106,8 +106,8 @@ const Navigation = ({ className = '', activeSection = '', onSectionChange = (sec
                 className={`
                   relative transition-all duration-300
                   ${activeSection === href.slice(1) 
-                    ? 'text-white font-bold' 
-                    : 'text-white/70'
+                    ? 'text-white font-bold font-space' 
+                    : 'text-white/70 font-space'
                   }
                 `}
               >

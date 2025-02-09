@@ -17,8 +17,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        playfair: ['Playfair Display', 'serif'],
-        raleway: ['Raleway', 'sans-serif'],
+        space: ['Space Grotesk', 'sans-serif'],
+        silkscreen: ['Silkscreen', 'cursive'],
+        vt323: ['VT323', 'monospace'],
       },
       keyframes: {
         "accordion-down": {

@@ -48,7 +48,7 @@ const Publications = () => {
       <div className="overflow-hidden">
         <TypingTitle 
           text="Publications"
-          className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair"
+          className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-silkscreen"
         />
       </div>
 
@@ -69,38 +69,38 @@ const Publications = () => {
                           hover:bg-white/[0.15] transition-all duration-300 hover:scale-[1.01] flex-1">
                 <div className="flex flex-col lg:flex-row gap-6">
                   <div className="flex-1">
-                    <h3 className="text-2xl font-semibold text-blue-300 font-raleway">
+                    <h3 className="text-2xl font-semibold text-teal-300 font-space">
                       {pub.title}
                     </h3>
                     
-                    <p className="text-gray-300 mt-2 font-medium">
+                    <p className="text-gray-300 mt-2 font-medium font-space">
                       {pub.year} | {pub.venue}
                     </p>
                     
-                    <p className="text-gray-200 mt-2 font-raleway">
+                    <p className="text-gray-200 mt-2 font-space">
                       {pub.authors.join(", ")}
                     </p>
                     
-                    <p className="text-gray-200 mt-4 leading-relaxed">
+                    <p className="text-gray-200 mt-4 leading-relaxed font-space">
                       {pub.abstract}
                     </p>
                     
                     <div className="flex gap-4 mt-4">
                       {pub.links.arxiv && (
                         <a href={pub.links.arxiv} target="_blank" rel="noopener noreferrer" 
-                          className="text-blue-400 hover:text-blue-300 transition-colors">
+                          className="text-teal-400 hover:text-teal-300 transition-colors">
                           arXiv
                         </a>
                       )}
                       {pub.links.code && (
                         <a href={pub.links.code} target="_blank" rel="noopener noreferrer"
-                          className="text-blue-400 hover:text-blue-300 transition-colors">
+                          className="text-teal-400 hover:text-teal-300 transition-colors">
                           Code
                         </a>
                       )}
                       {pub.links.pdf && (
                         <a href={pub.links.pdf} target="_blank" rel="noopener noreferrer"
-                          className="text-blue-400 hover:text-blue-300 transition-colors">
+                          className="text-teal-400 hover:text-teal-300 transition-colors">
                           PDF
                         </a>
                       )}

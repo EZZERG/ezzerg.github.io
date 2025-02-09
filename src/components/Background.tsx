@@ -23,12 +23,12 @@ const Background = ({ opacity }: BackgroundProps) => {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        color: 0x0,
+        color: 0x14b8a6, // Teal color
         shininess: 60.00,
-        waveHeight: 20.00,  // Adjust wave height (default: 40)
-        waveSpeed: 0.65,    // Adjust wave speed (default: 1)
-        zoom: 0.65,         // Adjust zoom level (default: 1)
-        backgroundColor: 0x0B1026
+        waveHeight: 20.00,
+        waveSpeed: 0.65,
+        zoom: 0.65,
+        backgroundColor: 0x000000 // Pure black
       })
 
       return () => {
@@ -46,7 +46,7 @@ const Background = ({ opacity }: BackgroundProps) => {
       className="fixed inset-0 -z-10"
       style={{ opacity }}
     >
-      <div ref={vantaRef} className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900" />
+      <div ref={vantaRef} className="absolute inset-0 bg-gradient-to-br from-black to-teal-900" />
       <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-20" />
     </motion.div>
   )
