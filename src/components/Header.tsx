@@ -4,7 +4,7 @@ import { FaGithub, FaGraduationCap } from 'react-icons/fa'
 
 const Header = () => {
   return (
-    <header className="backdrop-blur-xl bg-white/10 p-8 rounded-2xl border border-white/20 shadow-xl hover:bg-white/[0.15] transition-all duration-300 text-center">
+    <header id="main-header" className="backdrop-blur-xl bg-white/10 p-8 rounded-2xl border border-white/20 shadow-xl hover:bg-white/[0.15] transition-all duration-300 text-center">
       <div className="flex flex-col items-center gap-8">
         <div className="flex-1">
           <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-400 inline-block text-transparent bg-clip-text font-playfair">

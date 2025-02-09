@@ -9,6 +9,7 @@ import Education from '../components/Education'
 import Employment from '../components/Employment'
 import Publications from '../components/Publications'
 import Background from '../components/Background'
+import StickyHeader from '../components/StickyHeader'
 
 const Section = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -50,6 +51,7 @@ export default function Home() {
     <div className="min-h-screen p-4 md:p-8 text-white">
       <Background />
       <Navigation />
+      <StickyHeader />
       
       <main className="max-w-4xl mx-auto space-y-[50vh] pt-16 pb-[30vh]">
         <Section>
