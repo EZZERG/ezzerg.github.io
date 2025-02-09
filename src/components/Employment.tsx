@@ -54,7 +54,7 @@ const Employment = () => {
       <div className="overflow-hidden">
         <TypingTitle 
           text="Employment"
-          className="text-4xl font-bold bg-gradient-to-r from-gray-900 to-gray-500 inline-block text-transparent bg-clip-text font-silkscreen"
+          className="text-4xl font-bold bg-gradient-to-r from-black to-gray-700 inline-block text-transparent bg-clip-text font-orbitron"
         />
       </div>
       

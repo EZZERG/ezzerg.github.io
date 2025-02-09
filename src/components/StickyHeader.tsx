@@ -43,7 +43,7 @@ const StickyHeader = ({ activeSection = '' }) => {
         >
           <div className="max-w-4xl mx-auto px-4 flex flex-col">
             <div className="py-3 flex justify-between items-center">
-              <h1 className="text-xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-vt323">
+              <h1 className="text-xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-quantico">
                 Your Name
               </h1>
               

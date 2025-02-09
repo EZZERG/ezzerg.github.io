@@ -18,8 +18,8 @@ module.exports = {
     extend: {
       fontFamily: {
         space: ['Space Grotesk', 'sans-serif'],
-        silkscreen: ['Silkscreen', 'cursive'],
-        vt323: ['VT323', 'monospace'],
+        orbitron: ['Orbitron', 'sans-serif'],
+        quantico: ['Quantico', 'sans-serif'],
       },
       keyframes: {
         "accordion-down": {

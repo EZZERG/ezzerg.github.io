@@ -11,13 +11,13 @@ const Header = () => {
           <div>
             <TypingTitle
               text="Your Name"
-              className="text-5xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-vt323"
+              className="text-5xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-quantico"
             />
           </div>
           <div>
             <TypingTitle
               text="PhD Candidate in [Your Field]"
-              className="text-xl text-gray-200 font-silkscreen"
+              className="text-xl text-gray-200 font-orbitron"
             />
           </div>
           <div className="flex gap-4 justify-center">
