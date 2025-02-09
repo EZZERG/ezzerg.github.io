@@ -1,6 +1,7 @@
 'use client'
-import { MdEmail } from 'react-icons/md'
-import { FaGithub, FaGraduationCap } from 'react-icons/fa'
+import { MdOutlineEmail } from 'react-icons/md'
+import { FiGithub } from 'react-icons/fi'
+import { LuGraduationCap, LuLinkedin } from 'react-icons/lu'
 import TypingTitle from './TypingTitle'
 
 const Header = () => {
@@ -23,24 +24,31 @@ const Header = () => {
           <div className="flex gap-4 justify-center">
             <a
               href="mailto:your.email@university.edu"
-              className="p-3 rounded-lg bg-white/5 hover:bg-white/20 transition-all duration-300"
+              className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
               aria-label="Email"
             >
-              <MdEmail className="w-6 h-6" />
+              <MdOutlineEmail className="w-6 h-6" />
             </a>
             <a
               href="https://scholar.google.com"
-              className="p-3 rounded-lg bg-white/5 hover:bg-white/20 transition-all duration-300"
+              className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
               aria-label="Google Scholar"
             >
-              <FaGraduationCap className="w-6 h-6" />
+              <LuGraduationCap className="w-6 h-6" />
             </a>
             <a
               href="https://github.com"
-              className="p-3 rounded-lg bg-white/5 hover:bg-white/20 transition-all duration-300"
+              className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
               aria-label="GitHub"
             >
-              <FaGithub className="w-6 h-6" />
+              <FiGithub className="w-6 h-6" />
+            </a>
+            <a
+              href="https://linkedin.com"
+              className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
+              aria-label="LinkedIn"
+            >
+              <LuLinkedin className="w-6 h-6" />
             </a>
           </div>
         </div>

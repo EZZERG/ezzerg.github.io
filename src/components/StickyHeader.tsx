@@ -2,9 +2,11 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
-import { MdEmail } from 'react-icons/md'
-import { FaGithub, FaGraduationCap } from 'react-icons/fa'
-import { HiDownload } from 'react-icons/hi' // Add this import
+import { MdOutlineEmail } from 'react-icons/md'
+import { FaRegUser } from 'react-icons/fa'
+import { HiOutlineDownload } from 'react-icons/hi'
+import { FiGithub } from 'react-icons/fi'
+import { LuGraduationCap, LuLinkedin } from 'react-icons/lu'
 
 const navItems = [
   { href: '#about', label: 'About' },
@@ -51,32 +53,39 @@ const StickyHeader = ({ activeSection = '' }) => {
                 <a
                   href="/path-to-your-cv.pdf"
                   download
-                  className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 flex items-center gap-2"
+                  className="p-2 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300 flex items-center gap-2"
                   aria-label="Download CV"
                 >
-                  <HiDownload className="w-4 h-4" />
+                  <HiOutlineDownload className="w-4 h-4" />
                   <span className="text-sm hidden sm:inline">CV</span>
                 </a>
                 <a
                   href="mailto:your.email@university.edu"
-                  className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300"
+                  className="p-2 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
                   aria-label="Email"
                 >
-                  <MdEmail className="w-4 h-4" />
+                  <MdOutlineEmail className="w-4 h-4" />
                 </a>
                 <a
                   href="https://scholar.google.com"
-                  className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300"
+                  className="p-2 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
                   aria-label="Google Scholar"
                 >
-                  <FaGraduationCap className="w-4 h-4" />
+                  <LuGraduationCap className="w-4 h-4" />
                 </a>
                 <a
                   href="https://github.com"
-                  className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300"
+                  className="p-2 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
                   aria-label="GitHub"
                 >
-                  <FaGithub className="w-4 h-4" />
+                  <FiGithub className="w-4 h-4" />
+                </a>
+                <a
+                  href="https://linkedin.com"
+                  className="p-2 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
+                  aria-label="LinkedIn"
+                >
+                  <LuLinkedin className="w-4 h-4" />
                 </a>
               </div>
             </div>
