@@ -4,7 +4,7 @@ import TypingTitle from './TypingTitle'
 
 const About = () => {
   return (
-    <section id="about" className="backdrop-blur-xl bg-white/10 p-8 rounded-2xl border border-white/20 shadow-xl hover:bg-white/[0.15] transition-all duration-300">
+    <section id="about" className="backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/20 shadow-xl hover:bg-white/[0.15] hover:backdrop-blur-xl transition-all duration-300">
       <div className="flex flex-col md:flex-row items-center gap-8 mb-6">
         <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white/20">
           <img

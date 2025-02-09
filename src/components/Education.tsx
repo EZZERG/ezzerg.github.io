@@ -133,10 +133,10 @@ const Education = () => {
                 />
               </div>
 
-              <div className="backdrop-blur-xl bg-white/10 p-6 rounded-2xl border border-white/20 shadow-xl 
-                          hover:bg-white/[0.15] transition-all duration-300 hover:scale-[1.01] flex-1">
+              <div className="backdrop-blur-sm bg-white/5 p-6 rounded-2xl border border-white/20 shadow-xl 
+                          hover:bg-white/[0.15] hover:backdrop-blur-xl transition-all duration-300">
                 <div className="flex flex-col md:flex-row gap-6 items-start">
-                  <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/10 p-4 flex-shrink-0">
+                  <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/5 p-4 flex-shrink-0">
                     <img
                       src={edu.logo}
                       alt={`${edu.institution} logo`}

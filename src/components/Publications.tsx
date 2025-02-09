@@ -65,8 +65,8 @@ const Publications = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <div className="backdrop-blur-xl bg-white/10 p-6 rounded-2xl border border-white/20 shadow-xl 
-                          hover:bg-white/[0.15] transition-all duration-300 hover:scale-[1.01] flex-1">
+              <div className="backdrop-blur-sm bg-white/5 p-6 rounded-2xl border border-white/20 shadow-xl 
+                          hover:bg-white/[0.15] hover:backdrop-blur-xl transition-all duration-300">
                 <div className="flex flex-col lg:flex-row gap-6">
                   <div className="flex-1">
                     <h3 className="text-2xl font-semibold text-teal-300 font-space">
@@ -107,7 +107,7 @@ const Publications = () => {
                     </div>
                   </div>
                   
-                  <div className="lg:w-[425px] h-[300px] rounded-lg overflow-hidden bg-white/10 relative">
+                  <div className="lg:w-[425px] h-[300px] rounded-lg overflow-hidden bg-white/5 relative">
                     <img
                       src={pub.previewImage}
                       alt={`Preview of ${pub.title}`}
