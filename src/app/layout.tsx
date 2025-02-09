@@ -45,7 +45,7 @@ export default function RootLayout({
           strategy="beforeInteractive"
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-[#0B1026]`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${spaceGrotesk.variable} antialiased bg-black`}>
         {children}
       </body>
     </html>

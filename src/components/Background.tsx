@@ -1,20 +1,44 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
-import { motion, MotionValue } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 
-interface BackgroundProps {
-  opacity: MotionValue<number>
-}
-
-const Background = ({ opacity }: BackgroundProps) => {
+const Background = () => {
   const vantaRef = useRef<HTMLDivElement>(null)
+  const effectRef = useRef<any>(null)
+  const [scrollProgress, setScrollProgress] = useState(0)
+
+  const interpolateColor = (progress: number) => {
+    // Convert from black (0,0,0) to teal (0,128,128)
+    const r = 0
+    const g = Math.round(128 * progress)
+    const b = Math.round(128 * progress)
+    return (r << 16) + (g << 8) + b
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
+      const progress = Math.min(window.scrollY / totalHeight, 1)
+      setScrollProgress(progress)
+      
+      if (effectRef.current) {
+        const newColor = interpolateColor(progress)
+        effectRef.current.setOptions({
+          color: newColor,
+          backgroundColor: newColor
+        })
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   useEffect(() => {
     const initVanta = () => {
       if (!vantaRef.current || !window.VANTA) return;
       
-      const effect = window.VANTA.WAVES({
+      effectRef.current = window.VANTA.WAVES({
         el: vantaRef.current,
         mouseControls: true,
         touchControls: true,
@@ -23,32 +47,27 @@ const Background = ({ opacity }: BackgroundProps) => {
         minWidth: 200.00,
         scale: 1.00,
         scaleMobile: 1.00,
-        color: 0x14b8a6, // Teal color
+        color: 0x000000,
         shininess: 60.00,
         waveHeight: 20.00,
         waveSpeed: 0.65,
         zoom: 0.65,
-        backgroundColor: 0x000000 // Pure black
+        backgroundColor: 0x000000
       })
 
       return () => {
-        if (effect) effect.destroy()
+        if (effectRef.current) effectRef.current.destroy()
       }
     }
 
-    // Small delay to ensure scripts are loaded
     const timer = setTimeout(initVanta, 100)
     return () => clearTimeout(timer)
   }, [])
 
   return (
-    <motion.div 
-      className="fixed inset-0 -z-10"
-      style={{ opacity }}
-    >
-      <div ref={vantaRef} className="absolute inset-0 bg-gradient-to-br from-black to-teal-900" />
-      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-20" />
-    </motion.div>
+    <div className="fixed inset-0 -z-10">
+      <div ref={vantaRef} className="absolute inset-0 bg-black" />
+    </div>
   )
 }
 

@@ -53,14 +53,7 @@ const ParallaxSection = ({ children }: { children: React.ReactNode }) => {
 export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [activeSection, setActiveSection] = useState('')
-  const { scrollYProgress } = useScroll()
   
-  const backgroundOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.2],
-    [0.1, 0.3]
-  )
-
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -69,7 +62,7 @@ export default function Home() {
 
   return (
     <div className="text-white">
-      <Background opacity={backgroundOpacity} />
+      <Background />
       <Navigation activeSection={activeSection} onSectionChange={setActiveSection} />
       <StickyHeader activeSection={activeSection} />
       

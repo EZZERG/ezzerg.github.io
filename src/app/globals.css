@@ -69,13 +69,13 @@ a:hover {
 /* Lightning glow animations */
 @keyframes lightningGlow {
   0%, 100% {
-    box-shadow: 0 0 5px rgba(20, 184, 166, 0.5),
-                0 0 10px rgba(20, 184, 166, 0.3);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+                0 0 10px rgba(255, 255, 255, 0.3);
   }
   50% {
-    box-shadow: 0 0 15px rgba(20, 184, 166, 0.8),
-                0 0 25px rgba(20, 184, 166, 0.5),
-                0 0 35px rgba(20, 184, 166, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
+                0 0 25px rgba(255, 255, 255, 0.5),
+                0 0 35px rgba(255, 255, 255, 0.3);
   }
 }
 
@@ -93,14 +93,14 @@ a:hover {
 /* Update lightning animations for hover states */
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 15px 5px rgba(20, 184, 166, 0.5),
-                0 0 25px 8px rgba(20, 184, 166, 0.3);
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5),
+                0 0 25px 8px rgba(255, 255, 255, 0.3);
     filter: blur(1px);
   }
   50% {
-    box-shadow: 0 0 25px 8px rgba(20, 184, 166, 0.8),
-                0 0 35px 12px rgba(20, 184, 166, 0.5),
-                0 0 45px 15px rgba(20, 184, 166, 0.3);
+    box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.8),
+                0 0 35px 12px rgba(255, 255, 255, 0.5),
+                0 0 45px 15px rgba(255, 255, 255, 0.3);
     filter: blur(2px);
   }
 }
