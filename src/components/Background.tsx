@@ -1,8 +1,13 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { motion, MotionValue } from 'framer-motion'
 
-const Background = () => {
+interface BackgroundProps {
+  opacity: MotionValue<number>
+}
+
+const Background = ({ opacity }: BackgroundProps) => {
   const vantaRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -36,7 +41,15 @@ const Background = () => {
     return () => clearTimeout(timer)
   }, [])
 
-  return <div ref={vantaRef} className="fixed inset-0 -z-10 bg-[#0B1026]" />
+  return (
+    <motion.div 
+      className="fixed inset-0 -z-10"
+      style={{ opacity }}
+    >
+      <div ref={vantaRef} className="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900" />
+      <div className="absolute inset-0 bg-[url('/grid.svg')] bg-repeat opacity-20" />
+    </motion.div>
+  )
 }
 
 export default Background

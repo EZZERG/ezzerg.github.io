@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
+import { motion, useScroll, useTransform, cubicBezier } from 'framer-motion'
 import Navigation from '../components/Navigation'
 import Header from '../components/Header'
 import About from '../components/About'
@@ -11,29 +11,41 @@ import Publications from '../components/Publications'
 import Background from '../components/Background'
 import StickyHeader from '../components/StickyHeader'
 
-const Section = ({ children }: { children: React.ReactNode }) => {
+const ParallaxSection = ({ children }: { children: React.ReactNode }) => {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"]
+  })
+
+  const y = useTransform(
+    scrollYProgress, 
+    [0, 1], 
+    ["0%", "50%"],
+    { 
+      ease: cubicBezier(0.4, 0, 0, 1)
+    }
+  )
+  
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.3],
+    [1, 1, 0]
+  )
+
   return (
     <motion.div
-      initial={{ 
-        opacity: 0, 
-        y: 100,
-        scale: 0.95,
-        rotateX: -10
-      }}
-      whileInView={{ 
-        opacity: 1, 
-        y: 0,
-        scale: 1,
-        rotateX: 0
-      }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ 
-        duration: 1.2,
-        ease: [0.25, 0.1, 0, 1],
-        opacity: { duration: 0.8 }
-      }}
+      ref={ref}
+      className="relative min-h-screen"
     >
-      {children}
+      <motion.div
+        className="sticky top-0 h-screen flex items-center py-16"
+        style={{ opacity, y }}
+      >
+        <div className="w-full">
+          {children}
+        </div>
+      </motion.div>
     </motion.div>
   )
 }
@@ -41,6 +53,13 @@ const Section = ({ children }: { children: React.ReactNode }) => {
 export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [activeSection, setActiveSection] = useState('')
+  const { scrollYProgress } = useScroll()
+  
+  const backgroundOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    [0.1, 0.3]
+  )
 
   useEffect(() => {
     setMounted(true)
@@ -49,24 +68,32 @@ export default function Home() {
   if (!mounted) return null
 
   return (
-    <div className="min-h-screen p-4 md:p-8 text-white">
-      <Background />
+    <div className="text-white">
+      <Background opacity={backgroundOpacity} />
       <Navigation activeSection={activeSection} onSectionChange={setActiveSection} />
       <StickyHeader activeSection={activeSection} />
       
-      <main className="max-w-4xl mx-auto space-y-[50vh] pt-16 pb-[30vh]">
-        <Section>
-          <Header />
-        </Section>
-        <Section>
-          <About />
-        </Section>
-        <Education />
-        <Employment />
-        <Section>
-          <Publications />
-        </Section>
-      </main>
+      <motion.div 
+        className="relative w-full"
+      >
+        <div className="max-w-4xl mx-auto px-4">
+          <ParallaxSection>
+            <Header />
+          </ParallaxSection>
+          <ParallaxSection>
+            <About />
+          </ParallaxSection>
+          <ParallaxSection>
+            <Education />
+          </ParallaxSection>
+          <ParallaxSection>
+            <Employment />
+          </ParallaxSection>
+          <ParallaxSection>
+            <Publications />
+          </ParallaxSection>
+        </div>
+      </motion.div>
     </div>
   )
 }
