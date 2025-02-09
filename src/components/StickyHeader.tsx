@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import { MdEmail } from 'react-icons/md'
 import { FaGithub, FaGraduationCap } from 'react-icons/fa'
+import { HiDownload } from 'react-icons/hi' // Add this import
 
 const navItems = [
   { href: '#about', label: 'About' },
@@ -47,6 +48,15 @@ const StickyHeader = ({ activeSection = '' }) => {
               </h1>
               
               <div className="flex gap-3">
+                <a
+                  href="/path-to-your-cv.pdf"
+                  download
+                  className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300 flex items-center gap-2"
+                  aria-label="Download CV"
+                >
+                  <HiDownload className="w-4 h-4" />
+                  <span className="text-sm hidden sm:inline">CV</span>
+                </a>
                 <a
                   href="mailto:your.email@university.edu"
                   className="p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-all duration-300"
