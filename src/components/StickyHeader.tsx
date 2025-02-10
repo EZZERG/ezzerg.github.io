@@ -7,6 +7,7 @@ import { FaRegUser } from 'react-icons/fa'
 import { HiOutlineDownload } from 'react-icons/hi'
 import { FiGithub } from 'react-icons/fi'
 import { LuGraduationCap, LuLinkedin } from 'react-icons/lu'
+import HamburgerMenu from './HamburgerMenu'
 
 const navItems = [
   { href: '#about', label: 'About' },
@@ -49,7 +50,7 @@ const StickyHeader = ({ activeSection = '' }) => {
                 Your Name
               </h1>
               
-              <div className="flex gap-3">
+              <div className="flex gap-3 items-center">
                 <a
                   href="/path-to-your-cv.pdf"
                   download
@@ -87,37 +88,8 @@ const StickyHeader = ({ activeSection = '' }) => {
                 >
                   <LuLinkedin className="w-4 h-4" />
                 </a>
-              </div>
-            </div>
-            
-            <div className="lg:hidden pb-3 -mt-1">
-              <div className="flex gap-4 justify-start overflow-x-auto scrollbar-hide">
-                {navItems.map(({ href, label }) => (
-                  <a
-                    key={href}
-                    href={href}
-                    className="relative px-4 py-1.5 whitespace-nowrap"
-                  >
-                    {activeSection === href.slice(1) && (
-                      <motion.div
-                        layoutId="activeSectionMobile"
-                        className="absolute inset-0 bg-white/20 rounded-md"
-                        transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
-                      />
-                    )}
-                    <span 
-                      className={`
-                        relative transition-all duration-300
-                        ${activeSection === href.slice(1) 
-                          ? 'text-white font-bold' 
-                          : 'text-white/70'
-                        }
-                      `}
-                    >
-                      {label}
-                    </span>
-                  </a>
-                ))}
+                
+                <HamburgerMenu activeSection={activeSection} navItems={navItems} />
               </div>
             </div>
           </div>
