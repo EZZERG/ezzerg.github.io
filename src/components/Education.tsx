@@ -74,94 +74,99 @@ const Education = () => {
   }, [])
 
   return (
-    <section id="education" className="space-y-8">
-      <div className="overflow-hidden">
-        <TypingTitle 
-          text="Education"
-          className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-orbitron"
-        />
-      </div>
-      
-      <div className="relative">
-        {/* Timeline line with gradient */}
-        <div ref={timelineRef} className="absolute left-[11px] top-4 bottom-4 w-[2px]">
-          <div className="absolute inset-0 bg-white/20" />
-          {hoveredIndex !== null && (
-            <div 
-              className="absolute top-0 w-full bg-gradient-to-b from-teal-400 to-transparent transition-all duration-300"
-              style={{
-                height: `${(hoveredIndex + 1) * 100 / educationData.length}%`,
-                opacity: 0.5,
-                boxShadow: '0 0 20px 5px rgba(20, 184, 166, 0.5)',
-                filter: 'blur(2px)'
-              }}
-            />
-          )}
+    <section 
+      id="education" 
+      className="min-h-screen flex items-center py-16"
+    >
+      <div className="space-y-8 w-full">
+        <div className="overflow-hidden">
+          <TypingTitle 
+            text="Education"
+            className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-orbitron"
+          />
         </div>
         
-        <div className="space-y-6">
-          {educationData.map((edu, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ margin: "-100px", once: false }}
-              className="relative flex items-center gap-6 ml-6"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              {/* Timeline dot */}
-              <div className="absolute top-1/2 -translate-y-1/2 w-6 h-6" 
-                style={{ 
-                  left: `${linePosition-11}px`,
-                  transform: 'translate(-50%, -50%)' // Center both horizontally and vertically
-                }}>
-                <div 
-                  className={`w-3 h-3 bg-teal-400 rounded-full absolute top-1.5 left-1.5 transition-all duration-300
-                    ${hoveredIndex === index ? 'animate-glow' : ''}`}
+        <div className="relative">
+          {/* Timeline line with gradient */}
+          <div ref={timelineRef} className="absolute left-[11px] top-4 bottom-4 w-[2px]">
+            <div className="absolute inset-0 bg-white/20" />
+            {hoveredIndex !== null && (
+              <div 
+                className="absolute top-0 w-full bg-gradient-to-b from-teal-400 to-transparent transition-all duration-300"
+                style={{
+                  height: `${(hoveredIndex + 1) * 100 / educationData.length}%`,
+                  opacity: 0.5,
+                  boxShadow: '0 0 20px 5px rgba(20, 184, 166, 0.5)',
+                  filter: 'blur(2px)'
+                }}
+              />
+            )}
+          </div>
+          
+          <div className="space-y-6">
+            {educationData.map((edu, index) => (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ margin: "-100px", once: false }}
+                className="relative flex items-center gap-6 ml-6"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {/* Timeline dot */}
+                <div className="absolute top-1/2 -translate-y-1/2 w-6 h-6" 
                   style={{ 
-                    boxShadow: hoveredIndex === index ? '0 0 20px 5px rgba(20, 184, 166, 0.7)' : 'none',
-                    filter: hoveredIndex === index ? 'blur(1px)' : 'none'
-                  }} 
-                />
-                <motion.div
-                  initial={{ scale: 0.1, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  className={`w-full h-full border-2 border-teal-400/50 rounded-full absolute top-0 left-0
-                    ${hoveredIndex === index ? 'animate-pulse' : ''}`}
-                />
-              </div>
+                    left: `${linePosition-11}px`,
+                    transform: 'translate(-50%, -50%)' // Center both horizontally and vertically
+                  }}>
+                  <div 
+                    className={`w-3 h-3 bg-teal-400 rounded-full absolute top-1.5 left-1.5 transition-all duration-300
+                      ${hoveredIndex === index ? 'animate-glow' : ''}`}
+                    style={{ 
+                      boxShadow: hoveredIndex === index ? '0 0 20px 5px rgba(20, 184, 166, 0.7)' : 'none',
+                      filter: hoveredIndex === index ? 'blur(1px)' : 'none'
+                    }} 
+                  />
+                  <motion.div
+                    initial={{ scale: 0.1, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    className={`w-full h-full border-2 border-teal-400/50 rounded-full absolute top-0 left-0
+                      ${hoveredIndex === index ? 'animate-pulse' : ''}`}
+                  />
+                </div>
 
-              <div className="backdrop-blur-sm bg-white/5 p-6 rounded-2xl border border-white/20 shadow-xl 
-                          hover:bg-white/[0.15] hover:backdrop-blur-xl transition-all duration-300">
-                <div className="flex flex-col md:flex-row gap-6 items-start">
-                  <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/5 p-4 flex-shrink-0">
-                    <img
-                      src={edu.logo}
-                      alt={`${edu.institution} logo`}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-semibold text-teal-300 font-space">
-                      {edu.institution}
-                    </h3>
-                    <p className="text-xl text-gray-200 mt-1 font-space">
-                      {edu.degree}
-                    </p>
-                    <p className="text-gray-300 mt-1 font-medium font-space">
-                      {edu.years}
-                    </p>
-                    <p className="text-gray-200 mt-4 leading-relaxed font-space">
-                      {edu.description}
-                    </p>
+                <div className="backdrop-blur-sm bg-white/5 p-6 rounded-2xl border border-white/20 shadow-xl 
+                            hover:bg-white/[0.15] hover:backdrop-blur-xl transition-all duration-300">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/5 p-4 flex-shrink-0">
+                      <img
+                        src={edu.logo}
+                        alt={`${edu.institution} logo`}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-semibold text-teal-300 font-space">
+                        {edu.institution}
+                      </h3>
+                      <p className="text-xl text-gray-200 mt-1 font-space">
+                        {edu.degree}
+                      </p>
+                      <p className="text-gray-300 mt-1 font-medium font-space">
+                        {edu.years}
+                      </p>
+                      <p className="text-gray-200 mt-4 leading-relaxed font-space">
+                        {edu.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
