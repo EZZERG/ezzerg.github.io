@@ -48,7 +48,7 @@ const StickyHeader = () => {
               
               <div className="flex gap-3 items-center">
                 <a
-                  href="/path-to-your-cv.pdf"
+                  href="/cv/EZZERG_CV.pdf"
                   download
                   className="p-2 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300 flex items-center gap-2"
                   aria-label="Download CV"

@@ -2,6 +2,7 @@
 import { MdOutlineEmail } from 'react-icons/md'
 import { FiGithub } from 'react-icons/fi'
 import { LuGraduationCap, LuLinkedin } from 'react-icons/lu'
+import { HiOutlineDownload } from 'react-icons/hi'
 import TypingTitle from './TypingTitle'
 import HeaderNavigation from './HeaderNavigation'
 
@@ -30,6 +31,15 @@ const Header = () => {
               />
             </div>
             <div className="flex gap-4 justify-center">
+              <a
+                href="/cv/EZZERG_CV.pdf"
+                download
+                className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300 flex items-center gap-2"
+                aria-label="Download CV"
+              >
+                <HiOutlineDownload className="w-6 h-6" />
+                <span className="text-sm">CV</span>
+              </a>
               <a
                 href="mailto:your.email@university.edu"
                 className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
