@@ -4,10 +4,20 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { BookOpen, ChevronDown, ChevronUp } from 'lucide-react'
 import TypingTitle from './TypingTitle'
-import paper1 from '@/data/papers/paper1.json'
-import paper2 from '@/data/papers/paper2.json'
+import BibtexModal from './BibtexModal'
+import { BibTexEntry } from '@/types/publication'
 
-const publicationsData = [paper1, paper2]
+import paper1 from '@/data/papers/paper_1.json'
+import paper2 from '@/data/papers/paper_2.json'
+import paper3 from '@/data/papers/paper_3.json'
+import paper4 from '@/data/papers/paper_4.json'
+import paper5 from '@/data/papers/paper_5.json'
+import paper6 from '@/data/papers/paper_6.json'
+import paper7 from '@/data/papers/paper_7.json'
+import paper8 from '@/data/papers/paper_8.json'
+
+
+const publicationsData = [paper8, paper7, paper6, paper5, paper4, paper3, paper2, paper1]
 
 const titleVariants = {
   hidden: { 
@@ -44,9 +54,30 @@ const cardVariants = {
 const Publications = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+  const [bibtexModal, setBibtexModal] = useState<{ 
+    isOpen: boolean; 
+    data: { 
+      bibtex: BibTexEntry; 
+      title: string 
+    } 
+  }>({
+    isOpen: false,
+    data: { 
+      bibtex: { 
+        type: '', 
+        key: '', 
+        fields: {} 
+      }, 
+      title: '' 
+    }
+  })
 
   const toggleExpanded = (index: number) => {
     setExpandedIndex(expandedIndex === index ? null : index)
+  }
+
+  const showBibtex = (bibtex: BibTexEntry, title: string) => {
+    setBibtexModal({ isOpen: true, data: { bibtex, title } })
   }
 
   return (
@@ -83,7 +114,18 @@ const Publications = () => {
                   <div className="flex flex-col lg:flex-row gap-6 h-full">
                     <div className="flex-1 flex flex-col">
                       <h3 className="text-2xl font-semibold text-teal-300 font-space">
-                        {pub.title}
+                        {pub.url ? (
+                          <a 
+                            href={pub.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="hover:text-teal-200 transition-colors"
+                          >
+                            {pub.title}
+                          </a>
+                        ) : (
+                          pub.title
+                        )}
                       </h3>
                       
                       <p className="text-gray-300 mt-2 font-medium font-space">
@@ -119,11 +161,13 @@ const Publications = () => {
                               Code
                             </a>
                           )}
-                          {pub.links.pdf && (
-                            <a href={pub.links.pdf} target="_blank" rel="noopener noreferrer"
-                              className="text-teal-400 hover:text-teal-300 transition-colors">
-                              PDF
-                            </a>
+                          {pub.bibtex && (
+                            <button
+                              onClick={() => showBibtex(pub.bibtex, pub.title)}
+                              className="text-teal-400 hover:text-teal-300 transition-colors"
+                            >
+                              BibTeX
+                            </button>
                           )}
                         </div>
 
@@ -160,6 +204,13 @@ const Publications = () => {
           </div>
         </div>
       </div>
+
+      <BibtexModal
+        isOpen={bibtexModal.isOpen}
+        onClose={() => setBibtexModal(prev => ({ ...prev, isOpen: false }))}
+        bibtex={bibtexModal.data.bibtex}
+        title={bibtexModal.data.title}
+      />
     </section>
   )
 }

@@ -1,0 +1,22 @@
+{
+  "title": "Text-free non-parallel many-to-many voice conversion using normalising flows",
+  "year": "2022",
+  "venue": "International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+  "authors": [
+    "Thomas Merritt",
+    "Abdelhamid Ezzerg",
+    "Piotr Bilinski",
+    "Magdalena Proszewska",
+    "Kamil Pokora",
+    "Roberto Barra-Chicote",
+    "Daniel Korzekwa"
+  ],
+  "abstract": "Non-parallel voice conversion (VC) is typically achieved using lossy representations of the source speech. However, ensuring only speaker identity information is dropped whilst all other information from the source speech is retained is a large challenge. This is particularly challenging in the scenario where at inference-time we have no knowledge of the text being read, i.e., text-free VC. To mitigate this, we investigate information-preserving VC approaches.Normalising flows have gained attention for text-to-speech synthesis, however have been under-explored for VC. Flows utilize invertible functions to learn the likelihood of the data, thus provide a lossless encoding of speech. We investigate normalising flows for VC in both text-conditioned and text-free scenarios. Furthermore, for text-free VC we compare pre-trained and jointly-learnt priors. Flow-based VC evaluations show no degradation between text-free and text-conditioned VC, resulting in improvements over the state-of-the-art. Also, joint-training of the prior is found to negatively impact text-free VC quality.",
+  "previewImage": "/paper_previews/paper_3.png",
+  "url": "https://ieeexplore.ieee.org/document/9746368",
+  "bibtex": "@INPROCEEDINGS{9746368,\n  author={Merritt, Thomas and Ezzerg, Abdelhamid and Biliński, Piotr and Proszewska, Magdalena and Pokora, Kamil and Barra-Chicote, Roberto and Korzekwa, Daniel},\n  booktitle={ICASSP 2022 - 2022 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, \n  title={Text-Free Non-Parallel Many-To-Many Voice Conversion Using Normalising Flow}, \n  year={2022},\n  volume={},\n  number={},\n  pages={6782-6786},\n  keywords={Degradation;Training;Schedules;Filtering;Conferences;Entertainment industry;Signal processing;voice conversion;Flow-TTS;Glow-TTS;Copy-Cat;AutoVC},\n  doi={10.1109/ICASSP43922.2022.9746368}}",
+  "links": {
+    "arxiv": "https://arxiv.org/abs/2203.08009",
+    "code": null
+  }
+}
