@@ -15,7 +15,7 @@ const HeaderNavigation = () => {
   ]
 
   return (
-    <div className="md:hidden absolute top-4 right-4">
+    <div className="lg:hidden absolute top-4 right-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
