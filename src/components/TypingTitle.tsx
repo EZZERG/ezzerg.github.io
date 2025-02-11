@@ -79,13 +79,13 @@ const TypingTitle = ({ text, className = '', startIndex = 0 }: TypingTitleProps)
   }, [isInView, text, startIndex])
 
   return (
-    <h2 className={`${className} relative inline-flex items-center`} ref={containerRef}>
-      <span ref={staticRef} className="inline-block whitespace-pre"></span>
-      <span ref={dynamicRef} className="inline-block whitespace-pre"></span>
+    <div className={`${className} relative inline-block w-full`} ref={containerRef}>
+      <span ref={staticRef} className="inline whitespace-normal"></span>
+      <span ref={dynamicRef} className="inline whitespace-normal"></span>
       <motion.span 
         className={`
-          h-[1.2em] w-[3px]
-          ml-[2px] -mb-[2px]
+          absolute h-[1.2em] w-[3px]
+          ml-[2px] -mb-[2px] inline-block
           ${isTyping ? 'opacity-100' : 'opacity-0'}
         `}
         animate={{
@@ -100,7 +100,7 @@ const TypingTitle = ({ text, className = '', startIndex = 0 }: TypingTitleProps)
           background: 'linear-gradient(to right, #60A5FA, #A78BFA)',
         }}
       />
-    </h2>
+    </div>
   )
 }
 

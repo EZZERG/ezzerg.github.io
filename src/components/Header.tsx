@@ -13,62 +13,66 @@ const Header = () => {
       className="min-h-screen w-full flex items-center justify-center relative"
     >
       <HeaderNavigation />
-      <div className="w-[600px] backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/20 shadow-xl hover:bg-white/[0.15] hover:backdrop-blur-xl transition-all duration-300 text-center">
-        <div className="flex flex-col items-center w-full">
-          <div className="w-full flex flex-col gap-6">
-            <div className="h-[3.75rem] relative">
+      <div className="max-w-[600px] w-[90vw] backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/20 shadow-xl hover:bg-white/[0.15] hover:backdrop-blur-xl transition-all duration-300">
+        <div className="flex flex-col items-center gap-6">
+          <div className="w-full text-center">
+            <div className="min-h-[4rem] inline-block">
               <TypingTitle
-                text="Your Name"
-                className="text-5xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-quantico absolute"
-                startIndex={4}  // Will start typing from "Name"
+                text="Abdelhamid Ezzerg"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 text-transparent bg-clip-text font-quantico"
+                startIndex={4}
               />
             </div>
-            <div className="h-[1.75rem] relative">
+          </div>
+          
+          <div className="w-full text-center">
+            <div className="min-h-[3rem] sm:min-h-[4rem] inline-block">
               <TypingTitle
-                text="PhD Candidate in [Your Field]"
-                className="text-xl text-gray-200 font-orbitron absolute"
-                startIndex={15}  // Will start typing from "[Your Field]"
+                text="PhD Student at University College London - ex Applied Scientist"
+                className="text-base sm:text-lg md:text-xl text-gray-200 font-orbitron"
+                startIndex={15}
               />
             </div>
-            <div className="flex gap-4 justify-center">
-              <a
-                href="/cv/EZZERG_CV.pdf"
-                download
-                className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300 flex items-center gap-2"
-                aria-label="Download CV"
-              >
-                <HiOutlineDownload className="w-6 h-6" />
-                <span className="text-sm">CV</span>
-              </a>
-              <a
-                href="mailto:your.email@university.edu"
-                className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
-                aria-label="Email"
-              >
-                <MdOutlineEmail className="w-6 h-6" />
-              </a>
-              <a
-                href="https://scholar.google.com"
-                className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
-                aria-label="Google Scholar"
-              >
-                <LuGraduationCap className="w-6 h-6" />
-              </a>
-              <a
-                href="https://github.com"
-                className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
-                aria-label="GitHub"
-              >
-                <FiGithub className="w-6 h-6" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <LuLinkedin className="w-6 h-6" />
-              </a>
-            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a
+              href="/cv/EZZERG_CV.pdf"
+              download
+              className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300 flex items-center gap-2"
+              aria-label="Download CV"
+            >
+              <HiOutlineDownload className="w-6 h-6" />
+              <span className="text-sm">CV</span>
+            </a>
+            <a
+              href="mailto:abdelhamid.ezzerg.24@ucl.ac.uk"
+              className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
+              aria-label="Email"
+            >
+              <MdOutlineEmail className="w-6 h-6" />
+            </a>
+            <a
+              href="https://scholar.google.com/citations?user=Sltvi4AAAAAJ&hl=en&oi=ao"
+              className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
+              aria-label="Google Scholar"
+            >
+              <LuGraduationCap className="w-6 h-6" />
+            </a>
+            <a
+              href="https://github.com/EZZERG"
+              className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
+              aria-label="GitHub"
+            >
+              <FiGithub className="w-6 h-6" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/abdelhamid-ezzerg-274437a6/"
+              className="p-3 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
+              aria-label="LinkedIn"
+            >
+              <LuLinkedin className="w-6 h-6" />
+            </a>
           </div>
         </div>
       </div>
