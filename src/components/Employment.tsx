@@ -12,12 +12,8 @@ import fimatixPosition from '@/data/employment/fimatix.json'
 import axaPosition from '@/data/employment/axa.json'
 import ibmPosition from '@/data/employment/ibm.json'
 
-interface TextSegment {
-  text: string;
-  href?: string;
-  type?: 'text' | 'bullet';
-  style?: 'normal' | 'bold';
-}
+import { TextSegment } from './RichText'
+
 
 interface EmploymentItem {
   employer: string;
@@ -53,10 +49,10 @@ const Employment = () => {
   useEffect(() => {
     // Combine employment data in chronological order
     setItems([
-      fimatixPosition,
-      amazonPosition,
-      axaPosition,
-      ibmPosition
+      fimatixPosition as EmploymentItem,
+      amazonPosition as EmploymentItem,
+      axaPosition as EmploymentItem,
+      ibmPosition as EmploymentItem
     ])
   }, [])
 

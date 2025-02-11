@@ -12,10 +12,7 @@ import centraleData from '@/data/education/centrale.json'
 import ensData from '@/data/education/ens.json'
 import cambridgeData from '@/data/education/cambridge.json'
 
-interface TextSegment {
-  text: string;
-  href?: string;
-}
+import { TextSegment } from './RichText'
 
 interface EducationItem {
   institution: string

@@ -3,11 +3,11 @@
   "title": "Intern Data Scientist",
   "years": "2017 - 2017",
   "description": [
-    { "text": "Implemented a graph-based model to detect insurance policy fraud." },
+    { "text": "Implemented a graph-based model to detect insurance policy fraud.", "type": "text" },
     { "type": "linebreak" },
     { "type": "linebreak" },
-    { "text": "Keywords: ", "style": "bold" },
-    { "text": "Graph-based models, Pagerank, Fraud Detection, NetworkX, Neo4j..." },
+    { "text": "Keywords: ", "type": "text", "style": "bold" },
+    { "text": "Graph-based models, Pagerank, Fraud Detection, NetworkX, Neo4j...", "type": "text" },
     { "type": "linebreak" }
   ],
   "logo": "/employers/axa_logo.svg",

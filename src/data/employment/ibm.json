@@ -3,11 +3,11 @@
   "title": "Part-time Data Scientist",
   "years": "2016 - 2017",
   "description": [
-    { "text": "Worked in a two-student group to construct a Machine Learning model capable of detecting credit card fraud. The proposed model significantly outperformed a rule-based baseline." },
+    { "text": "Worked in a two-student group to construct a Machine Learning model capable of detecting credit card fraud. The proposed model significantly outperformed a rule-based baseline.", "type": "text" },
     { "type": "linebreak" },
     { "type": "linebreak" },
-    { "text": "Keywords: ", "style": "bold" },
-    { "text": "Credit Card Fraud Detection, Anomaly detection, Random Forest, Gradient Boosting, XGBoost..." }
+    { "text": "Keywords: ", "type": "text", "style": "bold" },
+    { "text": "Credit Card Fraud Detection, Anomaly detection, Random Forest, Gradient Boosting, XGBoost...", "type": "text" }
   ],
   "logo": "/employers/ibm_logo.svg",
   "city": "Paris",

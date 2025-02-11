@@ -1,4 +1,4 @@
-interface TextSegment {
+export interface TextSegment {
   text: string;
   href?: string;
   type?: 'text' | 'bullet' | 'linebreak';  // Added 'linebreak' type
@@ -10,9 +10,14 @@ interface RichTextProps {
   className?: string;
 }
 
+// Type guard to check if a segment has an href
+const hasHref = (segment: TextSegment): segment is TextSegment & { href: string } => {
+  return 'href' in segment;
+};
+
 const RichText = ({ segments, className = '' }: RichTextProps) => {
   const textSegments = typeof segments === 'string' 
-    ? [{ text: segments, type: 'text', style: 'normal' }] 
+    ? [{ text: segments, type: 'text' as const, style: 'normal' as const }] 
     : segments;
 
   return (
@@ -29,7 +34,7 @@ const RichText = ({ segments, className = '' }: RichTextProps) => {
           </span>
         );
 
-        return segment.href ? (
+        return hasHref(segment) ? (
           <a
             key={index}
             href={segment.href}

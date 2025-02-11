@@ -3,7 +3,8 @@
   "degree": "M.Sc. in Applied Mathematics",
   "years": "2014 - 2017",
   "description": [
-    { "text": "Coursework: Probability, Statistics, Numerical Methods, Partial Differential Equations, Functional Analysis, Programming..." }
+    { "text": "Coursework: ", "type": "text", "style": "bold" },
+    { "text": "Probability, Statistics, Numerical Methods, Partial Differential Equations, Functional Analysis, Programming...", "type": "text" }
   ],
   "logo": "/institutions/ecole_centrale_paris_logo.svg",
   "city": "Paris",
