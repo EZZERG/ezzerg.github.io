@@ -5,7 +5,7 @@
   "description": [
     { "text": "Currently researching Bayesian methods under the supervision of " },
     { "text": "Prof. Jeremias Knoblauch", "href": "https://jeremiasknoblauch.github.io/" },
-    { "text": " The goal is to explore generalisations of classical Bayesian methods " },
+    { "text": ". The goal is to explore generalisations of classical Bayesian methods " },
     { "text": "In order to make them more suitable for modern Machine Learning and Statistical problems." }
     
   ],
