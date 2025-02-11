@@ -43,7 +43,7 @@ const StickyHeader = () => {
           <div className="max-w-4xl mx-auto px-4 flex flex-col">
             <div className="py-3 flex justify-between items-center">
               <h1 className="text-xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-quantico">
-                Your Name
+                Abdelhamid Ezzerg
               </h1>
               
               <div className="flex gap-3 items-center">
@@ -57,28 +57,28 @@ const StickyHeader = () => {
                   <span className="text-sm hidden sm:inline">CV</span>
                 </a>
                 <a
-                  href="mailto:your.email@university.edu"
+                  href="mailto:abdelhamid.ezzerg.24@ucl.ac.uk"
                   className="p-2 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
                   aria-label="Email"
                 >
                   <MdOutlineEmail className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://scholar.google.com"
+                  href="https://scholar.google.com/citations?user=Sltvi4AAAAAJ&hl=en&oi=ao"
                   className="p-2 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
                   aria-label="Google Scholar"
                 >
                   <LuGraduationCap className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/EZZERG"
                   className="p-2 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
                   aria-label="GitHub"
                 >
                   <FiGithub className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/abdelhamid-ezzerg-274437a6/"
                   className="p-2 rounded-lg bg-teal-500/10 hover:bg-teal-500/20 transition-all duration-300"
                   aria-label="LinkedIn"
                 >
