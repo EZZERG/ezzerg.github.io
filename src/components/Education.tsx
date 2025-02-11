@@ -7,9 +7,10 @@ import TypingTitle from './TypingTitle'
 import RichText from './RichText'
 
 // Import individual education data files
-import phdData from '@/data/education/phd.json'
-import mastersData from '@/data/education/masters.json'
-import bachelorsData from '@/data/education/bachelors.json'
+import uclData from '@/data/education/ucl.json'
+import centraleData from '@/data/education/centrale.json'
+import ensData from '@/data/education/ens.json'
+import cambridgeData from '@/data/education/cambridge.json'
 
 interface TextSegment {
   text: string;
@@ -22,6 +23,8 @@ interface EducationItem {
   years: string
   description: TextSegment[] | string
   logo: string
+  city: string    // New field
+  country: string // New field
 }
 
 const titleVariants = {
@@ -65,9 +68,10 @@ const Education = () => {
   useEffect(() => {
     // Combine education data in chronological order
     setItems([
-      phdData,
-      mastersData,
-      bachelorsData
+      uclData,
+      centraleData,
+      ensData,
+      cambridgeData
     ])
   }, [])
 
@@ -148,7 +152,7 @@ const Education = () => {
                 <div className="backdrop-blur-md bg-black/30 p-6 rounded-2xl border border-white/20 shadow-xl 
                             hover:bg-black/60 hover:backdrop-blur-xl transition-all duration-300">
                   <div className="flex flex-col md:flex-row gap-6 items-start">
-                    <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/5 p-4 flex-shrink-0">
+                    <div className="w-40 h-40 rounded-lg overflow-hidden bg-white/5 p-4 flex-shrink-0">
                       <img
                         src={edu.logo}
                         alt={`${edu.institution} logo`}
@@ -160,6 +164,9 @@ const Education = () => {
                       <h3 className="text-2xl font-semibold text-teal-300 font-space">
                         {edu.institution}
                       </h3>
+                      <p className="text-sm text-gray-400 mt-1 font-space">
+                        {edu.city}, {edu.country}
+                      </p>
                       <p className="text-xl text-gray-200 mt-1 font-space">
                         {edu.degree}
                       </p>

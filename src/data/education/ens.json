@@ -1,0 +1,11 @@
+{
+  "institution": "ENS Paris-Saclay",
+  "degree": "Research M.Sc. in Applied Mathemtics and Machine Learning (MVA)",
+  "years": "2016 - 2017",
+  "description": [
+    { "text": "Coursework: Deep learning, sparsity and compressed sensing, statistical learning, reinforcement learning..." }
+  ],
+  "logo": "/institutions/ens_paris_saclay_logo.svg",
+  "city": "Paris",
+  "country": "France"
+}
