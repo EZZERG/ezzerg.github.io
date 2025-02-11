@@ -1,0 +1,15 @@
+{
+  "employer": "Fimatix",
+  "title": "Data Scientist",
+  "years": "2024 - 2024",
+  "description": [
+    { "text": "Using Machine Learning to extract information from unstructured data.", "type": "text" },
+    { "type": "linebreak" },
+    { "type": "linebreak" },
+    { "text": "Keywords: ", "type": "text", "style": "bold" },
+    { "text": "Deep Neural Networks, Natural Language Processing, Question Answering...", "type": "text"}
+  ],
+  "logo": "/employers/fimatix_logo.svg",
+  "city": "London",
+  "country": "United Kingdom"
+}

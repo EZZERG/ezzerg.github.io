@@ -1,6 +1,8 @@
 interface TextSegment {
   text: string;
   href?: string;
+  type?: 'text' | 'bullet' | 'linebreak';  // Added 'linebreak' type
+  style?: 'normal' | 'bold';
 }
 
 interface RichTextProps {
@@ -9,15 +11,25 @@ interface RichTextProps {
 }
 
 const RichText = ({ segments, className = '' }: RichTextProps) => {
-  // If segments is a string, wrap it in a single text segment
   const textSegments = typeof segments === 'string' 
-    ? [{ text: segments }] 
+    ? [{ text: segments, type: 'text', style: 'normal' }] 
     : segments;
 
   return (
     <span className={className}>
-      {textSegments.map((segment, index) => 
-        segment.href ? (
+      {textSegments.map((segment, index) => {
+        if (segment.type === 'linebreak') {
+          return <br key={index} />;
+        }
+
+        const content = (
+          <span className={segment.style === 'bold' ? 'font-bold' : ''}>
+            {segment.type === 'bullet' && <span className="mr-2">•</span>}
+            {segment.text}
+          </span>
+        );
+
+        return segment.href ? (
           <a
             key={index}
             href={segment.href}
@@ -25,12 +37,15 @@ const RichText = ({ segments, className = '' }: RichTextProps) => {
             rel="noopener noreferrer"
             className="text-teal-400 hover:text-teal-300 transition-colors duration-200 underline decoration-teal-400/30 hover:decoration-teal-300/50"
           >
-            {segment.text}
+            {content}
           </a>
         ) : (
-          <span key={index}>{segment.text}</span>
-        )
-      )}
+          <span key={index}>
+            {content}
+            {segment.type === 'bullet' && <br />}
+          </span>
+        );
+      })}
     </span>
   );
 };

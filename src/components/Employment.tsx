@@ -7,12 +7,16 @@ import TypingTitle from './TypingTitle'
 import RichText from './RichText'
 
 // Import individual employment data files
-import researchAssistant from '@/data/employment/research-assistant.json'
-import teachingAssistant from '@/data/employment/teaching-assistant.json'
+import amazonPosition from '@/data/employment/amazon.json'
+import fimatixPosition from '@/data/employment/fimatix.json'
+import axaPosition from '@/data/employment/axa.json'
+import ibmPosition from '@/data/employment/ibm.json'
 
 interface TextSegment {
   text: string;
   href?: string;
+  type?: 'text' | 'bullet';
+  style?: 'normal' | 'bold';
 }
 
 interface EmploymentItem {
@@ -21,6 +25,8 @@ interface EmploymentItem {
   years: string;
   description: TextSegment[] | string;
   logo: string;
+  city: string;    // New field
+  country: string; // New field
 }
 
 const cardVariants = {
@@ -47,8 +53,10 @@ const Employment = () => {
   useEffect(() => {
     // Combine employment data in chronological order
     setItems([
-      researchAssistant,
-      teachingAssistant
+      fimatixPosition,
+      amazonPosition,
+      axaPosition,
+      ibmPosition
     ])
   }, [])
 
@@ -129,7 +137,7 @@ const Employment = () => {
                 <div className="backdrop-blur-md bg-black/40 p-6 rounded-2xl border border-white/20 shadow-xl 
                             hover:bg-black/70 transition-all duration-300 hover:backdrop-blur-xl">
                   <div className="flex flex-col md:flex-row gap-6 items-start">
-                    <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/5 p-4 flex-shrink-0">
+                    <div className="w-40 h-40 rounded-lg overflow-hidden bg-white/5 p-4 flex-shrink-0">
                       <img
                         src={job.logo}
                         alt={`${job.employer} logo`}
@@ -141,6 +149,9 @@ const Employment = () => {
                       <h3 className="text-2xl font-semibold text-teal-300 font-space">
                         {job.employer}
                       </h3>
+                      <p className="text-sm text-gray-400 mt-1 font-space">
+                        {job.city}, {job.country}
+                      </p>
                       <p className="text-xl text-gray-200 mt-1 font-space">
                         {job.title}
                       </p>

@@ -1,0 +1,16 @@
+{
+  "employer": "AXA Data Innovation Lab (DIL)",
+  "title": "Intern Data Scientist",
+  "years": "2017 - 2017",
+  "description": [
+    { "text": "Implemented a graph-based model to detect insurance policy fraud." },
+    { "type": "linebreak" },
+    { "type": "linebreak" },
+    { "text": "Keywords: ", "style": "bold" },
+    { "text": "Graph-based models, Pagerank, Fraud Detection, NetworkX, Neo4j..." },
+    { "type": "linebreak" }
+  ],
+  "logo": "/employers/axa_logo.svg",
+  "city": "Paris",
+  "country": "France"
+}
