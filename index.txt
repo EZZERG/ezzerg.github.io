@@ -1,0 +1,21 @@
+1:"$Sreact.fragment"
+2:I[3704,["177","static/chunks/app/layout-26deffb10394f2df.js"],""]
+3:I[5244,[],""]
+4:I[3866,[],""]
+5:I[7033,[],"ClientPageRoot"]
+6:I[8291,["479","static/chunks/795d4814-3748d344dc992ccb.js","150","static/chunks/59650de3-9b67e6569212f9cb.js","512","static/chunks/9c4e2130-318da36cc758b4fa.js","777","static/chunks/66ec4792-b6347c960e85fd0f.js","844","static/chunks/ee560e2c-673322240e264888.js","657","static/chunks/657-2bf9d6858734f233.js","974","static/chunks/app/page-583ae4dc836155e1.js"],"default"]
+9:I[6213,[],"OutletBoundary"]
+b:I[6213,[],"MetadataBoundary"]
+d:I[6213,[],"ViewportBoundary"]
+f:I[4835,[],""]
+:HL["/_next/static/media/2d141e1a38819612-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/569ce4b8f30dc480-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/93f479601ee12b01-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/ab86f138d0d6e9da-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/css/a3025488da9eabb9.css","style"]
+0:{"P":null,"b":"RsHktA7uwsMzJh4QzRsM5","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/a3025488da9eabb9.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","children":[["$","head",null,{"children":[["$","$L2",null,{"src":"https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js","strategy":"beforeInteractive"}],["$","$L2",null,{"src":"https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js","strategy":"beforeInteractive"}],["$","$L2",null,{"src":"https://unpkg.com/typewriter-effect@latest/dist/core.js","strategy":"beforeInteractive"}]]}],["$","body",null,{"className":"__variable_4d318d __variable_ea5f4b __variable_0aa4ae __variable_89b68c antialiased bg-black","children":["$","$L3",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[],[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L5",null,{"Component":"$6","searchParams":{},"params":{},"promises":["$@7","$@8"]}],null,["$","$L9",null,{"children":"$La"}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","kCZTz52gahYRFE3fIg5nR",{"children":[["$","$Lb",null,{"children":"$Lc"}],["$","$Ld",null,{"children":"$Le"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}]]}],false]],"m":"$undefined","G":["$f","$undefined"],"s":false,"S":true}
+7:{}
+8:{}
+e:[["$","meta","0",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+c:[["$","meta","0",{"charSet":"utf-8"}],["$","title","1",{"children":"Abdelhamid Ezzerg website"}],["$","meta","2",{"name":"description","content":"Personal academic website of Abdelhamid Ezzerg"}],["$","link","3",{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"16x16"}],["$","link","4",{"rel":"icon","href":"/ae_logo.svg"}]]
+a:null
