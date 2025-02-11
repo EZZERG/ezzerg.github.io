@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { BookOpen, ChevronDown, ChevronUp } from 'lucide-react'
+import { BookOpen, ChevronDown, ChevronUp, Maximize2, X } from 'lucide-react'
 import TypingTitle from './TypingTitle'
 import BibtexModal from './BibtexModal'
 import { BibTexEntry } from '@/types/publication'
@@ -72,6 +72,7 @@ const Publications = () => {
       title: '' 
     }
   })
+  const [zoomedImage, setZoomedImage] = useState<string | null>(null)
 
   const toggleAuthors = (index: number) => {
     setExpandedAuthors(prev => 
@@ -95,139 +96,177 @@ const Publications = () => {
 
   const truncateText = (text: string, maxLength: number) => {
     if (text.length <= maxLength) return text;
-    return text.slice(0, maxLength).trim() + "...";
+    return text.slice(0, maxLength).trim() + "..."
   }
 
   return (
-    <section 
-      id="publications" 
-      className="min-h-screen flex items-center py-16"
-    >
-      <div className="space-y-8 w-full">
-        <div className="overflow-hidden flex items-center gap-3">
-          <BookOpen className="w-8 h-8 text-black" strokeWidth={1.5} />
-          <TypingTitle 
-            text="Publications"
-            className="text-4xl font-bold bg-gradient-to-r from-black to-gray-700 inline-block text-transparent bg-clip-text font-orbitron"
-            startIndex={3}
-          />
-        </div>
+    <>
+      <section 
+        id="publications" 
+        className="min-h-screen flex items-center py-16"
+      >
+        <div className="space-y-8 w-full">
+          <div className="overflow-hidden flex items-center gap-3">
+            <BookOpen className="w-8 h-8 text-black" strokeWidth={1.5} />
+            <TypingTitle 
+              text="Publications"
+              className="text-4xl font-bold bg-gradient-to-r from-black to-gray-700 inline-block text-transparent bg-clip-text font-orbitron"
+              startIndex={3}
+            />
+          </div>
 
-        <div className="relative">
-          <div className="space-y-6">
-            {publicationsData.map((pub, index) => (
-              <motion.div
-                key={index}
-                variants={cardVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ margin: "-100px", once: false }}
-                className="relative flex items-center"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <div className={`backdrop-blur-md bg-black/40 p-6 rounded-2xl border border-white/20 shadow-xl 
-                              hover:bg-black/70 hover:backdrop-blur-xl transition-all duration-300
-                              w-full`}>
-                  <div className="flex flex-col lg:flex-row gap-6">
-                    <div className="flex-1 flex flex-col">
-                      <h3 className="text-2xl font-semibold text-teal-300 font-space">
-                        {pub.url ? (
-                          <a 
-                            href={pub.url} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="hover:text-teal-200 transition-colors"
-                          >
-                            {pub.title}
-                          </a>
-                        ) : (
-                          pub.title
-                        )}
-                      </h3>
-                      
-                      <p className="text-gray-300 mt-2 font-medium font-space">
-                        {pub.year} | {pub.venue}
-                      </p>
-                      
-                      <div className="relative">
-                        <p className="text-gray-200 mt-2 font-space">
-                          {expandedAuthors.includes(index) 
-                            ? pub.authors.join(", ")
-                            : truncateText(pub.authors.join(", "), 100)}
-                          {pub.authors.join(", ").length > 100 && (
+          <div className="relative">
+            <div className="space-y-6">
+              {publicationsData.map((pub, index) => (
+                <motion.div
+                  key={index}
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ margin: "-100px", once: false }}
+                  className="relative flex items-center"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <div className={`backdrop-blur-md bg-black/40 p-6 rounded-2xl border border-white/20 shadow-xl 
+                                hover:bg-black/70 hover:backdrop-blur-xl transition-all duration-300
+                                w-full`}>
+                    <div className="flex flex-col items-center lg:items-stretch lg:flex-row gap-6">
+                      <div className="flex-1 flex flex-col">
+                        <h3 className="text-2xl font-semibold text-teal-300 font-space">
+                          {pub.url ? (
+                            <a 
+                              href={pub.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="hover:text-teal-200 transition-colors"
+                            >
+                              {pub.title}
+                            </a>
+                          ) : (
+                            pub.title
+                          )}
+                        </h3>
+                        
+                        <p className="text-gray-300 mt-2 font-medium font-space">
+                          {pub.year} | {pub.venue}
+                        </p>
+                        
+                        <div className="relative">
+                          <p className="text-gray-200 mt-2 font-space">
+                            {expandedAuthors.includes(index) 
+                              ? pub.authors.join(", ")
+                              : truncateText(pub.authors.join(", "), 100)}
+                            {pub.authors.join(", ").length > 100 && (
+                              <button
+                                onClick={() => toggleAuthors(index)}
+                                className="text-teal-400 hover:text-teal-300 transition-colors text-sm ml-1"
+                              >
+                                {expandedAuthors.includes(index) ? "Show less" : "Read more"}
+                              </button>
+                            )}
+                          </p>
+                        </div>
+                        
+                        <div className="relative mt-4">
+                          <p className={`text-gray-200 leading-relaxed font-space ${!expandedAbstracts.includes(index) ? 'line-clamp-4' : ''}`}>
+                            {pub.abstract}
+                          </p>
+                          {pub.abstract.length > 300 && (
                             <button
-                              onClick={() => toggleAuthors(index)}
+                              onClick={() => toggleAbstract(index)}
                               className="text-teal-400 hover:text-teal-300 transition-colors text-sm ml-1"
                             >
-                              {expandedAuthors.includes(index) ? "Show less" : "Read more"}
-                            </button>
-                          )}
-                        </p>
-                      </div>
-                      
-                      <div className="relative mt-4">
-                        <p className={`text-gray-200 leading-relaxed font-space ${!expandedAbstracts.includes(index) ? 'line-clamp-4' : ''}`}>
-                          {pub.abstract}
-                        </p>
-                        {pub.abstract.length > 300 && (
-                          <button
-                            onClick={() => toggleAbstract(index)}
-                            className="text-teal-400 hover:text-teal-300 transition-colors text-sm ml-1"
-                          >
-                            {expandedAbstracts.includes(index) ? "Show less" : "...Read more"}
-                          </button>
-                        )}
-                      </div>
-
-                      <div className="mt-4 flex items-center gap-4">
-                        <div className="flex gap-4">
-                          {pub.links.arxiv && (
-                            <a href={pub.links.arxiv} target="_blank" rel="noopener noreferrer" 
-                              className="text-teal-400 hover:text-teal-300 transition-colors">
-                              arXiv
-                            </a>
-                          )}
-                          {pub.links.code && (
-                            <a href={pub.links.code} target="_blank" rel="noopener noreferrer"
-                              className="text-teal-400 hover:text-teal-300 transition-colors">
-                              Code
-                            </a>
-                          )}
-                          {pub.bibtex && (
-                            <button
-                              onClick={() => showBibtex(pub.bibtex, pub.title)}
-                              className="text-teal-400 hover:text-teal-300 transition-colors"
-                            >
-                              BibTeX
+                              {expandedAbstracts.includes(index) ? "Show less" : "...Read more"}
                             </button>
                           )}
                         </div>
+
+                        <div className="mt-4 flex items-center gap-4">
+                          <div className="flex gap-4">
+                            {pub.links.arxiv && (
+                              <a href={pub.links.arxiv} target="_blank" rel="noopener noreferrer" 
+                                className="text-teal-400 hover:text-teal-300 transition-colors">
+                                arXiv
+                              </a>
+                            )}
+                            {pub.links.code && (
+                              <a href={pub.links.code} target="_blank" rel="noopener noreferrer"
+                                className="text-teal-400 hover:text-teal-300 transition-colors">
+                                Code
+                              </a>
+                            )}
+                            {pub.bibtex && (
+                              <button
+                                onClick={() => showBibtex(pub.bibtex, pub.title)}
+                                className="text-teal-400 hover:text-teal-300 transition-colors"
+                              >
+                                BibTeX
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="lg:w-[30vw] w-full max-w-[425px] rounded-lg overflow-hidden bg-black/10 relative flex-shrink-0 lg:self-center flex items-center justify-center transition-colors hover:bg-black/20 group">
+                        <button
+                          onClick={() => setZoomedImage(pub.previewImage)}
+                          className="absolute top-2 right-2 p-1.5 rounded-lg bg-black/40 text-white/70 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60 hover:text-white"
+                          aria-label="Zoom image"
+                        >
+                          <Maximize2 className="w-5 h-5" />
+                        </button>
+                        <img
+                          src={pub.previewImage}
+                          alt={`Preview of ${pub.title}`}
+                          className="w-auto max-h-[300px] object-contain py-4 px-2"
+                        />
                       </div>
                     </div>
-                    
-                    <div className="lg:w-[30vw] max-w-[425px] aspect-[4/3] rounded-lg overflow-hidden bg-white/5 relative flex-shrink-0 self-start">
-                      <img
-                        src={pub.previewImage}
-                        alt={`Preview of ${pub.title}`}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <BibtexModal
-        isOpen={bibtexModal.isOpen}
-        onClose={() => setBibtexModal(prev => ({ ...prev, isOpen: false }))}
-        bibtex={bibtexModal.data.bibtex}
-        title={bibtexModal.data.title}
-      />
-    </section>
+        <BibtexModal
+          isOpen={bibtexModal.isOpen}
+          onClose={() => setBibtexModal(prev => ({ ...prev, isOpen: false }))}
+          bibtex={bibtexModal.data.bibtex}
+          title={bibtexModal.data.title}
+        />
+      </section>
+
+      <AnimatePresence>
+        {zoomedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            onClick={() => setZoomedImage(null)}
+          >
+            <button
+              onClick={() => setZoomedImage(null)}
+              className="absolute top-4 right-4 p-2 rounded-lg bg-black/40 text-white/70 hover:bg-black/60 hover:text-white"
+              aria-label="Close zoom view"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <motion.img
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              src={zoomedImage}
+              alt="Zoomed preview"
+              className="max-w-full max-h-[90vh] object-contain"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 
