@@ -11,8 +11,7 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  basePath: '/ezzerg.github.io',
-  assetPrefix: '/ezzerg.github.io/',
+  assetPrefix: './',
 }
 
 export default nextConfig
