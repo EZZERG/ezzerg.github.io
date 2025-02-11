@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
+import { GraduationCap } from 'lucide-react'  // Changed from AcademicCapIcon to GraduationCap
 import TypingTitle from './TypingTitle'
 
 const educationData = [
@@ -79,7 +80,8 @@ const Education = () => {
       className="min-h-screen flex items-center py-16"
     >
       <div className="space-y-8 w-full">
-        <div className="overflow-hidden">
+        <div className="overflow-hidden flex items-center gap-3">
+          <GraduationCap className="w-8 h-8 text-teal-400" strokeWidth={1.5} />  {/* Changed from AcademicCapIcon to GraduationCap */}
           <TypingTitle 
             text="Education"
             className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-orbitron"

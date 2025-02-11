@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
+import { Briefcase } from 'lucide-react'
 import TypingTitle from './TypingTitle'
 
 const employmentData = [
@@ -55,7 +56,8 @@ const Employment = () => {
       className="min-h-screen flex items-center py-16"
     >
       <div className="space-y-8 w-full">
-        <div className="overflow-hidden">
+        <div className="overflow-hidden flex items-center gap-3">
+          <Briefcase className="w-8 h-8 text-black" strokeWidth={1.5} />
           <TypingTitle 
             text="Employment"
             className="text-4xl font-bold bg-gradient-to-r from-black to-gray-700 inline-block text-transparent bg-clip-text font-orbitron"

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { BookOpen } from 'lucide-react'
 import TypingTitle from './TypingTitle'
 import paper1 from '@/data/papers/paper1.json'
 import paper2 from '@/data/papers/paper2.json'
@@ -49,7 +50,8 @@ const Publications = () => {
       className="min-h-screen flex items-center py-16"
     >
       <div className="space-y-8 w-full">
-        <div className="overflow-hidden">
+        <div className="overflow-hidden flex items-center gap-3">
+          <BookOpen className="w-8 h-8 text-black" strokeWidth={1.5} />
           <TypingTitle 
             text="Publications"
             className="text-4xl font-bold bg-gradient-to-r from-black to-gray-700 inline-block text-transparent bg-clip-text font-orbitron"
