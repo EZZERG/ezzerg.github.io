@@ -1,8 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { BookOpen } from 'lucide-react'
+import { BookOpen, ChevronDown, ChevronUp } from 'lucide-react'
 import TypingTitle from './TypingTitle'
 import paper1 from '@/data/papers/paper1.json'
 import paper2 from '@/data/papers/paper2.json'
@@ -43,6 +43,11 @@ const cardVariants = {
 
 const Publications = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+
+  const toggleExpanded = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index)
+  }
 
   return (
     <section 
@@ -72,10 +77,11 @@ const Publications = () => {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                <div className="backdrop-blur-md bg-black/40 p-6 rounded-2xl border border-white/20 shadow-xl 
-                            hover:bg-black/70 hover:backdrop-blur-xl transition-all duration-300">
-                  <div className="flex flex-col lg:flex-row gap-6">
-                    <div className="flex-1">
+                <div className={`backdrop-blur-md bg-black/40 p-6 rounded-2xl border border-white/20 shadow-xl 
+                              hover:bg-black/70 hover:backdrop-blur-xl transition-all duration-300
+                              w-full ${expandedIndex === index ? 'h-auto' : 'h-[40vh] min-h-[400px]'}`}>
+                  <div className="flex flex-col lg:flex-row gap-6 h-full">
+                    <div className="flex-1 flex flex-col">
                       <h3 className="text-2xl font-semibold text-teal-300 font-space">
                         {pub.title}
                       </h3>
@@ -88,37 +94,63 @@ const Publications = () => {
                         {pub.authors.join(", ")}
                       </p>
                       
-                      <p className="text-gray-200 mt-4 leading-relaxed font-space">
-                        {pub.abstract}
-                      </p>
-                      
-                      <div className="flex gap-4 mt-4">
-                        {pub.links.arxiv && (
-                          <a href={pub.links.arxiv} target="_blank" rel="noopener noreferrer" 
-                            className="text-teal-400 hover:text-teal-300 transition-colors">
-                            arXiv
-                          </a>
+                      <div className="relative flex-1 overflow-hidden">
+                        <p className={`text-gray-200 mt-4 leading-relaxed font-space
+                                    ${expandedIndex === index ? '' : 'line-clamp-4'}`}>
+                          {pub.abstract}
+                        </p>
+                        
+                        {pub.abstract.length > 300 && expandedIndex !== index && (
+                          <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/40 to-transparent" />
                         )}
-                        {pub.links.code && (
-                          <a href={pub.links.code} target="_blank" rel="noopener noreferrer"
-                            className="text-teal-400 hover:text-teal-300 transition-colors">
-                            Code
-                          </a>
-                        )}
-                        {pub.links.pdf && (
-                          <a href={pub.links.pdf} target="_blank" rel="noopener noreferrer"
-                            className="text-teal-400 hover:text-teal-300 transition-colors">
-                            PDF
-                          </a>
+                      </div>
+
+                      <div className="mt-4 flex items-center gap-4">
+                        <div className="flex gap-4">
+                          {pub.links.arxiv && (
+                            <a href={pub.links.arxiv} target="_blank" rel="noopener noreferrer" 
+                              className="text-teal-400 hover:text-teal-300 transition-colors">
+                              arXiv
+                            </a>
+                          )}
+                          {pub.links.code && (
+                            <a href={pub.links.code} target="_blank" rel="noopener noreferrer"
+                              className="text-teal-400 hover:text-teal-300 transition-colors">
+                              Code
+                            </a>
+                          )}
+                          {pub.links.pdf && (
+                            <a href={pub.links.pdf} target="_blank" rel="noopener noreferrer"
+                              className="text-teal-400 hover:text-teal-300 transition-colors">
+                              PDF
+                            </a>
+                          )}
+                        </div>
+
+                        {pub.abstract.length > 300 && (
+                          <button
+                            onClick={() => toggleExpanded(index)}
+                            className="ml-auto flex items-center gap-1 text-teal-400 hover:text-teal-300 transition-colors"
+                          >
+                            {expandedIndex === index ? (
+                              <>
+                                Show less <ChevronUp className="w-4 h-4" />
+                              </>
+                            ) : (
+                              <>
+                                Read more <ChevronDown className="w-4 h-4" />
+                              </>
+                            )}
+                          </button>
                         )}
                       </div>
                     </div>
                     
-                    <div className="lg:w-[425px] h-[300px] rounded-lg overflow-hidden bg-white/5 relative">
+                    <div className="lg:w-[30vw] max-w-[425px] aspect-[4/3] rounded-lg overflow-hidden bg-white/5 relative flex-shrink-0 self-start">
                       <img
                         src={pub.previewImage}
                         alt={`Preview of ${pub.title}`}
-                        className="absolute top-0 left-0 w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                       />
                     </div>
                   </div>
