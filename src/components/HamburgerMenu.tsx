@@ -1,9 +1,16 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { IoMenu, IoClose } from 'react-icons/io5'
-import { AiOutlineHome } from 'react-icons/ai'
+import { IoMenu, IoClose, IoHomeOutline, IoPersonOutline, IoSchoolOutline, IoBriefcaseOutline, IoNewspaperOutline } from 'react-icons/io5'
+
+const icons = {
+  'main-header': IoHomeOutline,
+  'about': IoPersonOutline,
+  'education': IoSchoolOutline,
+  'employment': IoBriefcaseOutline,
+  'publications': IoNewspaperOutline
+}
 
 interface HamburgerMenuProps {
   activeSection: string;
@@ -43,7 +50,7 @@ const HamburgerMenu = ({ activeSection, navItems }: HamburgerMenuProps) => {
                   : 'text-white/70'
                 }
               `}>
-                <AiOutlineHome className="w-4 h-4" />
+                <IoHomeOutline className="w-4 h-4" />
                 Home
               </span>
             </a>
@@ -55,11 +62,16 @@ const HamburgerMenu = ({ activeSection, navItems }: HamburgerMenuProps) => {
                 className="block px-4 py-2 hover:bg-white/10 transition-colors duration-200"
               >
                 <span className={`
+                  flex items-center gap-2
                   ${activeSection === href.slice(1) 
                     ? 'text-white font-bold' 
                     : 'text-white/70'
                   }
                 `}>
+                  {(() => {
+                    const Icon = icons[href.slice(1) as keyof typeof icons];
+                    return Icon && <Icon className="w-4 h-4" />;
+                  })()}
                   {label}
                 </span>
               </a>

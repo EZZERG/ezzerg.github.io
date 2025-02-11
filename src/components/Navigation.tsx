@@ -1,13 +1,14 @@
 'use client'
 import { motion } from 'framer-motion'
 import { useActiveSection } from '../hooks/useActiveSection'
+import { IoHomeOutline, IoPersonOutline, IoSchoolOutline, IoBriefcaseOutline, IoNewspaperOutline } from 'react-icons/io5'
 
 const navItems = [
-  { href: '#main-header', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#education', label: 'Education' },
-  { href: '#employment', label: 'Employment' },
-  { href: '#publications', label: 'Publications' }
+  { href: '#main-header', label: 'Home', icon: IoHomeOutline },
+  { href: '#about', label: 'About', icon: IoPersonOutline },
+  { href: '#education', label: 'Education', icon: IoSchoolOutline },
+  { href: '#employment', label: 'Employment', icon: IoBriefcaseOutline },
+  { href: '#publications', label: 'Publications', icon: IoNewspaperOutline }
 ]
 
 const Navigation = () => {
@@ -28,7 +29,7 @@ const Navigation = () => {
       }}
     >
       <div className="flex backdrop-blur-xl bg-white/10 px-6 py-3 rounded-full border border-white/20">
-        {navItems.map(({ href, label }) => (
+        {navItems.map(({ href, label, icon: Icon }) => (
           <a
             key={href}
             href={href}
@@ -42,12 +43,13 @@ const Navigation = () => {
               />
             )}
             <span className={`
-              relative z-10
+              relative z-10 flex items-center gap-2
               ${activeSection === href.slice(1) 
                 ? 'text-white font-bold' 
                 : 'text-white/70'
               }
             `}>
+              <Icon className="w-4 h-4" />
               {label}
             </span>
           </a>
