@@ -27,7 +27,7 @@ const Section = ({ children, id }: { children: React.ReactNode, id?: string }) =
   return (
     <motion.div
       ref={ref}
-      className="min-h-screen flex items-center"
+      className="min-h-[50vh] md:min-h-screen flex items-center"
       style={{ opacity }}
       data-section-id={id}
     >
