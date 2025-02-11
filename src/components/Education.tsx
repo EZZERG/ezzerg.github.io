@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import { GraduationCap } from 'lucide-react'
+import { IoSchoolOutline } from 'react-icons/io5'
 import TypingTitle from './TypingTitle'
 import RichText from './RichText'
 
@@ -87,7 +87,7 @@ const Education = () => {
     >
       <div className="space-y-8 w-full">
         <div className="overflow-hidden flex items-center gap-3">
-          <GraduationCap className="w-8 h-8 text-teal-400" strokeWidth={1.5} />  {/* Changed from AcademicCapIcon to GraduationCap */}
+          <IoSchoolOutline className="w-8 h-8 text-teal-400" />
           <TypingTitle 
             text="Education"
             className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-orbitron"

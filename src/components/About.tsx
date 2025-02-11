@@ -1,6 +1,6 @@
 'use client'
 
-import { UserCircle } from 'lucide-react'
+import { IoPersonOutline } from 'react-icons/io5'
 import TypingTitle from './TypingTitle'
 
 const About = () => {
@@ -22,7 +22,7 @@ const About = () => {
             </div>
             <div className="md:w-[55%]">
               <div className="flex items-center gap-3 mb-6">
-                <UserCircle className="w-8 h-8 text-teal-400" strokeWidth={1.5} />
+                <IoPersonOutline className="w-8 h-8 text-teal-400" />
                 <TypingTitle 
                   text="About Me"
                   className="text-4xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-orbitron"

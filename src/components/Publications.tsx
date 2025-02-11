@@ -2,8 +2,8 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
+import { IoNewspaperOutline } from 'react-icons/io5'
 import { 
-  BookOpen, 
   ChevronDown, 
   ChevronUp, 
   Maximize2, 
@@ -116,7 +116,7 @@ const Publications = () => {
       >
         <div className="space-y-8 w-full">
           <div className="overflow-hidden flex items-center gap-3">
-            <BookOpen className="w-8 h-8 text-black" strokeWidth={1.5} />
+            <IoNewspaperOutline className="w-8 h-8 text-black" />
             <TypingTitle 
               text="Publications"
               className="text-4xl font-bold bg-gradient-to-r from-black to-gray-700 inline-block text-transparent bg-clip-text font-orbitron"
