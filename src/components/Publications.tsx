@@ -2,7 +2,16 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { BookOpen, ChevronDown, ChevronUp, Maximize2, X } from 'lucide-react'
+import { 
+  BookOpen, 
+  ChevronDown, 
+  ChevronUp, 
+  Maximize2, 
+  X, 
+  FileText, 
+  Code, 
+  Book 
+} from 'lucide-react'
 import TypingTitle from './TypingTitle'
 import BibtexModal from './BibtexModal'
 import { BibTexEntry } from '@/types/publication'
@@ -183,25 +192,36 @@ const Publications = () => {
                         </div>
 
                         <div className="mt-4 flex items-center gap-4">
-                          <div className="flex gap-4">
+                          <div className="flex gap-3">
                             {pub.links.arxiv && (
-                              <a href={pub.links.arxiv} target="_blank" rel="noopener noreferrer" 
-                                className="text-teal-400 hover:text-teal-300 transition-colors">
-                                arXiv
+                              <a 
+                                href={pub.links.arxiv} 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors border border-white/10 text-sm"
+                              >
+                                <FileText className="w-4 h-4" />
+                                <span>arXiv</span>
                               </a>
                             )}
                             {pub.links.code && (
-                              <a href={pub.links.code} target="_blank" rel="noopener noreferrer"
-                                className="text-teal-400 hover:text-teal-300 transition-colors">
-                                Code
+                              <a 
+                                href={pub.links.code} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors border border-white/10 text-sm"
+                              >
+                                <Code className="w-4 h-4" />
+                                <span>Code</span>
                               </a>
                             )}
                             {pub.bibtex && (
                               <button
                                 onClick={() => showBibtex(pub.bibtex, pub.title)}
-                                className="text-teal-400 hover:text-teal-300 transition-colors"
+                                className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors border border-white/10 text-sm"
                               >
-                                BibTeX
+                                <Book className="w-4 h-4" />
+                                <span>BibTeX</span>
                               </button>
                             )}
                           </div>
