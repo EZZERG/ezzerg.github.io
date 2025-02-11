@@ -8,6 +8,7 @@ import { HiOutlineDownload } from 'react-icons/hi'
 import { FiGithub } from 'react-icons/fi'
 import { LuGraduationCap, LuLinkedin } from 'react-icons/lu'
 import HamburgerMenu from './HamburgerMenu'
+import { useActiveSection } from '../hooks/useActiveSection'
 
 const navItems = [
   { href: '#about', label: 'About' },
@@ -16,21 +17,17 @@ const navItems = [
   { href: '#publications', label: 'Publications' }
 ]
 
-const StickyHeader = ({ activeSection = '' }) => {
+const StickyHeader = () => {
   const [isVisible, setIsVisible] = useState(false)
+  const activeSection = useActiveSection()
 
   useEffect(() => {
     const handleScroll = () => {
-      // Get the header element and its position
-      const headerElement = document.getElementById('main-header')
-      if (headerElement) {
-        const headerBottom = headerElement.offsetTop + headerElement.offsetHeight
-        setIsVisible(window.scrollY > headerBottom - 100) // Adding some offset for smoother transition
-      }
+      setIsVisible(window.scrollY > window.innerHeight * 0.5)
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // Check initial position
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -38,10 +35,9 @@ const StickyHeader = ({ activeSection = '' }) => {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ y: -100, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: -100, opacity: 0 }}
-          transition={{ duration: 0.3 }}
+          initial={{ y: -100 }}
+          animate={{ y: 0 }}
+          exit={{ y: -100 }}
           className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-black/75 border-b border-white/10"
         >
           <div className="max-w-4xl mx-auto px-4 flex flex-col">
