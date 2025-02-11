@@ -59,6 +59,7 @@ const Employment = () => {
           <TypingTitle 
             text="Employment"
             className="text-4xl font-bold bg-gradient-to-r from-black to-gray-700 inline-block text-transparent bg-clip-text font-orbitron"
+            startIndex={3}
           />
         </div>
         

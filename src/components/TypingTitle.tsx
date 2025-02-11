@@ -6,6 +6,7 @@ import { useInView, motion } from 'framer-motion'
 interface TypingTitleProps {
   text: string;
   className?: string;
+  startIndex?: number;
 }
 
 declare global {
@@ -14,35 +15,46 @@ declare global {
   }
 }
 
-const TypingTitle = ({ text, className = '' }: TypingTitleProps) => {
-  const elementRef = useRef<HTMLSpanElement>(null)
+const TypingTitle = ({ text, className = '', startIndex = 0 }: TypingTitleProps) => {
+  const staticRef = useRef<HTMLSpanElement>(null)
+  const dynamicRef = useRef<HTMLSpanElement>(null)
   const typewriterRef = useRef<any>(null)
-  const isInView = useInView(elementRef, { margin: "-25% 0px" })
+  const containerRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(containerRef, { margin: "-25% 0px" })
   const [isTyping, setIsTyping] = useState(false)
 
   useEffect(() => {
     const initTypewriter = () => {
-      if (!elementRef.current || !window.Typewriter) {
+      if (!dynamicRef.current || !staticRef.current || !window.Typewriter) {
         setTimeout(initTypewriter, 100)
         return
       }
 
       if (typewriterRef.current) {
         typewriterRef.current.stop()
-        elementRef.current.innerHTML = ''
       }
 
       setIsTyping(true)
       
-      typewriterRef.current = new window.Typewriter(elementRef.current, {
+      // Always include trailing space with the static part
+      let splitIndex = startIndex
+      if (text[splitIndex - 1] === ' ') splitIndex--
+      
+      const staticPart = text.slice(0, splitIndex)
+      const dynamicPart = text.slice(splitIndex)
+      
+      staticRef.current.textContent = staticPart
+      dynamicRef.current.textContent = ''
+      
+      typewriterRef.current = new window.Typewriter(dynamicRef.current, {
         delay: 75,
         cursor: '',
         wrapperClassName: 'typewriter-wrapper',
+        startDelay: 300,
       })
 
       typewriterRef.current
-        .pauseFor(300)
-        .typeString(text)
+        .typeString(dynamicPart)
         .callFunction(() => setIsTyping(false))
         .start()
     }
@@ -50,9 +62,11 @@ const TypingTitle = ({ text, className = '' }: TypingTitleProps) => {
     if (isInView) {
       initTypewriter()
     } else {
-      // Show full text when not in view
-      if (elementRef.current) {
-        elementRef.current.innerHTML = text
+      if (staticRef.current && dynamicRef.current) {
+        let splitIndex = startIndex
+        if (text[splitIndex - 1] === ' ') splitIndex--
+        staticRef.current.textContent = text.slice(0, splitIndex)
+        dynamicRef.current.textContent = text.slice(splitIndex)
       }
     }
 
@@ -62,11 +76,12 @@ const TypingTitle = ({ text, className = '' }: TypingTitleProps) => {
         setIsTyping(false)
       }
     }
-  }, [isInView, text])
+  }, [isInView, text, startIndex])
 
   return (
-    <h2 className={`${className} relative inline-flex items-center`}>
-      <span ref={elementRef}>{text}</span>
+    <h2 className={`${className} relative inline-flex items-center`} ref={containerRef}>
+      <span ref={staticRef} className="inline-block whitespace-pre"></span>
+      <span ref={dynamicRef} className="inline-block whitespace-pre"></span>
       <motion.span 
         className={`
           h-[1.2em] w-[3px]

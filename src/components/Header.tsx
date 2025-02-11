@@ -19,12 +19,14 @@ const Header = () => {
               <TypingTitle
                 text="Your Name"
                 className="text-5xl font-bold bg-gradient-to-r from-teal-400 to-teal-200 inline-block text-transparent bg-clip-text font-quantico absolute"
+                startIndex={4}  // Will start typing from "Name"
               />
             </div>
             <div className="h-[1.75rem] relative">
               <TypingTitle
                 text="PhD Candidate in [Your Field]"
                 className="text-xl text-gray-200 font-orbitron absolute"
+                startIndex={15}  // Will start typing from "[Your Field]"
               />
             </div>
             <div className="flex gap-4 justify-center">
