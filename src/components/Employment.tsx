@@ -4,23 +4,24 @@ import { motion } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
 import { Briefcase } from 'lucide-react'
 import TypingTitle from './TypingTitle'
+import RichText from './RichText'
 
-const employmentData = [
-  {
-    employer: "Current University Name",
-    title: "Research Assistant",
-    years: "2022 - Present",
-    description: "[Brief description of your role and responsibilities, including key projects, achievements, and areas of focus. Consider mentioning specific research areas, publications, or collaborations.]",
-    logo: "/institutions/current-employer.svg"
-  },
-  {
-    employer: "Previous University Name",
-    title: "Teaching Assistant",
-    years: "2020 - 2022",
-    description: "[Brief description of courses and responsibilities, including subjects taught, student mentoring, and any curriculum development work. Highlight key achievements and impact on student learning.]",
-    logo: "/institutions/previous-employer.svg"
-  }
-]
+// Import individual employment data files
+import researchAssistant from '@/data/employment/research-assistant.json'
+import teachingAssistant from '@/data/employment/teaching-assistant.json'
+
+interface TextSegment {
+  text: string;
+  href?: string;
+}
+
+interface EmploymentItem {
+  employer: string;
+  title: string;
+  years: string;
+  description: TextSegment[] | string;
+  logo: string;
+}
 
 const cardVariants = {
   hidden: { 
@@ -41,6 +42,15 @@ const Employment = () => {
   const timelineRef = useRef<HTMLDivElement>(null)
   const [linePosition, setLinePosition] = useState(0)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [items, setItems] = useState<EmploymentItem[]>([])
+
+  useEffect(() => {
+    // Combine employment data in chronological order
+    setItems([
+      researchAssistant,
+      teachingAssistant
+    ])
+  }, [])
 
   useEffect(() => {
     if (timelineRef.current) {
@@ -73,7 +83,7 @@ const Employment = () => {
               <div 
                 className="absolute top-0 w-full bg-gradient-to-b from-teal-400 to-transparent transition-all duration-300"
                 style={{
-                  height: `${(hoveredIndex + 1) * 100 / employmentData.length}%`,
+                  height: `${(hoveredIndex + 1) * 100 / items.length}%`,
                   opacity: 0.5,
                   boxShadow: '0 0 20px 5px rgba(20, 184, 166, 0.5)',
                   filter: 'blur(2px)'
@@ -83,7 +93,7 @@ const Employment = () => {
           </div>
           
           <div className="space-y-6">
-            {employmentData.map((job, index) => (
+            {items.map((job, index) => (
               <motion.div
                 key={index}
                 variants={cardVariants}
@@ -138,7 +148,7 @@ const Employment = () => {
                         {job.years}
                       </p>
                       <p className="text-gray-200 mt-4 leading-relaxed font-space">
-                        {job.description}
+                        <RichText segments={job.description} />
                       </p>
                     </div>
                   </div>

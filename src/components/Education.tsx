@@ -2,32 +2,27 @@
 
 import { motion } from 'framer-motion'
 import { useRef, useState, useEffect } from 'react'
-import { GraduationCap } from 'lucide-react'  // Changed from AcademicCapIcon to GraduationCap
+import { GraduationCap } from 'lucide-react'
 import TypingTitle from './TypingTitle'
+import RichText from './RichText'
 
-const educationData = [
-  {
-    institution: "Current University Name",
-    degree: "PhD in [Your Field]",
-    years: "2021 - Present",
-    description: "Currently researching [Topic] under the supervision of [Professor]. Focus areas include [Area 1], [Area 2], and [Area 3]. Part of the [Lab/Research Group] working on [Project/Initiative].",
-    logo: "/institutions/current-university.svg"
-  },
-  {
-    institution: "Previous University Name",
-    degree: "Master's in [Your Field]",
-    years: "2019 - 2021",
-    description: "Completed thesis on [Topic] with focus on [Specific Area]. Participated in [Notable Project/Research].",
-    logo: "/institutions/masters-university.svg"
-  },
-  {
-    institution: "First University Name",
-    degree: "Bachelor's in [Your Field]",
-    years: "2015 - 2019",
-    description: "Graduated with honors. Major in [Subject] with minor in [Subject]. Key projects included [Project 1] and [Project 2].",
-    logo: "/institutions/bachelors-university.svg"
-  }
-]
+// Import individual education data files
+import phdData from '@/data/education/phd.json'
+import mastersData from '@/data/education/masters.json'
+import bachelorsData from '@/data/education/bachelors.json'
+
+interface TextSegment {
+  text: string;
+  href?: string;
+}
+
+interface EducationItem {
+  institution: string
+  degree: string
+  years: string
+  description: TextSegment[] | string
+  logo: string
+}
 
 const titleVariants = {
   hidden: { 
@@ -65,6 +60,16 @@ const Education = () => {
   const timelineRef = useRef<HTMLDivElement>(null)
   const [linePosition, setLinePosition] = useState(0)
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [items, setItems] = useState<EducationItem[]>([])
+
+  useEffect(() => {
+    // Combine education data in chronological order
+    setItems([
+      phdData,
+      mastersData,
+      bachelorsData
+    ])
+  }, [])
 
   useEffect(() => {
     if (timelineRef.current) {
@@ -97,7 +102,7 @@ const Education = () => {
               <div 
                 className="absolute top-0 w-full bg-gradient-to-b from-teal-400 to-transparent transition-all duration-300"
                 style={{
-                  height: `${(hoveredIndex + 1) * 100 / educationData.length}%`,
+                  height: `${(hoveredIndex + 1) * 100 / items.length}%`,
                   opacity: 0.5,
                   boxShadow: '0 0 20px 5px rgba(20, 184, 166, 0.5)',
                   filter: 'blur(2px)'
@@ -107,7 +112,7 @@ const Education = () => {
           </div>
           
           <div className="space-y-6">
-            {educationData.map((edu, index) => (
+            {items.map((edu, index) => (
               <motion.div
                 key={index}
                 variants={cardVariants}
@@ -162,7 +167,7 @@ const Education = () => {
                         {edu.years}
                       </p>
                       <p className="text-gray-200 mt-4 leading-relaxed font-space">
-                        {edu.description}
+                        <RichText segments={edu.description} />
                       </p>
                     </div>
                   </div>

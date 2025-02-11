@@ -1,0 +1,17 @@
+{
+  "institution": "Current University Name",
+  "degree": "PhD in [Your Field]",
+  "years": "2021 - Present",
+  "description": [
+    { "text": "Currently researching [Topic] under the supervision of " },
+    { "text": "Professor Smith", "href": "https://example.com/prof-smith" },
+    { "text": ". Focus areas include " },
+    { "text": "Area 1", "href": "https://example.com/area1" },
+    { "text": ", " },
+    { "text": "Area 2", "href": "https://example.com/area2" },
+    { "text": ", and " },
+    { "text": "Area 3", "href": "https://example.com/area3" },
+    { "text": ". Part of the [Lab/Research Group] working on [Project/Initiative]." }
+  ],
+  "logo": "/institutions/current-university.svg"
+}
