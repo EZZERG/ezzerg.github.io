@@ -53,7 +53,8 @@ const cardVariants = {
 
 const Publications = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+  const [expandedAuthors, setExpandedAuthors] = useState<number[]>([])
+  const [expandedAbstracts, setExpandedAbstracts] = useState<number[]>([])
   const [bibtexModal, setBibtexModal] = useState<{ 
     isOpen: boolean; 
     data: { 
@@ -72,12 +73,29 @@ const Publications = () => {
     }
   })
 
-  const toggleExpanded = (index: number) => {
-    setExpandedIndex(expandedIndex === index ? null : index)
+  const toggleAuthors = (index: number) => {
+    setExpandedAuthors(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    )
+  }
+
+  const toggleAbstract = (index: number) => {
+    setExpandedAbstracts(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    )
   }
 
   const showBibtex = (bibtex: BibTexEntry, title: string) => {
     setBibtexModal({ isOpen: true, data: { bibtex, title } })
+  }
+
+  const truncateText = (text: string, maxLength: number) => {
+    if (text.length <= maxLength) return text;
+    return text.slice(0, maxLength).trim() + "...";
   }
 
   return (
@@ -110,8 +128,8 @@ const Publications = () => {
               >
                 <div className={`backdrop-blur-md bg-black/40 p-6 rounded-2xl border border-white/20 shadow-xl 
                               hover:bg-black/70 hover:backdrop-blur-xl transition-all duration-300
-                              w-full ${expandedIndex === index ? 'h-auto' : 'h-[40vh] min-h-[400px]'}`}>
-                  <div className="flex flex-col lg:flex-row gap-6 h-full">
+                              w-full`}>
+                  <div className="flex flex-col lg:flex-row gap-6">
                     <div className="flex-1 flex flex-col">
                       <h3 className="text-2xl font-semibold text-teal-300 font-space">
                         {pub.url ? (
@@ -132,18 +150,33 @@ const Publications = () => {
                         {pub.year} | {pub.venue}
                       </p>
                       
-                      <p className="text-gray-200 mt-2 font-space">
-                        {pub.authors.join(", ")}
-                      </p>
+                      <div className="relative">
+                        <p className="text-gray-200 mt-2 font-space">
+                          {expandedAuthors.includes(index) 
+                            ? pub.authors.join(", ")
+                            : truncateText(pub.authors.join(", "), 100)}
+                          {pub.authors.join(", ").length > 100 && (
+                            <button
+                              onClick={() => toggleAuthors(index)}
+                              className="text-teal-400 hover:text-teal-300 transition-colors text-sm ml-1"
+                            >
+                              {expandedAuthors.includes(index) ? "Show less" : "Read more"}
+                            </button>
+                          )}
+                        </p>
+                      </div>
                       
-                      <div className="relative flex-1 overflow-hidden">
-                        <p className={`text-gray-200 mt-4 leading-relaxed font-space
-                                    ${expandedIndex === index ? '' : 'line-clamp-4'}`}>
+                      <div className="relative mt-4">
+                        <p className={`text-gray-200 leading-relaxed font-space ${!expandedAbstracts.includes(index) ? 'line-clamp-4' : ''}`}>
                           {pub.abstract}
                         </p>
-                        
-                        {pub.abstract.length > 300 && expandedIndex !== index && (
-                          <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-black/40 to-transparent" />
+                        {pub.abstract.length > 300 && (
+                          <button
+                            onClick={() => toggleAbstract(index)}
+                            className="text-teal-400 hover:text-teal-300 transition-colors text-sm ml-1"
+                          >
+                            {expandedAbstracts.includes(index) ? "Show less" : "...Read more"}
+                          </button>
                         )}
                       </div>
 
@@ -170,23 +203,6 @@ const Publications = () => {
                             </button>
                           )}
                         </div>
-
-                        {pub.abstract.length > 300 && (
-                          <button
-                            onClick={() => toggleExpanded(index)}
-                            className="ml-auto flex items-center gap-1 text-teal-400 hover:text-teal-300 transition-colors"
-                          >
-                            {expandedIndex === index ? (
-                              <>
-                                Show less <ChevronUp className="w-4 h-4" />
-                              </>
-                            ) : (
-                              <>
-                                Read more <ChevronDown className="w-4 h-4" />
-                              </>
-                            )}
-                          </button>
-                        )}
                       </div>
                     </div>
                     
