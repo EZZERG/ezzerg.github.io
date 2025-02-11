@@ -116,8 +116,8 @@ const Employment = () => {
                   />
                 </div>
 
-                <div className="backdrop-blur-sm bg-black/10 p-6 rounded-2xl border border-white/20 shadow-xl 
-                            hover:bg-black/30 transition-all duration-300 hover:backdrop-blur-xl">
+                <div className="backdrop-blur-md bg-black/40 p-6 rounded-2xl border border-white/20 shadow-xl 
+                            hover:bg-black/70 transition-all duration-300 hover:backdrop-blur-xl">
                   <div className="flex flex-col md:flex-row gap-6 items-start">
                     <div className="w-24 h-24 rounded-lg overflow-hidden bg-white/5 p-4 flex-shrink-0">
                       <img

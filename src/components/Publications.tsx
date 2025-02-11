@@ -72,8 +72,8 @@ const Publications = () => {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                <div className="backdrop-blur-sm bg-black/25 p-6 rounded-2xl border border-white/20 shadow-xl 
-                            hover:bg-black/50 hover:backdrop-blur-xl transition-all duration-300">
+                <div className="backdrop-blur-md bg-black/40 p-6 rounded-2xl border border-white/20 shadow-xl 
+                            hover:bg-black/70 hover:backdrop-blur-xl transition-all duration-300">
                   <div className="flex flex-col lg:flex-row gap-6">
                     <div className="flex-1">
                       <h3 className="text-2xl font-semibold text-teal-300 font-space">

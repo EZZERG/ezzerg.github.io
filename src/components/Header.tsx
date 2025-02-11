@@ -12,7 +12,7 @@ const Header = () => {
       className="min-h-screen w-full flex items-center justify-center relative"
     >
       <HeaderNavigation />
-      <div className="w-[600px] backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/20 shadow-xl hover:bg-white/[0.15] hover:backdrop-blur-xl transition-all duration-300 text-center">
+      <div className="w-[600px] backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/20 shadow-xl hover:bg-white/[0.15] hover:backdrop-blur-xl transition-all duration-300 text-center">
         <div className="flex flex-col items-center w-full">
           <div className="w-full flex flex-col gap-6">
             <div className="h-[3.75rem] relative">

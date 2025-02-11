@@ -10,7 +10,7 @@ const About = () => {
       className="min-h-screen flex items-center py-16"
     >
       <div className="space-y-8 w-full">
-        <div className="backdrop-blur-sm bg-white/5 p-8 rounded-2xl border border-white/20 shadow-xl 
+        <div className="backdrop-blur-md bg-white/5 p-8 rounded-2xl border border-white/20 shadow-xl 
                     hover:bg-white/[0.15] hover:backdrop-blur-xl transition-all duration-300">
           <div className="flex flex-col md:flex-row items-center gap-8 mb-6">
             <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white/20">
