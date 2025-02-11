@@ -55,11 +55,8 @@ const BibtexModal = ({ isOpen, onClose, bibtex, title }: BibtexModalProps) => {
             
             <button
               onClick={copyToClipboard}
-              className="mt-4 flex items-center gap-2 px-4 py-2 rounded-lg
-                       bg-teal-600 hover:bg-teal-500 transition-colors text-white
-                       flex-shrink-0"
+              className="mt-4 self-start inline-flex bg-teal-600 text-white rounded px-3 py-1.5 text-sm hover:bg-teal-500 transition-colors"
             >
-              <Copy className="w-4 h-4" />
               Copy to Clipboard
             </button>
           </motion.div>
