@@ -153,6 +153,12 @@ a:hover {
   transform: rotate(180deg);
 }
 
+.authors-text {
+  color: #94a3b8;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
 section {
   position: relative;
   overflow: hidden;

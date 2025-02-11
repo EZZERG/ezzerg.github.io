@@ -153,7 +153,7 @@ const Publications = () => {
                         </p>
                         
                         <div className="relative">
-                          <p className="text-gray-200 mt-2 font-space">
+                          <p className="authors-text mt-2 font-space">
                             {expandedAuthors.includes(index) 
                               ? pub.authors.join(", ")
                               : truncateText(pub.authors.join(", "), 100)}
