@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background circle -->
+  <circle cx="24" cy="24" r="24" fill="#1a1a1a"/>
+  
+  <!-- Letters "AE" in teal with Audiowide font -->
+  <text x="24" y="32" 
+        style="font-family: var(--font-audiowide), sans-serif;" 
+        font-size="22" 
+        fill="#2dd4bf" 
+        text-anchor="middle"
+        letter-spacing="-1">
+    AE
+  </text>
+</svg>

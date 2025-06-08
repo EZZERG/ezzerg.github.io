@@ -1,0 +1,15 @@
+{
+  "employer": "Amazon",
+  "title": "Applied Scientist",
+  "years": "2018 - 2023",
+  "description": [
+    { "text": "Building Machine Learning models behind Amazon's Alexa Text-to-Speech.", "type": "text" },
+    { "type": "linebreak" },
+    { "type": "linebreak" },
+    { "text": "Keywords: ", "type": "text", "style": "bold" },
+    { "text": "Deep Neural Networks, Speech Synthesis, sequence-to-sequence modelling, Variational Auto-Encoders, Generative Adversarial Networks, Normalizing Flows...", "type": "text" }
+  ],
+  "logo": "/employers/amazon_logo.svg",
+  "city": "Cambridge",
+  "country": "United Kingdom"
+}

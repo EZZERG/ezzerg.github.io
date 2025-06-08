@@ -1,0 +1,16 @@
+{
+  "institution": "University College London (UCL)",
+  "degree": "PhD in Statistics",
+  "years": "2024 - Present",
+  "description": [
+    { "text": "Currently researching Bayesian methods under the supervision of ", "type": "text" },
+    { "text": "Prof. Jeremias Knoblauch", "type": "text", "href": "https://jeremiasknoblauch.github.io/" },
+    { "text": " and ", "type": "text" },
+    { "text": "Prof. Ilija Bogunovic", "type": "text", "href": "https://ilijabogunovic.com/" },
+    { "text": ". The goal is to explore generalisations of classical Bayesian methods ", "type": "text" },
+    { "text": "in order to make them more suitable for modern Statistical and Machine Learning problems.", "type": "text" }
+  ],
+  "logo": "/institutions/university_college_london_logo.svg",
+  "city": "London",
+  "country": "United Kingdom"
+}

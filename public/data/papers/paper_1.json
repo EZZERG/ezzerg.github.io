@@ -1,0 +1,23 @@
+{
+  "title": "Non-Autoregressive TTS with Explicit Duration Modelling for Low-Resource Highly Expressive Speech",
+  "year": "2021",
+  "venue": "Speech Synthesis Workshop (SSW)",
+  "authors": [
+    "Raahil Shah",
+    "Kamil Pokora",
+    "Abdelhamid Ezzerg",
+    "Viacheslav Klimkov",
+    "Goeric Huybrechts",
+    "Bartosz Putrycz",
+    "Daniel Korzekwa",
+    "Thomas Merritt"
+  ],
+  "abstract": "Whilst recent neural text-to-speech (TTS) approaches produce high-quality speech, they typically require a large amount of recordings from the target speaker. In previous work, a 3-step method was proposed to generate high-quality TTS while greatly reducing the amount of data required for training. However, we have observed a ceiling effect in the level of naturalness achievable for highly expressive voices when using this approach. In this paper, we present a method for building highly expressive TTS voices with as little as 15 minutes of speech data from the target speaker. Compared to the current state-of-the-art approach, our proposed improvements close the gap to recordings by 23.3% for naturalness of speech and by 16.3% for speaker similarity. Further, we match the naturalness and speaker similarity of a Tacotron2-based full-data (~10 hours) model using only 15 minutes of target speaker data, whereas with 30 minutes or more, we significantly outperform it. The following improvements are proposed: 1) changing from an autoregressive, attention-based TTS model to a non-autoregressive model replacing attention with an external duration model and 2) an additional Conditional Generative Adversarial Network (cGAN) based fine-tuning step.",
+  "previewImage": "/paper_previews/paper_1.png",
+  "url": "https://arxiv.org/abs/2106.12896",
+  "bibtex": "@misc{shah2021nonautoregressivettsexplicitduration,\n  title={Non-Autoregressive TTS with Explicit Duration Modelling for Low-Resource Highly Expressive Speech},\n  author={Raahil Shah and Kamil Pokora and Abdelhamid Ezzerg and Viacheslav Klimkov and Goeric Huybrechts and Bartosz Putrycz and Daniel Korzekwa and Thomas Merritt},\n  year={2021},\n  eprint={2106.12896},\n  archivePrefix={arXiv},\n  primaryClass={cs.SD},\n  url={https://arxiv.org/abs/2106.12896}}",
+  "links": {
+    "arxiv": "https://arxiv.org/abs/2106.12896",
+    "code": null
+  }
+}
