@@ -14,7 +14,9 @@
   }
 
   body {
-    @apply bg-white text-gray-900 dark:bg-gray-950 dark:text-gray-100;
+    @apply bg-gradient-to-br from-blue-100 via-white to-purple-100 text-gray-900 dark:from-gray-950 dark:via-gray-900 dark:to-blue-950 dark:text-gray-100;
+    min-height: 100vh;
+    background-attachment: fixed;
   }
 
   html {
@@ -25,5 +27,23 @@
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/20 dark:bg-gray-800/20 backdrop-blur-xl border border-white/60 dark:border-gray-600/60 shadow-xl shadow-white/30 dark:shadow-black/40;
+  }
+  
+  .glass-card-hover {
+    @apply transition-all duration-300 ease-out hover:scale-[1.02] hover:bg-white/60 dark:hover:bg-gray-800/60 hover:shadow-2xl hover:shadow-blue-500/30 dark:hover:shadow-purple-400/40 hover:border-white/80 dark:hover:border-gray-500/80;
+  }
+  
+  .floating-element {
+    @apply absolute opacity-20 dark:opacity-10 pointer-events-none;
+  }
+  
+  .glass-strong {
+    @apply bg-white/15 dark:bg-gray-900/15 backdrop-blur-2xl border border-white/70 dark:border-gray-600/70;
   }
 }

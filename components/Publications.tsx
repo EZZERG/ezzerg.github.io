@@ -30,21 +30,23 @@ export default function Publications() {
   const filteredPapers = filterYear === 'all' ? papers : papers.filter(p => p.year === filterYear)
 
   return (
-    <Section id="publications" title="Publications" className="bg-gray-50 dark:bg-gray-900">
+    <Section id="publications" title="Publications" className="bg-gradient-to-br from-blue-200/30 via-purple-100/20 to-purple-200/30 dark:from-blue-900/30 dark:via-purple-900/20 dark:to-gray-900/30">
       <div className="mb-8 flex justify-center">
-        <div className="inline-flex rounded-lg bg-gray-100 dark:bg-gray-800 p-1">
+        <div className="inline-flex rounded-xl glass-card p-1 shadow-lg">
           {years.map((year) => (
-            <button
+            <motion.button
               key={year}
               onClick={() => setFilterYear(year)}
-              className={`px-4 py-2 rounded-md transition-colors ${
+              className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                 filterYear === year
-                  ? 'bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 shadow-sm'
-                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100'
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                  : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-white/20 dark:hover:bg-gray-800/20'
               }`}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               {year === 'all' ? 'All Years' : year}
-            </button>
+            </motion.button>
           ))}
         </div>
       </div>
@@ -87,8 +89,9 @@ function PublicationCard({ paper, index, onClick }: { paper: Paper; index: numbe
       animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
       exit={{ opacity: 0, scale: 0.9 }}
       transition={{ duration: 0.3, delay: index * 0.05 }}
+      whileHover={{ scale: 1.05, y: -10 }}
       layout
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:shadow-xl transition-shadow"
+      className="glass-card glass-card-hover rounded-xl shadow-lg overflow-hidden cursor-pointer group"
       onClick={onClick}
     >
       <div className="relative h-48">
@@ -126,10 +129,10 @@ function PublicationModal({ paper, onClose }: { paper: Paper; onClose: () => voi
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
-        className="bg-white dark:bg-gray-800 rounded-lg shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+        className="glass-card rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border-2 border-white/30 dark:border-gray-700/50"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="sticky top-0 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 p-4 flex justify-between items-center">
+        <div className="sticky top-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md border-b border-white/20 dark:border-gray-700/30 p-4 flex justify-between items-center">
           <h3 className="text-xl font-semibold">Paper Details</h3>
           <button
             onClick={onClose}

@@ -17,6 +17,10 @@ const config: Config = {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'slide-down': 'slideDown 0.3s ease-out',
+        'float': 'float 6s ease-in-out infinite',
+        'float-delayed': 'float 6s ease-in-out infinite 2s',
+        'float-slow': 'float 8s ease-in-out infinite 1s',
+        'glow': 'glow 2s ease-in-out infinite alternate',
       },
       keyframes: {
         fadeIn: {
@@ -31,6 +35,17 @@ const config: Config = {
           '0%': { transform: 'translateY(-10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+          '50%': { transform: 'translateY(-20px) rotate(5deg)' },
+        },
+        glow: {
+          '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.5)' },
+          '100%': { boxShadow: '0 0 30px rgba(59, 130, 246, 0.8)' },
+        },
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },

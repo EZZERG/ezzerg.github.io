@@ -29,7 +29,7 @@ export default function Experience() {
   }, [])
 
   return (
-    <Section id="experience" title="Professional Experience">
+    <Section id="experience" title="Professional Experience" className="bg-gradient-to-br from-purple-200/30 via-blue-100/20 to-blue-200/30 dark:from-purple-900/30 dark:via-blue-900/20 dark:to-gray-900/30">
       <div className="relative">
         <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700 transform md:-translate-x-1/2"></div>
         
@@ -83,6 +83,7 @@ function ExperienceCard({ job, index }: { job: Employment; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ scale: 1.02 }}
       className={`relative flex flex-col md:flex-row items-center ${
         isEven ? 'md:flex-row-reverse' : ''
       }`}
@@ -90,7 +91,7 @@ function ExperienceCard({ job, index }: { job: Employment; index: number }) {
       <div className="absolute left-8 md:left-1/2 w-4 h-4 bg-gray-900 dark:bg-gray-100 rounded-full transform md:-translate-x-1/2"></div>
       
       <div className={`w-full md:w-1/2 ${isEven ? 'md:pl-12' : 'md:pr-12'} pl-16 md:pl-0`}>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <div className="glass-card glass-card-hover rounded-xl shadow-lg p-6 group">
           <div className="flex items-start gap-4 mb-4">
             <div className="w-16 h-16 relative flex-shrink-0">
               <Image

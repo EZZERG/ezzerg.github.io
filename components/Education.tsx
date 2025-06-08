@@ -25,7 +25,7 @@ export default function Education() {
   }, [])
 
   return (
-    <Section id="education" title="Education" className="bg-gray-50 dark:bg-gray-900">
+    <Section id="education" title="Education" className="bg-gradient-to-br from-blue-200/30 via-purple-100/20 to-purple-200/30 dark:from-blue-900/30 dark:via-purple-900/20 dark:to-gray-900/30">
       <div className="space-y-8">
         {education.map((edu, index) => (
           <EducationCard key={edu.institution} edu={edu} index={index} />
@@ -73,7 +73,8 @@ function EducationCard({ edu, index }: { edu: EducationType; index: number }) {
       initial={{ opacity: 0, x: -20 }}
       animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6"
+      className="glass-card glass-card-hover rounded-xl shadow-lg p-6 group"
+      whileHover={{ y: -5 }}
     >
       <div className="flex flex-col md:flex-row gap-6">
         <div className="flex-shrink-0">

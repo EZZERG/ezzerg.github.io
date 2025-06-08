@@ -44,21 +44,25 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="flex flex-wrap gap-4 justify-center md:justify-start"
             >
-              <a 
+              <motion.a 
                 href="/cv/EZZERG_CV.pdf"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
                 Download CV
-              </a>
-              <a 
+              </motion.a>
+              <motion.a 
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-gray-300 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 glass-card border border-white/30 dark:border-gray-700/30 rounded-xl hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Contact Me
-              </a>
+              </motion.a>
             </motion.div>
           </div>
           
@@ -68,7 +72,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="flex-shrink-0"
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-gray-200 dark:border-gray-800">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/30 dark:border-gray-700/30 backdrop-blur-sm shadow-2xl">
               <Image
                 src="/profile_photo/Profile_photo.jpeg"
                 alt="Profile"

@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export default function Header() {
   const [mounted, setMounted] = useState(false)
@@ -29,7 +30,7 @@ export default function Header() {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-white/90 dark:bg-gray-950/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      scrolled ? 'bg-white/40 dark:bg-gray-950/40 backdrop-blur-2xl shadow-2xl border-b border-white/50 dark:border-gray-700/50' : 'bg-transparent'
     }`}>
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -52,9 +53,11 @@ export default function Header() {
             </ul>
             
             {mounted && (
-              <button
+              <motion.button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                className="p-2 rounded-xl bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border border-white/30 dark:border-gray-700/30 hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? (
@@ -66,7 +69,7 @@ export default function Header() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                   </svg>
                 )}
-              </button>
+              </motion.button>
             )}
           </div>
         </div>
