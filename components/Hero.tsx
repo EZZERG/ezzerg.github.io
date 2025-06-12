@@ -56,7 +56,7 @@ export default function Hero() {
                 Download CV
               </motion.a>
               <motion.a 
-                href="#contact"
+                href="#footer"
                 className="inline-flex items-center gap-2 px-6 py-3 glass-card border border-white/30 dark:border-gray-700/30 rounded-xl hover:bg-white/20 dark:hover:bg-gray-800/20 transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
