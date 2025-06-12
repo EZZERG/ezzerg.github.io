@@ -33,6 +33,7 @@ export interface Paper {
   abstract: string
   previewImage: string
   url: string
+  pdfUrl?: string
   bibtex: string
   links: {
     arxiv: string | null
