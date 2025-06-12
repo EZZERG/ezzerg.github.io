@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Section from './Section'
 import type { Employment, TextContent } from '@/lib/types'
+import { useThemedLogo } from '@/lib/useThemedLogo'
 
 export default function Experience() {
   const [employment, setEmployment] = useState<Employment[]>([])
@@ -48,6 +49,7 @@ function ExperienceCard({ job, index }: { job: Employment; index: number }) {
     threshold: 0.1,
     triggerOnce: true,
   })
+  const themedLogo = useThemedLogo(job.logo)
 
   const renderDescription = (description: TextContent[]) => {
     return description.map((item, idx) => {
@@ -95,7 +97,7 @@ function ExperienceCard({ job, index }: { job: Employment; index: number }) {
           <div className="flex items-start gap-4 mb-4">
             <div className="w-16 h-16 relative flex-shrink-0">
               <Image
-                src={job.logo}
+                src={themedLogo}
                 alt={`${job.employer} logo`}
                 fill
                 className="object-contain"

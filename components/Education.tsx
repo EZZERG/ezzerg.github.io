@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Section from './Section'
 import type { Education as EducationType, TextContent } from '@/lib/types'
+import { useThemedLogo } from '@/lib/useThemedLogo'
 
 export default function Education() {
   const [education, setEducation] = useState<EducationType[]>([])
@@ -40,6 +41,7 @@ function EducationCard({ edu, index }: { edu: EducationType; index: number }) {
     threshold: 0.1,
     triggerOnce: true,
   })
+  const themedLogo = useThemedLogo(edu.logo)
 
   const renderDescription = (description: TextContent[]) => {
     return description.map((item, idx) => {
@@ -80,7 +82,7 @@ function EducationCard({ edu, index }: { edu: EducationType; index: number }) {
         <div className="flex-shrink-0">
           <div className="w-20 h-20 relative">
             <Image
-              src={edu.logo}
+              src={themedLogo}
               alt={`${edu.institution} logo`}
               fill
               className="object-contain"
