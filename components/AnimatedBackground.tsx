@@ -17,7 +17,7 @@ export default function AnimatedBackground() {
       {floatingElements.map((element) => (
         <motion.div
           key={element.id}
-          className="absolute rounded-full bg-gradient-to-br from-blue-400/20 to-purple-400/20 dark:from-blue-600/10 dark:to-purple-600/10"
+          className="absolute rounded-full bg-gradient-to-br from-amber-400/20 to-orange-400/20 dark:from-blue-600/10 dark:to-purple-600/10"
           style={{
             width: element.size,
             height: element.size,
@@ -39,10 +39,10 @@ export default function AnimatedBackground() {
         />
       ))}
       
-      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-blue-500/5 to-transparent dark:via-blue-400/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-transparent via-amber-500/5 to-transparent dark:via-blue-400/5" />
       
       <motion.div
-        className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-purple-400/10 to-pink-400/10 dark:from-purple-600/5 dark:to-pink-600/5 blur-3xl"
+        className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-to-br from-amber-400/10 to-orange-300/10 dark:from-purple-600/5 dark:to-pink-600/5 blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -55,7 +55,7 @@ export default function AnimatedBackground() {
       />
       
       <motion.div
-        className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-gradient-to-br from-blue-400/10 to-cyan-400/10 dark:from-blue-600/5 dark:to-cyan-600/5 blur-3xl"
+        className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-gradient-to-br from-yellow-400/10 to-amber-400/10 dark:from-blue-600/5 dark:to-cyan-600/5 blur-3xl"
         animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.4, 0.2, 0.4],

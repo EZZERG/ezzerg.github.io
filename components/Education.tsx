@@ -25,7 +25,7 @@ export default function Education() {
   }, [])
 
   return (
-    <Section id="education" title="Education" className="bg-gradient-to-br from-blue-200/30 via-purple-100/20 to-purple-200/30 dark:from-blue-900/30 dark:via-purple-900/20 dark:to-gray-900/30">
+    <Section id="education" title="Education" className="bg-gradient-to-br from-amber-100/30 via-orange-50/20 to-amber-100/30 dark:from-blue-900/30 dark:via-purple-900/20 dark:to-gray-900/30">
       <div className="space-y-8">
         {education.map((edu, index) => (
           <EducationCard key={edu.institution} edu={edu} index={index} />
@@ -56,7 +56,7 @@ function EducationCard({ edu, index }: { edu: EducationType; index: number }) {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
+            className="text-amber-700 dark:text-blue-400 hover:underline"
           >
             {content}
           </a>

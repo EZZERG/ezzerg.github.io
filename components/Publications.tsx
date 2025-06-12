@@ -30,7 +30,7 @@ export default function Publications() {
   const filteredPapers = filterYear === 'all' ? papers : papers.filter(p => p.year === filterYear)
 
   return (
-    <Section id="publications" title="Publications" className="bg-gradient-to-br from-blue-200/30 via-purple-100/20 to-purple-200/30 dark:from-blue-900/30 dark:via-purple-900/20 dark:to-gray-900/30">
+    <Section id="publications" title="Publications" className="bg-gradient-to-br from-amber-100/30 via-orange-50/20 to-amber-100/30 dark:from-blue-900/30 dark:via-purple-900/20 dark:to-gray-900/30">
       <div className="mb-8 flex justify-center">
         <div className="inline-flex rounded-xl glass-card p-1 shadow-lg">
           {years.map((year) => (
@@ -39,7 +39,7 @@ export default function Publications() {
               onClick={() => setFilterYear(year)}
               className={`px-4 py-2 rounded-lg transition-all duration-300 ${
                 filterYear === year
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                  ? 'bg-gradient-to-r from-amber-600 to-orange-600 dark:from-blue-600 dark:to-purple-600 text-white shadow-lg'
                   : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 hover:bg-white/20 dark:hover:bg-gray-800/20'
               }`}
               whileHover={{ scale: 1.05 }}

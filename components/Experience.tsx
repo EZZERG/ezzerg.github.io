@@ -29,7 +29,7 @@ export default function Experience() {
   }, [])
 
   return (
-    <Section id="experience" title="Professional Experience" className="bg-gradient-to-br from-purple-200/30 via-blue-100/20 to-blue-200/30 dark:from-purple-900/30 dark:via-blue-900/20 dark:to-gray-900/30">
+    <Section id="experience" title="Professional Experience" className="bg-gradient-to-br from-orange-100/30 via-amber-50/20 to-yellow-100/30 dark:from-purple-900/30 dark:via-blue-900/20 dark:to-gray-900/30">
       <div className="relative">
         <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700 transform md:-translate-x-1/2"></div>
         
@@ -64,7 +64,7 @@ function ExperienceCard({ job, index }: { job: Employment; index: number }) {
             href={item.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 dark:text-blue-400 hover:underline"
+            className="text-amber-700 dark:text-blue-400 hover:underline"
           >
             {content}
           </a>
