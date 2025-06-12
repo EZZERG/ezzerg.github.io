@@ -9,6 +9,7 @@ export default function Header() {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     setMounted(true)
@@ -20,6 +21,29 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement
+      if (mobileMenuOpen && !target.closest('header')) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && mobileMenuOpen) {
+        setMobileMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('keydown', handleEscape)
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [mobileMenuOpen])
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -38,7 +62,7 @@ export default function Header() {
             Academic Portfolio
           </Link>
           
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4">
             <ul className="hidden md:flex items-center gap-6">
               {navItems.map((item) => (
                 <li key={item.name}>
@@ -71,9 +95,62 @@ export default function Header() {
                 )}
               </motion.button>
             )}
+            
+            <motion.button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-xl bg-white/20 dark:bg-gray-800/20 backdrop-blur-md border border-white/30 dark:border-gray-700/30 hover:bg-white/30 dark:hover:bg-gray-800/30 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Toggle mobile menu"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {mobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </motion.button>
           </div>
         </div>
       </nav>
+      
+      {/* Mobile Menu */}
+      <motion.div
+        initial={false}
+        animate={mobileMenuOpen ? "open" : "closed"}
+        variants={{
+          open: { opacity: 1, y: 0, display: "block" },
+          closed: { opacity: 0, y: -20, transitionEnd: { display: "none" } }
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-2xl shadow-2xl border-b border-white/50 dark:border-gray-700/50"
+      >
+        <nav className="container mx-auto px-6 py-4">
+          <ul className="flex flex-col gap-4">
+            {navItems.map((item, index) => (
+              <motion.li
+                key={item.name}
+                initial={false}
+                animate={mobileMenuOpen ? "open" : "closed"}
+                variants={{
+                  open: { opacity: 1, x: 0 },
+                  closed: { opacity: 0, x: -20 }
+                }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
+                <a
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-colors"
+                >
+                  {item.name}
+                </a>
+              </motion.li>
+            ))}
+          </ul>
+        </nav>
+      </motion.div>
     </header>
   )
 }
