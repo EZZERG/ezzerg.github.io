@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import AboutMe from '@/components/AboutMe'
 import Education from '@/components/Education'
 import Experience from '@/components/Experience'
 import Publications from '@/components/Publications'
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <AboutMe />
         <Education />
         <Experience />
         <Publications />
