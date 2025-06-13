@@ -61,7 +61,7 @@ export default function Header() {
       <nav className="container mx-auto py-4">
         <div className="flex items-center justify-between">
           <Link href="#home" className="text-xl font-bold text-gray-900 dark:text-gray-100">
-            Academic Portfolio
+            Abdelhamid Ezzerg
           </Link>
           
           <div className="flex items-center gap-4">

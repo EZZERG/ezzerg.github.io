@@ -25,27 +25,16 @@ export default function AboutMe() {
       >
         <div className="glass-card rounded-xl shadow-lg p-8">
           <div className="prose prose-lg dark:prose-invert max-w-none">
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              I am a passionate researcher and engineer specializing in speech synthesis and machine learning. 
-              With a strong academic foundation from prestigious institutions including Cambridge, École Centrale Paris, 
-              and ENS Paris-Saclay, I have dedicated my career to advancing the field of Text-to-Speech (TTS) technology.
-            </p>
-            
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-              Currently at Amazon, I lead innovative projects in neural speech synthesis, focusing on creating 
-              more natural and expressive synthetic voices. My work spans from theoretical research to practical 
-              implementation, with a particular interest in low-resource TTS systems and prosody modeling.
-            </p>
-            
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Beyond my technical work, I am committed to sharing knowledge and contributing to the research 
-              community through publications, collaborations, and mentorship. I believe in the transformative 
-              power of AI to make technology more accessible and human-centered.
+              Welcome to my academic profile! I am currently a PhD student at University College London (UCL), where I began my doctoral journey in October 2024 under the supervision of Professors <a href="https://jeremiasknoblauch.github.io/" target="_blank" rel="noopener noreferrer" className="text-amber-700 dark:text-blue-400 hover:underline">Jeremias Knoblauch</a> and <a href="https://www.ilijabogunovic.com/" target="_blank" rel="noopener noreferrer" className="text-amber-700 dark:text-blue-400 hover:underline">Ilija Bogunovic</a>. My research focuses on modern Bayesian methods and their applications, an area I find both challenging and exciting.
+            </p>
+            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Prior to starting my PhD, I worked for six years as an Applied Scientist, where I gained valuable experience in Machine Learning projects involving Text-to-Speech synthesis (at Amazon) and information extraction from unstructured data (at Fimatix).
             </p>
           </div>
           
           <motion.div 
-            className="mt-8 flex flex-wrap gap-4"
+            className="mt-8 flex flex-wrap gap-4 justify-center"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -59,16 +48,16 @@ export default function AboutMe() {
             
             <div className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg">
               <svg className="w-5 h-5 text-amber-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
               </svg>
-              <span className="text-sm font-medium">Speech Synthesis</span>
+              <span className="text-sm font-medium">Statistics</span>
             </div>
             
             <div className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg">
               <svg className="w-5 h-5 text-amber-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
               </svg>
-              <span className="text-sm font-medium">Research</span>
+              <span className="text-sm font-medium">Speech Synthesis</span>
             </div>
             
             <div className="flex items-center gap-2 px-4 py-2 glass-card rounded-lg">

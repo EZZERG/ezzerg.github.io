@@ -10,7 +10,7 @@ export default function Footer() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-3xl">
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:ezzergabdelhamid@gmail.com"
               className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-amber-200/50 dark:hover:bg-gray-800/50 transition-all duration-300 group"
               aria-label="Email"
             >
@@ -20,7 +20,7 @@ export default function Footer() {
               <span className="text-sm font-medium text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Email</span>
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/EZZERG"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-amber-200/50 dark:hover:bg-gray-800/50 transition-all duration-300 group"
@@ -32,7 +32,7 @@ export default function Footer() {
               <span className="text-sm font-medium text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">GitHub</span>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/abdelhamid-ezzerg-274437a6/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-amber-200/50 dark:hover:bg-gray-800/50 transition-all duration-300 group"
@@ -44,7 +44,7 @@ export default function Footer() {
               <span className="text-sm font-medium text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">LinkedIn</span>
             </a>
             <a
-              href="https://scholar.google.com"
+              href="https://scholar.google.com/citations?user=Sltvi4AAAAAJ&hl=en"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-amber-200/50 dark:hover:bg-gray-800/50 transition-all duration-300 group"

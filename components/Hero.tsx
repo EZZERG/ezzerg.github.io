@@ -20,7 +20,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="text-4xl md:text-6xl font-bold mb-4"
             >
-              Your Name
+              Abdelhamid Ezzerg
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -28,7 +28,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-6"
             >
-              PhD Student in Statistics
+              PhD Student in Statistics and Machine Learning - Applied Scientist
             </motion.p>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -36,7 +36,7 @@ export default function Hero() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-lg text-gray-500 dark:text-gray-500 mb-8 max-w-2xl mx-auto md:mx-0"
             >
-              Researching machine learning and statistics with a focus on speech synthesis and normalizing flows.
+              Researching Bayesian Statistics and Machine Learning. Previous experience in Text-to-Speech synthesis and information extraction from unstructured data.
             </motion.p>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
