@@ -60,8 +60,46 @@ export default function Header() {
     }`}>
       <nav className="container mx-auto py-4">
         <div className="flex items-center justify-between">
-          <Link href="#home" className="text-xl font-bold text-gray-900 dark:text-gray-100">
-            Abdelhamid Ezzerg
+          <Link href="#home" className="flex items-center gap-3 text-xl font-bold text-gray-900 dark:text-gray-100">
+            <svg 
+              width="32" 
+              height="32" 
+              viewBox="0 0 48 48" 
+              className="text-amber-600 dark:text-purple-400"
+              fill="none"
+            >
+              {/* Background circle */}
+              <circle 
+                cx="24" 
+                cy="24" 
+                r="22" 
+                fill="currentColor" 
+                fillOpacity="0.1"
+                stroke="currentColor" 
+                strokeWidth="2"
+              />
+              
+              {/* Letter A */}
+              <path 
+                d="M12 34 L18 16 L24 34 M14.5 28 L21.5 28" 
+                stroke="currentColor" 
+                strokeWidth="3" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                fill="none"
+              />
+              
+              {/* Letter E */}
+              <path 
+                d="M26 16 L26 34 M26 16 L36 16 M26 25 L34 25 M26 34 L36 34" 
+                stroke="currentColor" 
+                strokeWidth="3" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+                fill="none"
+              />
+            </svg>
+            <span>Abdelhamid Ezzerg</span>
           </Link>
           
           <div className="flex items-center gap-4">

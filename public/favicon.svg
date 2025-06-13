@@ -1,0 +1,32 @@
+<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle 
+    cx="24" 
+    cy="24" 
+    r="22" 
+    fill="#d97706" 
+    fill-opacity="0.1"
+    stroke="#d97706" 
+    stroke-width="2"
+  />
+  
+  <!-- Letter A -->
+  <path 
+    d="M12 34 L18 16 L24 34 M14.5 28 L21.5 28" 
+    stroke="#d97706" 
+    stroke-width="3" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+    fill="none"
+  />
+  
+  <!-- Letter E -->
+  <path 
+    d="M26 16 L26 34 M26 16 L36 16 M26 25 L34 25 M26 34 L36 34" 
+    stroke="#d97706" 
+    stroke-width="3" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+    fill="none"
+  />
+</svg>
