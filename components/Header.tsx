@@ -57,7 +57,7 @@ export default function Header() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled ? 'bg-white/40 dark:bg-gray-950/40 backdrop-blur-2xl shadow-2xl border-b border-white/50 dark:border-gray-700/50' : 'bg-transparent'
     }`}>
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto py-4">
         <div className="flex items-center justify-between">
           <Link href="#home" className="text-xl font-bold text-gray-900 dark:text-gray-100">
             Academic Portfolio
@@ -127,7 +127,7 @@ export default function Header() {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="md:hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-gray-950/95 backdrop-blur-2xl shadow-2xl border-b border-white/50 dark:border-gray-700/50"
       >
-        <nav className="container mx-auto px-6 py-4">
+        <nav className="container mx-auto py-4">
           <ul className="flex flex-col gap-4">
             {navItems.map((item, index) => (
               <motion.li

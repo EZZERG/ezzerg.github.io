@@ -18,7 +18,7 @@ export default function Section({ id, title, children, className = '' }: Section
 
   return (
     <section id={id} className={`py-20 ${className}`}>
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}

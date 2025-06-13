@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
