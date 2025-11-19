@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   robots: 'index, follow',
   metadataBase: new URL('https://ezzerg.github.io'),
   alternates: {
-    canonical: 'https://ezzerg.github.io',
+    canonical: 'https://ezzerg.github.io/',
   },
   openGraph: {
     type: 'website',
