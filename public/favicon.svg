@@ -1,32 +1,38 @@
-<svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background circle -->
-  <circle 
-    cx="24" 
-    cy="24" 
-    r="22" 
-    fill="#d97706" 
-    fill-opacity="0.1"
-    stroke="#d97706" 
-    stroke-width="2"
-  />
-  
-  <!-- Letter A -->
-  <path 
-    d="M12 34 L18 16 L24 34 M14.5 28 L21.5 28" 
-    stroke="#d97706" 
-    stroke-width="3" 
-    stroke-linecap="round" 
-    stroke-linejoin="round"
-    fill="none"
-  />
-  
-  <!-- Letter E -->
-  <path 
-    d="M26 16 L26 34 M26 16 L36 16 M26 25 L34 25 M26 34 L36 34" 
-    stroke="#d97706" 
-    stroke-width="3" 
-    stroke-linecap="round" 
-    stroke-linejoin="round"
-    fill="none"
-  />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="AE — Abdelhamid Ezzerg">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="4" x2="56" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#141C2E" />
+      <stop offset="100%" stop-color="#090B10" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="22%" r="72%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="accent" x1="14" y1="51" x2="50" y2="51" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563EB" />
+      <stop offset="50%" stop-color="#60A5FA" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+  </defs>
+
+  <!-- Architectural Obsidian Seal (reads cleanly on both light and dark browser tabs) -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bg)" />
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#glow)" />
+  <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="13.25" fill="none" stroke="#33476E" stroke-width="1.5" />
+
+  <!-- Geometric AE Monogram (pure vector paths so it never depends on external webfont loading) -->
+  <g fill="#F8FAFC">
+    <!-- A -->
+    <path
+      fill-rule="evenodd"
+      d="M19.8 15H24.2L33.5 45H29L26.8 38H17.2L15 45H10.5L19.8 15ZM22 22.4L18.4 34H25.6L22 22.4Z"
+    />
+    <!-- E -->
+    <path
+      d="M37.5 15H53.5V19.3H42V27.9H51.2V32.1H42V40.7H53.5V45H37.5V15Z"
+    />
+  </g>
+
+  <!-- Signature Cobalt Architectural Hairline -->
+  <rect x="14" y="50.5" width="36" height="2.8" rx="1.4" fill="url(#accent)" />
 </svg>

@@ -1,0 +1,22 @@
+{
+  "title": "Non-Autoregressive TTS with Explicit Duration Modelling for Low-Resource Highly Expressive Speech",
+  "year": 2021,
+  "venue": "ISCA Speech Synthesis Workshop (SSW)",
+  "venueShort": "SSW 2021",
+  "authors": [
+    "Raahil Shah",
+    "Kamil Pokora",
+    "Abdelhamid Ezzerg",
+    "Viacheslav Klimkov",
+    "Goeric Huybrechts",
+    "Bartosz Putrycz",
+    "Daniel Korzekwa",
+    "Thomas Merritt"
+  ],
+  "abstract": "We present a method for building highly expressive TTS voices with as little as 15 minutes of speech data from a target speaker. By moving from an autoregressive attention-based TTS model to a non-autoregressive architecture with an external duration model and conditional GAN fine-tuning, we close the gap to recordings by 23.3% for naturalness and 16.3% for speaker similarity, matching a full-data (~10 hour) Tacotron2 baseline with only 15 minutes of audio.",
+  "arxivUrl": "https://arxiv.org/abs/2106.12896",
+  "topics": [
+    "Speech Synthesis",
+    "Diffusion & Prosody"
+  ]
+}

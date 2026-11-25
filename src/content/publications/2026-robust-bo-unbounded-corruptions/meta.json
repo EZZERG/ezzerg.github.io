@@ -1,0 +1,18 @@
+{
+  "title": "Robust Bayesian Optimisation with Unbounded Corruptions",
+  "year": 2026,
+  "venue": "International Conference on Machine Learning (ICML)",
+  "venueShort": "ICML 2026",
+  "authors": [
+    "Abdelhamid Ezzerg",
+    "Ilija Bogunovic",
+    "Jeremias Knoblauch"
+  ],
+  "abstract": "Bayesian Optimization is critically vulnerable to extreme outliers. Existing provably robust methods typically assume a bounded cumulative corruption budget, which makes them defenseless against even a single corruption of sufficient magnitude. To address this, we introduce a new adversary whose budget is only bounded in the frequency of corruptions, not in their magnitude. We then derive RCGP-UCB, an algorithm coupling the upper confidence bound (UCB) approach with a Robust Conjugate Gaussian Process (RCGP). We present stable and adaptive versions of RCGP-UCB, and prove that they achieve sublinear regret in the presence of up to O(T^(1/4)) and O(T^(1/7)) corruptions with possibly infinite magnitude. This robustness comes at near zero cost: without outliers, RCGP-UCB's regret bounds match those of the standard GP-UCB algorithm.",
+  "url": "https://icml.cc/virtual/2026/poster/60490",
+  "arxivUrl": "https://arxiv.org/abs/2511.15315",
+  "topics": [
+    "Bayesian Optimization"
+  ],
+  "featured": true
+}

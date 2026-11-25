@@ -1,0 +1,22 @@
+{
+  "title": "Text-free non-parallel many-to-many voice conversion using normalising flows",
+  "year": 2022,
+  "venue": "IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+  "venueShort": "ICASSP 2022",
+  "authors": [
+    "Thomas Merritt",
+    "Abdelhamid Ezzerg",
+    "Piotr Bilinski",
+    "Magdalena Proszewska",
+    "Kamil Pokora",
+    "Roberto Barra-Chicote",
+    "Daniel Korzekwa"
+  ],
+  "abstract": "Non-parallel voice conversion (VC) is typically achieved using lossy representations of the source speech. However, ensuring only speaker identity information is dropped whilst all other information from the source speech is retained is a large challenge, particularly in text-free VC. Normalising flows utilize invertible functions to learn the likelihood of the data, thus providing a lossless encoding of speech. We investigate normalising flows for VC in both text-conditioned and text-free scenarios. Flow-based VC evaluations show no degradation between text-free and text-conditioned VC, resulting in improvements over the state-of-the-art.",
+  "url": "https://ieeexplore.ieee.org/document/9746368",
+  "arxivUrl": "https://arxiv.org/abs/2203.08009",
+  "topics": [
+    "Normalizing Flows",
+    "Voice Conversion"
+  ]
+}

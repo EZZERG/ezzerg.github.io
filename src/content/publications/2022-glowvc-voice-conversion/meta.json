@@ -1,0 +1,20 @@
+{
+  "title": "GlowVC: Mel-spectrogram space disentangling model for language-independent text-free voice conversion",
+  "year": 2022,
+  "venue": "INTERSPEECH",
+  "venueShort": "INTERSPEECH 2022",
+  "authors": [
+    "Magdalena Proszewska",
+    "Grzegorz Beringer",
+    "Daniel Sáez-Trigueros",
+    "Thomas Merritt",
+    "Abdelhamid Ezzerg",
+    "Roberto Barra-Chicote"
+  ],
+  "abstract": "In this paper, we propose GlowVC: a multilingual multi-speaker flow-based model for language-independent text-free voice conversion. Building on Glow-TTS, we consider GlowVC-conditional (speaker-conditioned flow disentangling content and pitch) and GlowVC-explicit (unconditioned flow disentangling content, pitch, and speaker dimensions). GlowVC models greatly outperform the AutoVC baseline in intelligibility and demonstrate that GlowVC-explicit surpasses both GlowVC-conditional and AutoVC in naturalness across seen and unseen languages.",
+  "arxivUrl": "https://arxiv.org/abs/2207.01454",
+  "topics": [
+    "Normalizing Flows",
+    "Voice Conversion"
+  ]
+}

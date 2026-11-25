@@ -1,0 +1,22 @@
+{
+  "title": "Creating New Voices using Normalizing Flows",
+  "year": 2022,
+  "venue": "INTERSPEECH",
+  "venueShort": "INTERSPEECH 2022",
+  "authors": [
+    "Piotr Bilinski",
+    "Thomas Merritt",
+    "Abdelhamid Ezzerg",
+    "Kamil Pokora",
+    "Sebastian Cygert",
+    "Kayoko Yanagisawa",
+    "Roberto Barra-Chicote",
+    "Daniel Korzekwa"
+  ],
+  "abstract": "Creating realistic and natural-sounding synthetic speech remains a big challenge for voice identities unseen during training. Here we investigate the ability of normalizing flows in text-to-speech (TTS) and voice conversion (VC) modes to extrapolate from speakers observed during training to create unseen speaker identities. Extensive objective and subjective evaluations demonstrate state-of-the-art performance in zero-shot speech synthesis and the creation of novel speaker identities unobserved in the training set.",
+  "arxivUrl": "https://arxiv.org/abs/2312.14569",
+  "topics": [
+    "Normalizing Flows",
+    "Speech Synthesis"
+  ]
+}

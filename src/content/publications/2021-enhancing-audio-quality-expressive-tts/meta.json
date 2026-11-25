@@ -1,0 +1,23 @@
+{
+  "title": "Enhancing audio quality for expressive Neural Text-to-Speech",
+  "year": 2021,
+  "venue": "ISCA Speech Synthesis Workshop (SSW)",
+  "venueShort": "SSW 2021",
+  "authors": [
+    "Abdelhamid Ezzerg",
+    "Adam Gabrys",
+    "Bartosz Putrycz",
+    "Daniel Korzekwa",
+    "Daniel Saez-Trigueros",
+    "David McHardy",
+    "Kamil Pokora",
+    "Jakub Lachowicz",
+    "Jaime Lorenzo-Trueba",
+    "Viacheslav Klimkov"
+  ],
+  "abstract": "Highly expressive voices remain challenging for neural Text-to-Speech architectures because of an inherent trade-off between expressiveness and signal quality. We present a set of techniques to enhance the signal quality of a highly expressive voice without additional data: tuning autoregressive loop granularity, integrating Generative Adversarial Networks in acoustic modelling, and deploying Variational Auto-Encoders in both the acoustic model and neural vocoder. Combined, these techniques closed the perceived naturalness gap to human recordings by 39% in MUSHRA evaluations.",
+  "arxivUrl": "https://arxiv.org/abs/2108.06270",
+  "topics": [
+    "Speech Synthesis"
+  ]
+}

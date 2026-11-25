@@ -1,0 +1,29 @@
+{
+  "title": "Comparing normalizing flows and diffusion models for prosody and acoustic modelling in text-to-speech",
+  "year": 2023,
+  "venue": "INTERSPEECH",
+  "venueShort": "INTERSPEECH 2023",
+  "authors": [
+    "Guangyan Zhang",
+    "Thomas Merritt",
+    "Manuel Sam Ribeiro",
+    "Biel Tura Vecino",
+    "Kayoko Yanagisawa",
+    "Kamil Pokora",
+    "Abdelhamid Ezzerg",
+    "Sebastian Cygert",
+    "Ammar Abbas",
+    "Piotr Bilinski",
+    "Roberto Barra-Chicote",
+    "Daniel Korzekwa",
+    "Jaime Lorenzo-Trueba"
+  ],
+  "abstract": "Neural text-to-speech systems are often optimized on L1/L2 losses, which make strong assumptions about the distributions of the target data space. Aiming to improve those assumptions, Normalizing Flows and Diffusion Probabilistic Models were recently proposed as alternatives. In this paper, we compare traditional L1/L2-based approaches to diffusion and flow-based approaches for the tasks of prosody and mel-spectrogram prediction for text-to-speech synthesis. We use a prosody model to generate log-f0 and duration features, which are used to condition an acoustic model that generates mel-spectrograms. Experimental results demonstrate that the flow-based model achieves the best performance for spectrogram prediction, improving over equivalent diffusion and L1 models. Meanwhile, both diffusion and flow-based prosody predictors result in significant improvements over typical L2-trained prosody models.",
+  "arxivUrl": "https://arxiv.org/abs/2307.16679",
+  "topics": [
+    "Normalizing Flows",
+    "Diffusion & Prosody",
+    "Speech Synthesis"
+  ],
+  "featured": true
+}

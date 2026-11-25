@@ -1,0 +1,25 @@
+{
+  "title": "Remap, Warp and Attend: Non-Parallel Many-to-Many Accent Conversion with Normalizing Flows",
+  "year": 2022,
+  "venue": "IEEE Spoken Language Technology Workshop (SLT)",
+  "venueShort": "IEEE SLT 2022",
+  "authors": [
+    "Abdelhamid Ezzerg",
+    "Thomas Merritt",
+    "Kayoko Yanagisawa",
+    "Piotr Bilinski",
+    "Magdalena Proszewska",
+    "Kamil Pokora",
+    "Renard Korzeniowski",
+    "Roberto Barra-Chicote",
+    "Daniel Korzekwa"
+  ],
+  "abstract": "Regional accents of the same language affect not only how words are pronounced (i.e., phonetic content), but also impact prosodic aspects of speech such as speaking rate and intonation. This paper investigates a novel flow-based approach to accent conversion using normalizing flows. The proposed approach revolves around three steps: remapping the phonetic conditioning to better match the target accent, warping the duration of the converted speech to better suit the target phonemes, and an attention mechanism that implicitly aligns source and target speech sequences. Objective and subjective evaluations show that the proposed approach significantly outperforms a competitive CopyCat baseline model in terms of similarity to the target accent, naturalness and intelligibility.",
+  "url": "https://ieeexplore.ieee.org/document/10022506",
+  "arxivUrl": "https://arxiv.org/abs/2211.05850",
+  "topics": [
+    "Normalizing Flows",
+    "Voice Conversion"
+  ],
+  "featured": true
+}
